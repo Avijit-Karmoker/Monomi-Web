@@ -2,12 +2,13 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import { GetServerSideProps } from 'next'
+import Text from '@/components/Text'
 
 export default function Creator() {
   const { id } = useRouter().query
   return (
     <div>
-      <h1>Creator: {id}</h1>
+      <Text>Creator: {id}</Text>
       <Image
         src='/assets/images/logo.png'
         height={128.5}
@@ -17,7 +18,7 @@ export default function Creator() {
       <h2>
         Home:
         <Link href='/'>
-          <a>this page!</a>
+          <a>Suuuka</a>
         </Link>
       </h2>
     </div>
