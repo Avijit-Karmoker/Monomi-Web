@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from '@emotion/styled'
 import colors from '@/utils/colors'
 
 type Props = { bold?: boolean }

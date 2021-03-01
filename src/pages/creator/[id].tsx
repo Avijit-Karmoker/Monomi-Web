@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { GetServerSideProps } from 'next'
 import Text from '@/components/Text'
+import Button from '@/components/Button'
 
 export default function Creator() {
   const { id } = useRouter().query
@@ -18,7 +19,7 @@ export default function Creator() {
       <h2>
         Home:
         <Link href='/'>
-          <a>Suuuka</a>
+          <Button>Suuuka</Button>
         </Link>
       </h2>
     </div>

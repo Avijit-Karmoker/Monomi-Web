@@ -1,25 +1,15 @@
-import Head from 'next/head'
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
+import colors from '@/utils/colors'
 
 const Title = styled.h1`
   font-size: 50px;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${colors.secondary};
 `
 
 export default function Home() {
   return (
     <div className='container'>
-      <Head>
-        <title>Monomi Web App</title>
-        <link rel='manifest' href='/site.webmanifest' />
-        <link
-          rel='shortcut icon'
-          type='image/x-icon'
-          href='/assets/images/favicon.ico'
-        />
-      </Head>
-
       <main>
         <Title>Vo čia title</Title>
         <h1 className='title'>
