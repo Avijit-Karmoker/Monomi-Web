@@ -1,6 +1,5 @@
 import * as React from 'react'
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheets } from '@material-ui/core/styles'
 import createEmotionServer from '@emotion/server/create-instance'
 import theme from '@/utils/theme'
 import { cache } from './_app'
@@ -12,7 +11,7 @@ export default class Document extends NextDocument {
     return (
       <Html lang='en'>
         <Head>
-          <meta name='theme-color' content={theme.palette.primary.main} />
+          <meta name='theme-color' content={theme.colors.primary} />
         </Head>
         <body>
           <Main />
@@ -48,15 +47,6 @@ Document.getInitialProps = async (ctx) => {
   // 3. app.render
   // 4. page.render
 
-  // Render app and page and get the context of the page with collected side effects.
-  const sheets = new ServerStyleSheets()
-  const originalRenderPage = ctx.renderPage
-
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
-    })
-
   const initialProps = await NextDocument.getInitialProps(ctx)
   const styles = extractCritical(initialProps.html)
 
@@ -65,7 +55,6 @@ Document.getInitialProps = async (ctx) => {
     // Styles fragment is rendered after the app and page rendering finish.
     styles: [
       ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
       <style
         key='emotion-style-tag'
         data-emotion={`css ${styles.ids.join(' ')}`}

@@ -1,0 +1,43 @@
+{
+  "amount": "Suma",
+  "biometrics": "Biometrija",
+  "biometricsEnabled": "Biometrija aktyvuota",
+  "biometricsPrompt": "Prisijunkite su biometrija",
+  "biometryType": {
+    "Biometrics": "Biometrija",
+    "FaceID": "FaceID",
+    "TouchID": "TouchID",
+    "unavailable": "Biometrija nepalaikoma"
+  },
+  "cameraNotAuthorized": "Nesuteiktas leidimas naudoti kamerą",
+  "cancel": "Atšaukti",
+  "cannotBeUndone": "Šis veiksmas negali būti atšauktas.",
+  "chooseFromLibrary": "Pasirinkti iš galerijos",
+  "code": "Kodas",
+  "confirm": "Patvirtinti",
+  "countryFilter": "Įveskite šalies pavadinimą arba telefono kodą",
+  "discount": "Nuolaida",
+  "enableCameraPermission": "Spustelėkite čia, kad suteiktumėte leidimą naudoti kamerą",
+  "error": "Įvyko klaida 😵",
+  "genders": {
+    "f": "Moteris",
+    "m": "Vyras",
+    "o": "Kita"
+  },
+  "no": "Ne",
+  "ok": "Gerai",
+  "optional": "Pasirinktina",
+  "or": "arba",
+  "photoPickerTitle": "Įkelti nuotrauką",
+  "pressToDisable": "Spustelkite išjungimui",
+  "pressToEnable": "Spustelkite aktyvavimui",
+  "pressToEnableCameraPermissions": "Spustelėkite 'Gerai', kad suteiktumėte leidimą naudoti kamerą",
+  "retry": "Prašome įsitikinti kad programėlė atnaujinta arba pabandyti vėliau",
+  "retryBiometrics": "Nepavyko aktyvuoti biometrijos, prašome pabandyti dar kartą",
+  "serverError": "Serverio klaida, prašome pabandyti vėliau",
+  "serviceUnavailable": "Serveris šiuo metu nepasiekiamas, prašome patikrinti interneto ryšį arba pabandyti vėliau",
+  "takePhoto": "Daryti nuotrauką",
+  "termsAndConditions": "Taisyklės ir sąlygos",
+  "total": "Suma",
+  "yes": "Taip"
+}

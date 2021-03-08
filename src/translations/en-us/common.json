@@ -1,0 +1,43 @@
+{
+  "amount": "Amount",
+  "biometrics": "Biometrics",
+  "biometricsEnabled": "Biometrics enabled",
+  "biometricsPrompt": "Sign in with biometrics",
+  "biometryType": {
+    "Biometrics": "Biometrics",
+    "FaceID": "FaceID",
+    "TouchID": "TouchID",
+    "unavailable": "Biometrics unavailable"
+  },
+  "cameraNotAuthorized": "Camera permission is disabled",
+  "cancel": "Cancel",
+  "cannotBeUndone": "This action cannot be undone.",
+  "chooseFromLibrary": "Choose from library",
+  "code": "Code",
+  "confirm": "Confirm",
+  "countryFilter": "Input country name or dial code",
+  "discount": "Discount",
+  "enableCameraPermission": "Tap here to enable camera permission",
+  "error": "An error occurred 😵",
+  "genders": {
+    "f": "Female",
+    "m": "Male",
+    "o": "Other"
+  },
+  "no": "No",
+  "ok": "OK",
+  "optional": "Optional",
+  "or": "or",
+  "photoPickerTitle": "Upload a photo",
+  "pressToDisable": "Tap to disable",
+  "pressToEnable": "Tap to enable",
+  "pressToEnableCameraPermissions": "Tap 'OK' to launch Settings and enable",
+  "retry": "Please, make sure that the application is up-to-date or try again later",
+  "retryBiometrics": "Failed to enable biometrics, please try again",
+  "serverError": "A server error has occurred, please try again later",
+  "serviceUnavailable": "Server is currently unavailable, please check your internet connection or try again later",
+  "takePhoto": "Take a picture",
+  "termsAndConditions": "Terms and conditions",
+  "total": "Total",
+  "yes": "Yes"
+}

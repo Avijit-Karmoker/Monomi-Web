@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import colors from '@/utils/colors'
 
 const Title = styled.h1`
   font-size: 50px;
-  color: ${colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
 `
 
 export default function Home() {
