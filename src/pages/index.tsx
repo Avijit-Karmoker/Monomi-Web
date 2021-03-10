@@ -13,7 +13,7 @@ export default function Home() {
         <Title>Vo čia title</Title>
         <h1 className='title'>
           Suka{' '}
-          <Link href='/creator/suka'>
+          <Link href='/community/suka'>
             <a>this page!</a>
           </Link>
         </h1>

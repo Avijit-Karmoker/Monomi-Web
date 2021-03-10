@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { GetServerSideProps } from 'next'
 import Text from '@/components/Text'
 
-export default function Creator() {
+export default function Community() {
   const { id } = useRouter().query
   return (
     <div>
-      <Text>Creator: {id}</Text>
+      <Text>Community: {id}</Text>
       <Image
         src='/assets/images/logo.png'
         height={128.5}
@@ -24,7 +24,7 @@ export default function Creator() {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  console.log('Creator id:', context.query.id)
+  console.log('Community id:', context.query.id)
   return {
     props: {
       // props for your component
