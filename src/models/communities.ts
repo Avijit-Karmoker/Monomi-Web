@@ -2,25 +2,24 @@ import { createModel } from '@rematch/core'
 
 import API from '@/utils/API'
 import { RootModel } from '.'
-import {
-  CreatePaymentSubscriptionPayload,
-  PaymentSubscription,
-} from '@/typings'
-import { modelConfig } from '@monomi/rematch'
+import { Merchant, CommunitiesState } from '@/typings'
+
+const initialState: CommunitiesState = {
+  community: null,
+}
 
 export default createModel<RootModel>()({
-  ...modelConfig.communities,
-  effects: (dispatch) => ({
-    async subscribe(payload: CreatePaymentSubscriptionPayload) {
-      const { data } = await API.post<PaymentSubscription>(
-        'payments/subscriptions',
-        payload,
-      )
-
-      return data
+  state: initialState,
+  reducers: {
+    setCommunity(state, community: CommunitiesState['community']) {
+      return { ...state, community }
     },
-    async unsubscribe({ id }: Pick<PaymentSubscription, 'id'>) {
-      await API.delete(`payments/subscriptions/${id}`)
+  },
+  effects: (dispatch) => ({
+    async fetchCommunity(id: Merchant['id']) {
+      const { data } = await API.get(`communities/${id}`)
+
+      dispatch.communities.setCommunity(data)
     },
   }),
 })

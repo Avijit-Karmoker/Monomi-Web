@@ -1,26 +1,20 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link'
-import Image from 'next/image'
 import { GetServerSideProps } from 'next'
-import Text from '@/components/Text'
+import Profile from '@/components/Profile'
+import { Dispatch, RootState } from '@/store'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 export default function Community() {
+  const { community } = useSelector(({ communities }: RootState) => communities)
+  const dispatch = useDispatch<Dispatch>()
   const { id } = useRouter().query
-  return (
-    <div>
-      <Text>Community: {id}</Text>
-      <Image
-        src='/assets/images/logo.png'
-        height={128.5}
-        width={596}
-        quality={100}
-      />
-      <h2>
-        Home:
-        <Link href='/'>Suuuka</Link>
-      </h2>
-    </div>
-  )
+
+  useEffect(() => {
+    dispatch.communities.fetchCommunity(id as string)
+  }, [])
+
+  return community ? <Profile community={community} /> : null
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

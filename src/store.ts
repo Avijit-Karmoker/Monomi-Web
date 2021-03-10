@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger)
 }
 
-let store: RematchStore<RootModel, FullModel> | null = null
+let store: RematchStore<RootModel, FullModel> | null = createStore()
 
 export type Dispatch = RematchDispatch<RootModel>
 export type RootState = RematchRootState<RootModel, FullModel>

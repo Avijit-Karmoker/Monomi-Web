@@ -1,4 +1,4 @@
-export const baseHost = 'monomi.lt'
+export const baseHost = 'staging.monomi.lt'
 export const baseUrl = `https://client.api.${baseHost}/v1`
 export const termsAndConditionsUrl = `https://${baseHost}/dokumentai/vartotojo-sutartis`
 

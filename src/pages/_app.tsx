@@ -13,6 +13,8 @@ import Layout from '@/components/Layout'
 import '@/components/RippleButton/index.scss'
 import '@/styles/iconfont.css'
 import '@/styles/scss/index.scss'
+// fuck me with these global imports bleee
+import '@/styles/scss/react/pages/page-profile.scss'
 
 export const cache = createCache({ key: 'css', prepend: true })
 
