@@ -7,10 +7,11 @@ import ProfileSuggestedPages from './ProfileSuggestedPages'
 import { Community, MerchantPost } from '@/typings'
 import { FC } from 'react'
 
-const Profile: FC<{ community: Community; posts: MerchantPost[] }> = ({
-  community,
-  posts,
-}) => {
+const Profile: FC<{
+  community: Community
+  posts: MerchantPost[]
+  suggested: Community[]
+}> = ({ community, posts, suggested }) => {
   return (
     <div id='user-profile'>
       <Row>
@@ -22,7 +23,7 @@ const Profile: FC<{ community: Community; posts: MerchantPost[] }> = ({
         <Row>
           <Col lg={{ size: 3, order: 1 }} sm={{ size: 12 }} xs={{ order: 2 }}>
             <ProfileAbout {...community} />
-            {/* <ProfileSuggestedPages {...community} /> */}
+            <ProfileSuggestedPages list={suggested} />
           </Col>
           <Col lg={{ size: 6, order: 2 }} sm={{ size: 12 }} xs={{ order: 1 }}>
             <ProfilePosts list={posts} />

@@ -2,9 +2,11 @@ import { createModel } from '@rematch/core'
 
 import API from '@/utils/API'
 import { RootModel } from '.'
-import { CommunitiesState, Community, MerchantPost } from '@/typings'
+import { CommunitiesState, Community } from '@/typings'
 
 const initialState: CommunitiesState = {
+  list: [],
+  meta: { ...API.initialListMeta },
   community: null,
   posts: [],
   postsMeta: { ...API.initialListMeta },
@@ -13,6 +15,12 @@ const initialState: CommunitiesState = {
 export default createModel<RootModel>()({
   state: initialState,
   reducers: {
+    setList(
+      state: CommunitiesState,
+      { list, meta }: Pick<CommunitiesState, 'list' | 'meta'>,
+    ) {
+      return { ...state, list, meta }
+    },
     setCommunity(state, community: CommunitiesState['community']) {
       return { ...state, community }
     },
@@ -24,6 +32,14 @@ export default createModel<RootModel>()({
     },
   },
   effects: (dispatch) => ({
+    async fetchList() {
+      const { data: list, meta } = await API.get<
+        CommunitiesState['list'],
+        CommunitiesState['meta']
+      >('communities')
+
+      dispatch.communities.setList({ list, meta })
+    },
     async fetchCommunity(id: Community['id']) {
       const { data } = await API.get<Community>(`communities/${id}`)
 
