@@ -1,5 +1,6 @@
-export const baseHost = 'staging.monomi.lt'
-export const baseUrl = `https://client.api.${baseHost}/v1`
+export const baseHost = 'localhost:3000'
+export const scheme = 'http'
+export const baseUrl = `${scheme}://client.api.${baseHost}/v1`
 export const termsAndConditionsUrl = `https://${baseHost}/dokumentai/vartotojo-sutartis`
 
 export const languages = [

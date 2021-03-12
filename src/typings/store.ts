@@ -1,9 +1,11 @@
-import { Device, Merchant } from '.'
+import { Device, Community, MerchantPost, ListMeta } from '.'
 
 export interface GlobalState {
   device: Device | null
 }
 
 export interface CommunitiesState {
-  community: Merchant | null
+  community: Community | null
+  posts: MerchantPost[]
+  postsMeta: ListMeta
 }

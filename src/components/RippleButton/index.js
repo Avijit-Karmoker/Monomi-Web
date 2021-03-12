@@ -1,12 +1,7 @@
 // ** React Imports
 import { useState, useEffect } from 'react'
-
-// ** Third Party Components
 import { Button } from 'reactstrap'
 import classnames from 'classnames'
-
-// ** Styles
-import './index.scss'
 
 const RippleButton = ({ className, children, onClick, ...rest }) => {
   // ** States
@@ -45,12 +40,13 @@ const RippleButton = ({ className, children, onClick, ...rest }) => {
         [className]: className,
       })}
       onClick={(e) => {
-        const rect = e.target.getBoundingClientRect()
+        const rect = e.currentTarget.getBoundingClientRect()
         setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top })
         if (onClick) {
           onClick(e)
         }
       }}
+      color='primary'
       {...rest}
     >
       {children}
@@ -73,3 +69,5 @@ RippleButton.propTypes = {
 }
 
 Button.Ripple = RippleButton
+
+export default Button.Ripple

@@ -6,15 +6,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 export default function Community() {
-  const { community } = useSelector(({ communities }: RootState) => communities)
+  const { community, posts } = useSelector(
+    ({ communities }: RootState) => communities,
+  )
   const dispatch = useDispatch<Dispatch>()
   const { id } = useRouter().query
 
   useEffect(() => {
     dispatch.communities.fetchCommunity(id as string)
+    dispatch.communities.fetchPosts(id as string)
   }, [])
 
-  return community ? <Profile community={community} /> : null
+  return community ? <Profile community={community} posts={posts} /> : null
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
