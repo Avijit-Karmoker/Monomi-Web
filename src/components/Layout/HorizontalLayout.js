@@ -1,6 +1,5 @@
 // ** React Imports
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 
 // ** Store & Actions
 import { useSelector, useDispatch } from 'react-redux'
@@ -17,32 +16,20 @@ import themeConfig from '@/utils/theme'
 // ** Custom Components
 import NavbarComponent from './components/navbar'
 import FooterComponent from './components/footer'
-import MenuComponent from './components/menu/horizontal-menu'
 
 // ** Custom Hooks
-import { useRTL } from '@hooks/useRTL'
-import { useSkin } from '@hooks/useSkin'
-import { useNavbarType } from '@hooks/useNavbarType'
-import { useFooterType } from '@hooks/useFooterType'
-import { useNavbarColor } from '@hooks/useNavbarColor'
-
-// ** Styles
-import '@/styles/base/core/menu/menu-types/horizontal-menu.scss'
+import { useRTL } from '@/hooks/useRTL'
+import { useSkin } from '@/hooks/useSkin'
+import { useNavbarType } from '@/hooks/useNavbarType'
+import { useFooterType } from '@/hooks/useFooterType'
+import { useNavbarColor } from '@/hooks/useNavbarColor'
 
 const HorizontalLayout = (props) => {
   // ** Props
-  const {
-    children,
-    navbar,
-    footer,
-    menu,
-    currentActiveItem,
-    routerProps,
-  } = props
+  const { children, navbar, footer } = props
 
   // ** Hooks
   const [skin, setSkin] = useSkin()
-  const [isRtl, setIsRtl] = useRTL()
   const [navbarType, setNavbarType] = useNavbarType()
   const [footerType, setFooterType] = useFooterType()
   const [navbarColor, setNavbarColor] = useNavbarColor()
@@ -50,20 +37,6 @@ const HorizontalLayout = (props) => {
   // ** States
   const [isMounted, setIsMounted] = useState(false)
   const [navbarScrolled, setNavbarScrolled] = useState(false)
-
-  // ** Store Vars
-  const dispatch = useDispatch()
-  const layoutStore = useSelector((state) => state.layout)
-
-  // ** Vars
-  const contentWidth = layoutStore.contentWidth
-  const isHidden = layoutStore.menuHidden
-
-  // ** Handles Content Width
-  const setContentWidth = (val) => dispatch(handleContentWidth(val))
-
-  // ** Handles Content Width
-  const setIsHidden = (val) => dispatch(handleMenuHidden(val))
 
   // ** UseEffect Cleanup
   const cleanup = () => {
@@ -117,7 +90,7 @@ const HorizontalLayout = (props) => {
           navbarWrapperClasses[navbarType] || 'navbar-floating'
         } ${footerClasses[footerType] || 'footer-static'} menu-expanded`,
       )}
-      {...(isHidden ? { 'data-col': '1-column' } : {})}
+      data-col='1-column'
     >
       <Navbar
         expand='lg'
@@ -128,53 +101,10 @@ const HorizontalLayout = (props) => {
           },
         )}
       >
-        {!navbar && (
-          <div className='navbar-header d-xl-block d-none'>
-            <ul className='nav navbar-nav'>
-              <NavItem>
-                <Link to='/' className='navbar-brand'>
-                  <span className='brand-logo'>
-                    <img src={themeConfig.app.appLogoImage} alt='logo' />
-                  </span>
-                  <h2 className='brand-text mb-0'>{themeConfig.app.appName}</h2>
-                </Link>
-              </NavItem>
-            </ul>
-          </div>
-        )}
-
         <div className='navbar-container d-flex content'>
           {navbar ? navbar : <NavbarComponent skin={skin} setSkin={setSkin} />}
         </div>
       </Navbar>
-      {!isHidden ? (
-        <div className='horizontal-menu-wrapper'>
-          <Navbar
-            tag='div'
-            expand='sm'
-            light={skin !== 'dark'}
-            dark={skin === 'dark' || bgColorCondition}
-            className={classnames(
-              `header-navbar navbar-horizontal navbar-shadow menu-border`,
-              {
-                [navbarClasses[navbarType]]: navbarType !== 'static',
-                'floating-nav':
-                  (!navbarClasses[navbarType] && navbarType !== 'static') ||
-                  navbarType === 'floating',
-              },
-            )}
-          >
-            {menu ? (
-              menu
-            ) : (
-              <MenuComponent
-                routerProps={routerProps}
-                currentActiveItem={currentActiveItem}
-              />
-            )}
-          </Navbar>
-        </div>
-      ) : null}
 
       {children}
       <footer

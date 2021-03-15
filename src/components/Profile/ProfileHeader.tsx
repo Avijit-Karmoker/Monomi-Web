@@ -41,35 +41,15 @@ const ProfileHeader: FC<Community> = ({
           </div>
           <div className='profile-title ml-3'>
             <h2 className='text-white'>{name}</h2>
-            <p className='text-white'>{entityName}</p>
+            <p className='text-white d-none d-md-block'>{entityName}</p>
           </div>
         </div>
       </div>
       <div className='profile-header-nav'>
-        <Navbar
-          className='justify-content-end justify-content-md-between w-100'
-          expand='md'
-          light
-        >
-          <Button color='' className='btn-icon navbar-toggler' onClick={toggle}>
-            <AlignJustify size={21} />
-          </Button>
-          <Collapse isOpen={isOpen} navbar>
-            <div className='profile-tabs d-flex justify-content-between flex-wrap mt-1 mt-md-0'>
-              <Nav className='mb-0' pills>
-                <NavItem>
-                  <RippleButton className='font-weight-bold'>
-                    <span className='d-none d-md-block'>Feed</span>
-                    <Rss className='d-block d-md-none' size={14} />
-                  </RippleButton>
-                </NavItem>
-              </Nav>
-              <RippleButton>
-                <Edit className='d-block d-md-none' size={14} />
-                <span className='font-weight-bold d-none d-md-block'>Join</span>
-              </RippleButton>
-            </div>
-          </Collapse>
+        <Navbar className='justify-content-end w-100' expand='md' light>
+          <RippleButton>
+            <span className='font-weight-bold d-md-block'>Join</span>
+          </RippleButton>
         </Navbar>
       </div>
     </Card>

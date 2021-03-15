@@ -9,7 +9,7 @@ const { extractCritical } = createEmotionServer(cache)
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html lang='en'>
+      <Html lang='en' dir='ltr'>
         <Head>
           <meta name='theme-color' content={theme.colors.primary} />
         </Head>

@@ -2,7 +2,7 @@ import { useLayout } from '@/hooks/useLayout'
 import { useRouterTransition } from '@/hooks/useRouterTransition'
 
 import LayoutWrapper from './components/layout-wrapper'
-import VerticalLayout from './VerticalLayout'
+import HorizontalLayout from './HorizontalLayout'
 
 const Router = ({ children }) => {
   // ** Hooks
@@ -10,21 +10,21 @@ const Router = ({ children }) => {
   const [transition, setTransition] = useRouterTransition()
 
   return (
-    <VerticalLayout
-      layout={'VerticalLayout'}
+    <HorizontalLayout
+      layout={'HorizontalLayout'}
       setLayout={setLayout}
       transition={transition}
       setTransition={setTransition}
       currentActiveItem={null}
     >
       <LayoutWrapper
-        layout={'VerticalLayout'}
+        layout={'HorizontalLayout'}
         transition={transition}
         setTransition={setTransition}
       >
         {children}
       </LayoutWrapper>
-    </VerticalLayout>
+    </HorizontalLayout>
   )
 }
 

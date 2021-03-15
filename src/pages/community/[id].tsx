@@ -19,7 +19,11 @@ export default function Community() {
   }, [])
 
   return community ? (
-    <Profile community={community} posts={posts} suggested={list} />
+    <Profile
+      community={community}
+      posts={posts}
+      suggested={list.filter((item) => item.id !== id)}
+    />
   ) : null
 }
 

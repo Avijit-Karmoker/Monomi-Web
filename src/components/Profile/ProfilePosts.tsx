@@ -39,9 +39,7 @@ const ProfilePosts: FC<{ list: MerchantPost[] }> = ({ list }) => {
                   </small>
                 </div>
               </div>
-              <CardText>
-                <Content>{data.text}</Content>
-              </CardText>
+              <Content>{data.text}</Content>
               {data.image ? (
                 <img
                   src={data.image}

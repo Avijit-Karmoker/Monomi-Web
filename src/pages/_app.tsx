@@ -15,6 +15,7 @@ import '@/styles/iconfont.css'
 import '@/styles/scss/index.scss'
 // fuck me with these global imports bleee
 import '@/styles/scss/react/pages/page-profile.scss'
+import '@/styles/scss/base/core/menu/menu-types/horizontal-menu.scss'
 
 export const cache = createCache({ key: 'css', prepend: true })
 

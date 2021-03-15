@@ -105,7 +105,7 @@ const VerticalLayout = (props) => {
           'menu-open': false,
         },
       )}
-      {...{ 'data-col': '1-column' }}
+      data-col='1-column'
     >
       <Navbar
         expand='lg'

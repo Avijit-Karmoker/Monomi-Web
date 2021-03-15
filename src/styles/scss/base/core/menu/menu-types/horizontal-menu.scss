@@ -267,7 +267,7 @@
   &.navbar-floating {
     // Horizontal layout navbar shadow position and height fix
     .header-navbar-shadow {
-      height: 80px;
+      height: 32px;
     }
     @include media-breakpoint-up(xl) {
       .header-navbar-shadow {
