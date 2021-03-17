@@ -92,69 +92,6 @@ const Avatar = forwardRef((props, ref) => {
 
 export default Avatar
 
-// ** PropTypes
-Avatar.propTypes = {
-  imgClassName: Proptypes.string,
-  className: Proptypes.string,
-  src: Proptypes.string,
-  tag: Proptypes.oneOfType([Proptypes.func, Proptypes.string]),
-  badgeUp: Proptypes.bool,
-  content: Proptypes.string,
-  icon: Proptypes.node,
-  contentStyles: Proptypes.object,
-  badgeText: Proptypes.string,
-  imgHeight: Proptypes.oneOfType([Proptypes.string, Proptypes.number]),
-  imgWidth: Proptypes.oneOfType([Proptypes.string, Proptypes.number]),
-  size: Proptypes.oneOf(['sm', 'lg', 'xl']),
-  status: Proptypes.oneOf(['online', 'offline', 'away', 'busy']),
-  badgeColor: Proptypes.oneOf([
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'info',
-    'warning',
-    'dark',
-    'light-primary',
-    'light-secondary',
-    'light-success',
-    'light-danger',
-    'light-info',
-    'light-warning',
-    'light-dark',
-  ]),
-  color: Proptypes.oneOf([
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'info',
-    'warning',
-    'dark',
-    'light-primary',
-    'light-secondary',
-    'light-success',
-    'light-danger',
-    'light-info',
-    'light-warning',
-    'light-dark',
-  ]),
-  initials(props) {
-    if (props['initials'] && props['content'] === undefined) {
-      return new Error('content prop is required with initials prop.')
-    }
-    if (props['initials'] && typeof props['content'] !== 'string') {
-      return new Error('content prop must be a string.')
-    }
-    if (
-      typeof props['initials'] !== 'boolean' &&
-      props['initials'] !== undefined
-    ) {
-      return new Error('initials must be a boolean!')
-    }
-  },
-}
-
 // ** Default Props
 Avatar.defaultProps = {
   tag: 'div',

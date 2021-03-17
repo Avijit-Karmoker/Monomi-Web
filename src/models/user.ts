@@ -16,9 +16,9 @@ export default createModel<RootModel>()({
   state: {},
   reducers: {},
   effects: (dispatch) => ({
-    async createUser({ mobileNumber }: AuthenticationPayload, state) {
+    async createUser({ email }: AuthenticationPayload, state) {
       const payload = {
-        mobileNumber,
+        email,
         localization: getLanguage().toLowerCase(),
         termsConditionsSigned: true,
         device: state.global.device,

@@ -6,6 +6,7 @@ import {
   APIErrorResponse,
   EntityAddress,
 } from '@/typings'
+import { UseFormMethods } from 'react-hook-form'
 import { getLanguage } from './Internationalization'
 
 export const noop = () => {}
@@ -52,21 +53,36 @@ export function formatAddress({
     .join(', ')
 }
 
-export function formatErrors(error: APIErrorResponse): Record<string, string> {
+export function formatErrors(error: APIErrorResponse) {
   const errors = (error?.errors || [])
     .map(({ source, title, detail, code }) => {
       const pointer = source?.pointer
       const message = detail || title
 
+      let error: [string | number, string]
+
       if (pointer) {
         const [, attribute] = pointer.split('/data/attributes/')
 
-        return [attribute, message]
+        error = [attribute, message]
       } else {
-        return [code, message]
+        error = [code, message]
       }
+
+      return error
     })
     .filter((item) => item.length)
 
-  return Object.fromEntries(errors)
+  return errors
+}
+
+export function setAPIErrors<Setter extends UseFormMethods['setError']>(
+  setter: Setter,
+  error: APIErrorResponse,
+) {
+  formatErrors(error).forEach(([name, message]) => {
+    if (typeof name === 'string') {
+      setter(name, { type: 'server', message })
+    }
+  })
 }

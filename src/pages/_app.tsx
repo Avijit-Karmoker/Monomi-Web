@@ -16,6 +16,8 @@ import '@/styles/scss/index.scss'
 // fuck me with these global imports bleee
 import '@/styles/scss/react/pages/page-profile.scss'
 import '@/styles/scss/base/core/menu/menu-types/horizontal-menu.scss'
+import 'bs-stepper/dist/css/bs-stepper.min.css'
+import '@/styles/scss/base/plugins/forms/form-wizard.scss'
 
 export const cache = createCache({ key: 'css', prepend: true })
 

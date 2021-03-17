@@ -1,7 +1,8 @@
 import { Dispatch, RootState } from '@/store'
 import { AuthenticationPayload } from '@/typings'
+import { setAPIErrors } from '@/utils'
 import React, { FC, useCallback } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   Modal,
@@ -19,22 +20,32 @@ import {
 import RippleButton from '../RippleButton'
 
 const AuthModal: FC<{}> = () => {
-  const { authModalOpen, user } = useSelector(
-    ({ ui: { authModalOpen }, authentication: { user } }: RootState) => ({
+  const { authModalOpen } = useSelector(
+    ({ ui: { authModalOpen } }: RootState) => ({
       authModalOpen,
-      user,
     }),
   )
   const { ui, authentication } = useDispatch<Dispatch>()
-  const { register, errors, handleSubmit } = useForm<AuthenticationPayload>()
+  const {
+    register,
+    errors,
+    handleSubmit,
+    setError,
+    clearErrors,
+  } = useForm<AuthenticationPayload>()
 
-  const handleClose = useCallback(() => ui.setAuthModalOpen(false), [])
+  const handleClose = useCallback(() => ui.setAuthModalOpen(false), [ui])
   const authenticate = useCallback(
-    (data: AuthenticationPayload) => {
-      console.log({ data })
-      authentication.authenticate(data)
+    async (data: AuthenticationPayload) => {
+      try {
+        clearErrors()
+
+        await authentication.authenticate(data)
+      } catch (error) {
+        setAPIErrors(setError, error)
+      }
     },
-    [user],
+    [authentication, clearErrors],
   )
 
   return (
@@ -54,7 +65,10 @@ const AuthModal: FC<{}> = () => {
                   name='email'
                   placeholder='Email'
                   invalid={!!errors.email}
-                  innerRef={register({ required: true })}
+                  innerRef={register({
+                    required: true,
+                    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  })}
                 />
                 <Label for='email'>Email</Label>
                 <FormText className='text-muted'>
