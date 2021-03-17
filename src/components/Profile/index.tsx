@@ -11,12 +11,13 @@ const Profile: FC<{
   community: Community
   posts: MerchantPost[]
   suggested: Community[]
-}> = ({ community, posts, suggested }) => {
+  onJoin(): void
+}> = ({ community, posts, suggested, onJoin }) => {
   return (
     <div id='user-profile'>
       <Row>
         <Col sm='12'>
-          <ProfileHeader {...community} />
+          <ProfileHeader {...community} onJoin={onJoin} />
         </Col>
       </Row>
       <section id='profile-info'>

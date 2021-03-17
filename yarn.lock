@@ -261,7 +261,7 @@
 
 "@monomi/rematch@git+ssh://git@gitlab.com/monomi/rematch-models":
   version "0.0.2"
-  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#39100ffdf070f9651d4d4b46aa17346e40c4c341"
+  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#9ea3dbd83bbb40332fef84bfb954eddb35ec4e40"
   dependencies:
     "@rematch/core" "^2.0.0"
     redux "^4.0.5"
@@ -1952,6 +1952,11 @@ react-feather@^2.0.9:
   integrity sha512-yMfCGRkZdXwIs23Zw/zIWCJO3m3tlaUvtHiXlW+3FH7cIT6fiK1iJ7RJWugXq7Fso8ZaQyUm92/GOOHXvkiVUw==
   dependencies:
     prop-types "^15.7.2"
+
+react-hook-form@^6.15.4:
+  version "6.15.4"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.15.4.tgz#328003e1ccc096cd158899ffe7e3b33735a9b024"
+  integrity sha512-K+Sw33DtTMengs8OdqFJI3glzNl1wBzSefD/ksQw/hJf9CnOHQAU6qy82eOrh0IRNt2G53sjr7qnnw1JDjvx1w==
 
 react-i18next@^11.8.9:
   version "11.8.9"

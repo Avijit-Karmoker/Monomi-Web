@@ -11,3 +11,7 @@ export interface CommunitiesState {
   posts: MerchantPost[]
   postsMeta: ListMeta
 }
+
+export interface UIState {
+  authModalOpen: boolean
+}

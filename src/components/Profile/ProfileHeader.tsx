@@ -1,28 +1,18 @@
 import { Community } from '@/typings'
-import { FC, useState } from 'react'
-import { AlignJustify, Rss, Edit } from 'react-feather'
-import {
-  Card,
-  CardImg,
-  Collapse,
-  Navbar,
-  Nav,
-  NavItem,
-  Button,
-} from 'reactstrap'
+import { FC } from 'react'
+import { Card, CardImg, Navbar } from 'reactstrap'
 import RippleButton from '@/components/RippleButton'
 import { css } from '@emotion/css'
 
-const ProfileHeader: FC<Community> = ({
+type Props = Community & { onJoin(): void }
+
+const ProfileHeader: FC<Props> = ({
   coverUrl,
   logoUrl,
   name,
   entityName,
+  onJoin,
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggle = () => setIsOpen(!isOpen)
-
   return (
     <Card className='profile-header mb-2'>
       <CardImg
@@ -47,7 +37,7 @@ const ProfileHeader: FC<Community> = ({
       </div>
       <div className='profile-header-nav'>
         <Navbar className='justify-content-end w-100' expand='md' light>
-          <RippleButton>
+          <RippleButton onClick={onJoin}>
             <span className='font-weight-bold d-md-block'>Join</span>
           </RippleButton>
         </Navbar>
