@@ -8,6 +8,7 @@ import { RootModel } from '.'
 import {
   AuthenticationPayload,
   AuthMeta,
+  OnboardingPayload,
   UpdateUserPayload,
   User,
 } from '@/typings'
@@ -30,7 +31,7 @@ export default createModel<RootModel>()({
 
       return response
     },
-    async updateUser(payload: UpdateUserPayload, state) {
+    async updateUser(payload: OnboardingPayload, state) {
       const { user } = state.authentication
 
       if (user) {

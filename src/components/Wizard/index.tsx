@@ -1,34 +1,60 @@
-// ** React Imports
-import { useEffect, useState, Fragment, forwardRef } from 'react'
-
-// ** Third Party Components
-import Stepper from 'bs-stepper'
+import {
+  useEffect,
+  useState,
+  Fragment,
+  forwardRef,
+  ReactNode,
+  useRef,
+  useCallback,
+} from 'react'
 import classnames from 'classnames'
-import { PropTypes } from 'prop-types'
+import type Stepper from 'bs-stepper'
 import { ChevronRight } from 'react-feather'
 
-const Wizard = forwardRef((props, ref) => {
-  // ** Props
-  const { type, className, steps, separator, options, instance } = props
+let StepperImport: typeof Stepper
+if (process.browser) {
+  import('bs-stepper').then((module) => (StepperImport = module.default))
+}
 
-  // ** State
+type Props = {
+  type?: string
+  separator?: ReactNode
+  steps: {
+    id: string
+    subtitle: string
+    title: string
+    content: ReactNode
+    icon?: ReactNode
+  }[]
+  className?: any
+  options?: { [key: string]: any }
+}
+type ShownEvent = Event & {
+  detail: { to: number; from: number }
+}
+
+const Wizard = forwardRef<Stepper, Props>((props, ref) => {
+  const { type, className, steps, separator, options } = props
+
+  const containerRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
 
-  // ** Vars
-  let stepper = null
-
-  // ** Step change listener on mount
+  const handleShown = useCallback(
+    (event) => setActiveIndex((event as ShownEvent).detail.to),
+    [setActiveIndex],
+  )
   useEffect(() => {
-    stepper = new Stepper(ref.current, options)
+    if (ref && 'current' in ref && containerRef.current) {
+      ref.current = new StepperImport(containerRef.current, options)
+      console.log(ref.current)
 
-    ref.current.addEventListener('shown.bs-stepper', function (event) {
-      setActiveIndex(event.detail.indexStep)
-    })
-
-    if (instance) {
-      instance(stepper)
+      containerRef.current.addEventListener('shown.bs-stepper', handleShown)
     }
-  }, [])
+
+    return () => {
+      containerRef.current?.removeEventListener('shown.bs-stepper', handleShown)
+    }
+  }, [StepperImport, ref, containerRef, handleShown])
 
   // ** Renders Wizard Header
   const renderHeader = () => {
@@ -81,7 +107,7 @@ const Wizard = forwardRef((props, ref) => {
 
   return (
     <div
-      ref={ref}
+      ref={containerRef}
       className={classnames('bs-stepper', {
         [className]: className,
         vertical: type === 'vertical',

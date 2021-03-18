@@ -11,6 +11,10 @@
 // Select Control(Input)
 .select__control,
 .react-select__control {
+  .select__value-container {
+    padding-left: calc(1rem - 4px);
+  }
+
   &.select__control--is-disabled {
     border-color: $border-color;
     .select__indicator-separator {
@@ -22,6 +26,10 @@
   &.react-select__control--is-focused {
     box-shadow: none;
     border-color: $primary;
+
+    &:hover {
+      border-color: $primary;
+    }
   }
 
   .select__indicator svg {
@@ -36,7 +44,7 @@
   }
 
   .select__placeholder {
-    color: $body-color;
+    color: rgba($black, 0.4);
   }
 }
 
@@ -45,6 +53,8 @@
 .react-select__menu {
   .select__menu-list,
   .react-select__menu-list {
+    background: $white;
+
     .select__option,
     .react-select__option {
       cursor: pointer;

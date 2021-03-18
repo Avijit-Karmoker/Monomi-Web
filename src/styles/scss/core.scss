@@ -1,13 +1,14 @@
-@import './base/bootstrap.scss';
-@import './base/bootstrap-extended.scss';
-@import './base/colors.scss';
-@import './base/components.scss';
+@import './base/bootstrap';
+@import './base/bootstrap-extended';
+@import './base/colors';
+@import './base/components';
 
 // Themes
-@import './base/themes/dark-layout.scss';
-@import './base/themes/bordered-layout.scss';
-@import './base/themes/semi-dark-layout.scss';
-// @import './base/custom-rtl.scss';
+@import './base/themes/dark-layout';
+@import './base/themes/bordered-layout';
+@import './base/themes/semi-dark-layout';
+@import './base/core/menu/menu-types/horizontal-menu';
 
-// React Specific
+@import './base/plugins/forms/form-wizard';
+
 @import 'react/index';

@@ -1,10 +1,11 @@
-// Base Extended (General styles which are not added 'base styles')
 @import 'base-extended';
-
 @import 'dark-layout';
-
 @import 'rtl';
+@import 'app-loader';
 
 @import 'reactstrap/index';
-
-@import 'app-loader';
+@import 'libs/react-select/react-select';
+@import 'libs/flatpickr/flatpickr';
+@import 'libs/toastify/toastify';
+@import 'pages/page-profile.scss';
+@import 'bs-stepper/dist/css/bs-stepper.min.css';

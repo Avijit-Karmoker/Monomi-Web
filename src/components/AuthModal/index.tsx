@@ -1,14 +1,13 @@
 import { Dispatch, RootState } from '@/store'
 import { AuthenticationPayload } from '@/typings'
 import { setAPIErrors } from '@/utils'
-import React, { FC, useCallback } from 'react'
+import React, { FC, useCallback, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
   Row,
   Col,
   Form,
@@ -17,12 +16,19 @@ import {
   FormText,
   Label,
 } from 'reactstrap'
+import classnames from 'classnames'
 import RippleButton from '../RippleButton'
+import Wizard from '../Wizard'
+import Stepper from 'bs-stepper'
+import Account from './components/Account'
+import PersonalInfo from './components/PersonalInfo'
+import Security from './components/Security'
 
 const AuthModal: FC<{}> = () => {
-  const { authModalOpen } = useSelector(
-    ({ ui: { authModalOpen } }: RootState) => ({
+  const { authModalOpen, user } = useSelector(
+    ({ ui: { authModalOpen }, authentication: { user } }: RootState) => ({
       authModalOpen,
+      user,
     }),
   )
   const { ui, authentication } = useDispatch<Dispatch>()
@@ -33,6 +39,7 @@ const AuthModal: FC<{}> = () => {
     setError,
     clearErrors,
   } = useForm<AuthenticationPayload>()
+  const stepperRef = useRef<Stepper>(null)
 
   const handleClose = useCallback(() => ui.setAuthModalOpen(false), [ui])
   const authenticate = useCallback(
@@ -41,22 +48,55 @@ const AuthModal: FC<{}> = () => {
         clearErrors()
 
         await authentication.authenticate(data)
+
+        stepperRef.current?.next()
       } catch (error) {
         setAPIErrors(setError, error)
       }
     },
-    [authentication, clearErrors],
+    [authentication, clearErrors, setError, stepperRef],
   )
+
+  const steps = [
+    {
+      id: 'account',
+      title: 'Account',
+      subtitle: 'Email',
+      content: <Account stepperRef={stepperRef} />,
+    },
+    {
+      id: 'personal',
+      title: 'Personal',
+      subtitle: 'Fill info',
+      content: <PersonalInfo stepperRef={stepperRef} />,
+    },
+    {
+      id: 'security',
+      title: 'Security',
+      subtitle: 'Create PIN',
+      content: <Security />,
+    },
+  ]
 
   return (
     <Modal
       isOpen={authModalOpen}
-      className='modal-dialog-centered'
+      className='modal-dialog-centered modal-lg'
       toggle={handleClose}
     >
       <ModalHeader toggle={handleClose}>Join</ModalHeader>
       <ModalBody>
-        <Form onSubmit={handleSubmit(authenticate)}>
+        <div
+          className={classnames('vertical-wizard mt-1', {
+            hidden: user?.status !== 'boarding',
+          })}
+        >
+          <Wizard type='modern-vertical' ref={stepperRef} steps={steps} />
+        </div>
+        <Form
+          onSubmit={handleSubmit(authenticate)}
+          className={user?.status === 'boarding' ? 'hidden' : ''}
+        >
           <Row>
             <Col sm='12'>
               <FormGroup className='form-label-group mt-1'>

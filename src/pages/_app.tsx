@@ -9,15 +9,11 @@ import { useStore } from '../store'
 import { PersistGate } from 'redux-persist/integration/react'
 import { getPersistor } from '@rematch/persist'
 import Layout from '@/components/Layout'
+import { ToastContainer } from 'react-toastify'
 
 import '@/components/RippleButton/index.scss'
 import '@/styles/iconfont.css'
 import '@/styles/scss/index.scss'
-// fuck me with these global imports bleee
-import '@/styles/scss/react/pages/page-profile.scss'
-import '@/styles/scss/base/core/menu/menu-types/horizontal-menu.scss'
-import 'bs-stepper/dist/css/bs-stepper.min.css'
-import '@/styles/scss/base/plugins/forms/form-wizard.scss'
 
 export const cache = createCache({ key: 'css', prepend: true })
 
@@ -61,6 +57,11 @@ export default function App({ Component, pageProps }: AppProps) {
           <PersistGate persistor={persistor}>
             <Layout>
               <Component {...pageProps} />
+              <ToastContainer
+                newestOnTop
+                autoClose={false}
+                closeOnClick={false}
+              />
             </Layout>
           </PersistGate>
         </ThemeProvider>

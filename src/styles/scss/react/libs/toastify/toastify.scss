@@ -3,8 +3,13 @@
 @import '../../../base/components/include';
 @import '../../../base/core/colors/palette-variables';
 
+.Toastify {
+  .Toastify__toast-container--top-right {
+    top: 5.3rem;
+  }
+}
+
 .Toastify__toast {
-  background-color: $white;
   border-radius: $toast-border-radius;
   box-shadow: $toast-box-shadow;
   padding: 1rem;

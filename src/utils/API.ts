@@ -1,5 +1,5 @@
 import { Deserializer } from 'jsonapi-serializer'
-
+import { toast } from 'react-toastify'
 import store from '../store'
 import { baseUrl } from '@/config'
 import { getLanguage, getFixedT } from './Internationalization'
@@ -128,7 +128,11 @@ async function handleRequest<Response, Meta>(
     } else if (error.status === 429) {
       const [{ title, detail }] = (error as APIErrorResponse).errors
 
-      // window.alert(title, detail)
+      store!.dispatch.ui.addToast({
+        title,
+        message: detail,
+        type: toast.TYPE.ERROR,
+      })
     } else if (error.status === 401 && options.fetchRefreshToken) {
       if (store!.getState().authentication.refreshToken) {
         try {
