@@ -7,7 +7,7 @@ import commonEN from '@/translations/en-us/common.json'
 import pagesEN from '@/translations/en-us/pages.json'
 import commonLT from '@/translations/lt-lt/common.json'
 import pagesLT from '@/translations/lt-lt/pages.json'
-import { defaultLanguage, translationNamespaces } from '@/config'
+import { defaultLanguage, languages, translationNamespaces } from '@/config'
 
 export const initialize = i18n
   .use(LanguageDetector)
@@ -18,6 +18,7 @@ export const initialize = i18n
       'en-us': { common: commonEN, pages: pagesEN },
       'lt-lt': { common: commonLT, pages: pagesLT },
     },
+    supportedLngs: languages.map(({ id }) => id),
     lowerCaseLng: true,
     ns: translationNamespaces,
     fallbackLng: defaultLanguage.id,

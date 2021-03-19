@@ -36,7 +36,7 @@ export default createModel<RootModel>()({
 
       if (user) {
         const changes = getChanges(payload, user)
-        console.log({ changes, payload, user })
+
         if (Object.entries(changes).length) {
           const { data } = await API.put<User>('users/me', changes)
 

@@ -5,3 +5,11 @@ export type Toast = {
   message?: string
   type: TypeOptions
 }
+
+export type Language = {
+  id: string
+  title: string
+  abbr: string
+  dialCodes: string[]
+  default: boolean
+}
