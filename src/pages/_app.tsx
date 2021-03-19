@@ -9,7 +9,6 @@ import { useStore } from '../store'
 import { PersistGate } from 'redux-persist/integration/react'
 import { getPersistor } from '@rematch/persist'
 import Layout from '@/components/Layout'
-import { ToastContainer } from 'react-toastify'
 
 import '@/components/RippleButton/index.scss'
 import '@/styles/iconfont.css'
@@ -57,11 +56,6 @@ export default function App({ Component, pageProps }: AppProps) {
           <PersistGate persistor={persistor}>
             <Layout>
               <Component {...pageProps} />
-              <ToastContainer
-                newestOnTop
-                autoClose={false}
-                closeOnClick={false}
-              />
             </Layout>
           </PersistGate>
         </ThemeProvider>

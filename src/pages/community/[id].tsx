@@ -3,12 +3,15 @@ import { GetServerSideProps } from 'next'
 import Profile from '@/components/Profile'
 import { Dispatch, RootState } from '@/store'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import AuthModal from '@/components/AuthModal'
 
 export default function Community() {
-  const { community, posts, list } = useSelector(
-    ({ communities }: RootState) => communities,
+  const { community, posts, list, user } = useSelector(
+    ({ communities, authentication: { user } }: RootState) => ({
+      ...communities,
+      user,
+    }),
   )
   const { communities, ui } = useDispatch<Dispatch>()
   const { id } = useRouter().query
@@ -19,6 +22,14 @@ export default function Community() {
     communities.fetchList()
   }, [])
 
+  const handleJoin = useCallback(() => {
+    if (user?.status === 'active') {
+      ui.addToast({ title: 'Joined!', type: 'success' })
+    } else {
+      ui.setAuthModalOpen(true)
+    }
+  }, [user, ui])
+
   return (
     <>
       {community ? (
@@ -26,7 +37,7 @@ export default function Community() {
           community={community}
           posts={posts}
           suggested={list.filter((item) => item.id !== id)}
-          onJoin={() => ui.setAuthModalOpen(true)}
+          onJoin={handleJoin}
         />
       ) : null}
       <AuthModal />

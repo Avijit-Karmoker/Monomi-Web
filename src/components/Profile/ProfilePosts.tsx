@@ -19,7 +19,7 @@ const Content = styled.pre`
 const ProfilePosts: FC<{ list: MerchantPost[] }> = ({ list }) => {
   return (
     <>
-      {list.map(({ id, time, data, merchant }) => {
+      {list.map(({ id, time, data, merchant }, index) => {
         return (
           <Card className='post' key={id}>
             <CardBody>
@@ -56,7 +56,7 @@ const ProfilePosts: FC<{ list: MerchantPost[] }> = ({ list }) => {
                     <Heart
                       size={18}
                       className={classnames('mr-50', {
-                        'profile-likes': data.youLiked === true,
+                        'profile-likes': index % 2,
                       })}
                     />
                     <span>{data.likes}</span>

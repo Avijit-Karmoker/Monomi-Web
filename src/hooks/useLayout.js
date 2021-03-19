@@ -7,28 +7,13 @@ import themeConfig from '@/utils/theme'
 export const useLayout = () => {
   // ** States
   const [lastLayout, setLastLayout] = useState(null)
-  const [layout, setLayout] = useState(() => {
-    try {
-      return themeConfig.layout.type
-    } catch (error) {
-      // ** If error return initialValue
-      console.log(error)
-      return themeConfig.layout.type
-    }
-  })
+  const [layout, setLayout] = useState(() => themeConfig.layout.type)
 
   // ** Return a wrapped version of useState's setter function
   const setValue = (value) => {
-    try {
-      // ** Allow value to be a function so we have same API as useState
-      const valueToStore = value instanceof Function ? value(layout) : value
+    const valueToStore = value instanceof Function ? value(layout) : value
 
-      // ** Set state
-      setLayout(valueToStore)
-    } catch (error) {
-      // ** A more advanced implementation would handle the error case
-      console.log(error)
-    }
+    setLayout(valueToStore)
   }
 
   const handleLayout = () => {

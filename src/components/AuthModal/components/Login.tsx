@@ -2,6 +2,7 @@ import RippleButton from '@/components/RippleButton'
 import { Dispatch, RootState } from '@/store'
 import { PinPayload } from '@/typings'
 import { setAPIErrors } from '@/utils'
+import { setLanguage } from '@/utils/Internationalization'
 import React, { FC, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,16 +11,12 @@ import {
   Form,
   FormFeedback,
   FormGroup,
-  FormText,
   Input,
   Label,
   Row,
 } from 'reactstrap'
-import { pinValidationRegExp } from '@/config'
 
-type Payload = PinPayload & { pinRepeat: string }
-
-const Security: FC = () => {
+const Login: FC = () => {
   const { user } = useSelector(({ authentication: { user } }: RootState) => ({
     user,
   }))
@@ -30,20 +27,32 @@ const Security: FC = () => {
     handleSubmit,
     setError,
     clearErrors,
-    getValues,
-  } = useForm<Payload>()
+  } = useForm<PinPayload>()
 
   const update = useCallback(
-    async ({ pin }: Payload) => {
+    async (payload: PinPayload) => {
       try {
         clearErrors()
 
-        await dispatch.user.updateUser({ pin })
+        await dispatch.authentication.login(payload)
+
+        const { localization } = await dispatch.user.fetchUser()
+
+        await setLanguage(localization)
 
         dispatch.ui.setAuthModalOpen(false)
         dispatch.ui.addToast({ title: 'Signed in', type: 'success' })
       } catch (error) {
-        setAPIErrors(setError, error)
+        if (error.status === 401) {
+          setError('pin', { type: 'server' })
+        } else if (error.status === 403) {
+          setError('pin', { type: 'server' })
+
+          const [{ title, detail }] = error.errors
+          dispatch.ui.addToast({ title, message: detail, type: 'warning' })
+        } else {
+          setAPIErrors(setError, error)
+        }
       }
     },
     [dispatch, clearErrors, setError],
@@ -56,11 +65,11 @@ const Security: FC = () => {
           <FormGroup className='form-label-group'>
             <Input
               autoComplete='username'
-              defaultValue={user?.email!}
+              defaultValue={user?.email || ''}
               type='hidden'
             />
             <Input
-              autoComplete='new-password'
+              autoComplete='current-password'
               type='password'
               name='pin'
               placeholder='PIN'
@@ -69,32 +78,10 @@ const Security: FC = () => {
                 required: true,
                 maxLength: 4,
                 minLength: 4,
-                validate: (value) =>
-                  value.match(pinValidationRegExp) ? 'PIN too easy' : true,
               })}
             />
             <Label for='email'>PIN</Label>
-            {errors.pin?.message ? (
-              <FormFeedback>{errors.pin.message}</FormFeedback>
-            ) : (
-              <FormText>Create a PIN of 4 digits</FormText>
-            )}
-          </FormGroup>
-          <FormGroup className='form-label-group'>
-            <Input
-              autoComplete='new-password'
-              type='password'
-              name='pinRepeat'
-              placeholder='Repeat PIN'
-              invalid={!!errors.pinRepeat}
-              innerRef={register({
-                required: true,
-                validate: (value) =>
-                  value === getValues('pin') || 'PINs must match',
-              })}
-            />
-            <Label for='email'>Repeat PIN</Label>
-            <FormFeedback>{errors.pinRepeat?.message}</FormFeedback>
+            <FormFeedback>{errors.pin?.message}</FormFeedback>
           </FormGroup>
         </Col>
       </Row>
@@ -105,4 +92,4 @@ const Security: FC = () => {
   )
 }
 
-export default Security
+export default Login

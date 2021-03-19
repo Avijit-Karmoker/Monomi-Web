@@ -110,13 +110,14 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
               control={control}
               render={({ onChange, value }) => (
                 <Select
-                  defaultValue={{ label: value, value }}
+                  defaultValue={value ? { label: value, value } : null}
                   onChange={(option) => onChange(option?.value)}
                   options={genders.map((value) => ({ label: value, value }))}
                   className={classnames('react-select', {
                     'is-invalid': !!errors.gender,
                   })}
                   classNamePrefix='select'
+                  placeholder='Select...'
                 />
               )}
             />

@@ -86,3 +86,10 @@ export function setAPIErrors<Setter extends UseFormMethods['setError']>(
     }
   })
 }
+
+export function getInitials(content: string) {
+  return content
+    .split(' ')
+    .map((word) => word[0])
+    .join('')
+}

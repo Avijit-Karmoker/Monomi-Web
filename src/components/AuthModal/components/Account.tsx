@@ -30,7 +30,11 @@ const Account: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
 
         stepperRef.current?.next()
       } catch (error) {
-        setAPIErrors(setError, error)
+        if (error.status === 409) {
+          stepperRef.current?.next()
+        } else {
+          setAPIErrors(setError, error)
+        }
       }
     },
     [authentication, clearErrors, setError, stepperRef],

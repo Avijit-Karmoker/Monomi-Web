@@ -40,7 +40,7 @@ export default createModel<RootModel>()({
 
       const payload = {
         pin,
-        mobileNumber: user!.mobileNumber,
+        email: user!.email,
         device,
       }
 

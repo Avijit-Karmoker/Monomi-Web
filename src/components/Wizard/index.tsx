@@ -46,7 +46,6 @@ const Wizard = forwardRef<Stepper, Props>((props, ref) => {
   useEffect(() => {
     if (ref && 'current' in ref && containerRef.current) {
       ref.current = new StepperImport(containerRef.current, options)
-      console.log(ref.current)
 
       containerRef.current.addEventListener('shown.bs-stepper', handleShown)
     }
