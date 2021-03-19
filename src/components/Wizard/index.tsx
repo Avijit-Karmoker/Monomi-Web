@@ -53,7 +53,7 @@ const Wizard = forwardRef<Stepper, Props>((props, ref) => {
     return () => {
       containerRef.current?.removeEventListener('shown.bs-stepper', handleShown)
     }
-  }, [StepperImport, ref, containerRef, handleShown])
+  }, [StepperImport, ref, containerRef, handleShown, steps])
 
   // ** Renders Wizard Header
   const renderHeader = () => {

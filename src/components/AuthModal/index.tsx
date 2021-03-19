@@ -59,7 +59,7 @@ const AuthModal: FC<{}> = () => {
         },
       ]
     }
-  }, [user, stepperRef])
+  }, [user?.status, stepperRef])
 
   return (
     <Modal

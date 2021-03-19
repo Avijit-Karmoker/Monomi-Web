@@ -44,7 +44,6 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
         clearErrors()
 
         await dispatch.user.updateUser(data)
-        console.log(stepperRef.current)
         stepperRef.current!.next()
       } catch (error) {
         console.log({ error })
