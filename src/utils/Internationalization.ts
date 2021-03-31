@@ -19,6 +19,7 @@ export const initialize = i18n
       'lt-lt': { common: commonLT, pages: pagesLT },
     },
     supportedLngs: languages.map(({ id }) => id),
+    nonExplicitSupportedLngs: true,
     lowerCaseLng: true,
     ns: translationNamespaces,
     fallbackLng: defaultLanguage.id,

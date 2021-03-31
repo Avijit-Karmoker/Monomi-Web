@@ -1,27 +1,38 @@
 import { createModel } from '@rematch/core'
-
-import { AuthenticationPayload, PinPayload, AuthMeta } from '@/typings'
+import {
+  AuthenticationPayload,
+  PinPayload,
+  AuthMeta,
+  AuthRefreshMeta,
+} from '@/typings'
 import API from '@/utils/API'
 import ErrorReporting from '@/utils/ErrorReporting'
 import { RootModel } from '.'
 import { modelConfig } from '@monomi/rematch'
+import { signIn, signOut } from 'next-auth/client'
 
 export default createModel<RootModel>()({
   ...modelConfig.authentication,
   effects: (dispatch) => ({
     async authenticate(payload: AuthenticationPayload) {
-      try {
-        const {
-          data,
-          meta: { auth },
-        } = await dispatch.user.createUser(payload)
+      const {
+        setUser,
+        createSession,
+        changeUser,
+        deleteSession,
+      } = dispatch.authentication
 
-        dispatch.authentication.setUser(data)
-        dispatch.authentication.setRefreshToken(auth.refreshToken)
-        dispatch.authentication.setToken(auth.token)
+      try {
+        const { data, meta } = await dispatch.user.createUser(payload)
+
+        setUser(data)
+
+        createSession(meta)
       } catch (error) {
         if (error.status === 409) {
-          dispatch.authentication.changeUser(payload)
+          deleteSession()
+
+          changeUser(payload)
         }
 
         throw error
@@ -32,7 +43,7 @@ export default createModel<RootModel>()({
 
       ErrorReporting.setUser(null)
 
-      dispatch.authentication.reset()
+      dispatch.authentication.deleteSession()
     },
     async login({ pin }: PinPayload, state) {
       const { user } = state.authentication
@@ -44,14 +55,11 @@ export default createModel<RootModel>()({
         device,
       }
 
-      const {
-        data: { auth },
-      } = await API.post<AuthMeta>('auth/login', payload, {
+      const { data } = await API.post<AuthMeta>('auth/login', payload, {
         fetchRefreshToken: false,
       })
 
-      dispatch.authentication.setRefreshToken(auth.refreshToken)
-      dispatch.authentication.setToken(auth.token)
+      dispatch.authentication.createSession(data)
     },
     async fetchToken(_, state) {
       dispatch.authentication.setToken(null)
@@ -66,18 +74,40 @@ export default createModel<RootModel>()({
       }
 
       try {
-        const { data } = await API.post<AuthMeta>('auth/refresh', payload, {
-          fetchRefreshToken: false,
-        })
+        const { data } = await API.post<AuthRefreshMeta>(
+          'auth/refresh',
+          payload,
+          {
+            fetchRefreshToken: false,
+          },
+        )
 
-        dispatch.authentication.setToken(data.auth.token)
+        dispatch.authentication.createSession(data)
       } catch (error) {
         if (error.status === 401) {
-          dispatch.authentication.setRefreshToken(null)
+          dispatch.authentication.deleteSession()
         }
 
         throw error
       }
+    },
+    async createSession({ auth }: AuthMeta | AuthRefreshMeta) {
+      const { token } = auth
+      dispatch.authentication.setToken(auth.token)
+
+      if ('refreshToken' in auth) {
+        dispatch.authentication.setRefreshToken(auth.refreshToken)
+      }
+
+      return signIn('credentials', {
+        accessToken: token,
+        redirect: false,
+      })
+    },
+    async deleteSession() {
+      dispatch.authentication.reset()
+
+      return signOut({ redirect: false })
     },
   }),
 })

@@ -5,6 +5,7 @@ import { Dispatch, RootState } from '@/store'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCallback, useEffect } from 'react'
 import AuthModal from '@/components/AuthModal'
+import { useSession, getSession } from 'next-auth/client'
 
 export default function Community() {
   const { community, posts, list, user } = useSelector(
@@ -30,6 +31,8 @@ export default function Community() {
     }
   }, [user, ui])
 
+  const [session, loading] = useSession()
+  console.log({ session })
   return (
     <>
       {community ? (
@@ -49,7 +52,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   console.log('Community id:', context.query.id)
   return {
     props: {
-      // props for your component
+      session: await getSession(context),
     },
   }
 }

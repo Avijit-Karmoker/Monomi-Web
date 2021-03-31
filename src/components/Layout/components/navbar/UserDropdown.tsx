@@ -1,13 +1,15 @@
 import Avatar from '@/components/Avatar'
 import { RootState, Dispatch } from '@/store'
 import {
-  UncontrolledDropdown,
+  Dropdown,
   DropdownMenu,
   DropdownToggle,
   DropdownItem,
 } from 'reactstrap'
 import { Power, Home } from 'react-feather'
 import { useDispatch, useSelector } from 'react-redux'
+import Link from 'next/link'
+import { useCallback, useState } from 'react'
 
 const UserDropdown = () => {
   const { user } = useSelector(({ authentication: { user } }: RootState) => ({
@@ -15,7 +17,15 @@ const UserDropdown = () => {
   }))
   const { authentication } = useDispatch<Dispatch>()
 
-  let status = 'offline'
+  const logout = useCallback(() => authentication.logout(), [])
+
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+
+  const toggle = useCallback(() => setDropdownOpen((prevState) => !prevState), [
+    setDropdownOpen,
+  ])
+
+  let status
   if (user?.status === 'active') {
     status = 'online'
   } else if (user?.status === 'boarding') {
@@ -25,7 +35,12 @@ const UserDropdown = () => {
   const ToggleComponent = user ? DropdownToggle : 'a'
 
   return (
-    <UncontrolledDropdown tag='li' className='dropdown-user nav-item'>
+    <Dropdown
+      isOpen={dropdownOpen}
+      toggle={toggle}
+      tag='li'
+      className='dropdown-user nav-item'
+    >
       <ToggleComponent tag='a' className='nav-link dropdown-user-link'>
         <div className='user-nav d-sm-flex d-none'>
           <span className='user-name font-weight-bold'>
@@ -40,17 +55,19 @@ const UserDropdown = () => {
         />
       </ToggleComponent>
       <DropdownMenu right>
-        <DropdownItem tag='a' href='/feed'>
-          <Home size={14} className='mr-75' />
-          <span className='align-middle'>Feed</span>
+        <DropdownItem tag={Link} href='/feed'>
+          <a className='dropdown-item' role='menuitem' onClick={toggle}>
+            <Home size={14} className='mr-75' />
+            <span className='align-middle'>Feed</span>
+          </a>
         </DropdownItem>
         <DropdownItem divider />
-        <DropdownItem tag='a' onClick={authentication.logout}>
+        <DropdownItem tag='a' onClick={logout}>
           <Power size={14} className='mr-75' />
           <span className='align-middle'>Logout</span>
         </DropdownItem>
       </DropdownMenu>
-    </UncontrolledDropdown>
+    </Dropdown>
   )
 }
 
