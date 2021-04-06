@@ -4,12 +4,12 @@ import ProfileHeader from './ProfileHeader'
 import { Row, Col } from 'reactstrap'
 import ProfileLatestPhotos from './ProfileLatestPhotos'
 import ProfileSuggestedPages from './ProfileSuggestedPages'
-import { Community, MerchantPost } from '@/typings'
+import { Community, CommunityPost } from '@/typings'
 import { FC } from 'react'
 
 const Profile: FC<{
   community: Community
-  posts: MerchantPost[]
+  posts: CommunityPost[]
   suggested: Community[]
   onJoin(): void
 }> = ({ community, posts, suggested, onJoin }) => {

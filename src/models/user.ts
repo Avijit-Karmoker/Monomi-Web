@@ -9,7 +9,6 @@ import {
   AuthenticationPayload,
   AuthMeta,
   OnboardingPayload,
-  UpdateUserPayload,
   User,
 } from '@/typings'
 

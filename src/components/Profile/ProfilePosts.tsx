@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import Avatar from '@/components/Avatar'
 import { Heart, MessageSquare, Share2 } from 'react-feather'
 import { Card, CardBody, CardText, Row, Col } from 'reactstrap'
-import { MerchantPost } from '@/typings'
+import { CommunityPost } from '@/typings'
 import { DateTime } from 'luxon'
 import styled from '@emotion/styled'
 
@@ -16,7 +16,7 @@ const Content = styled.pre`
   word-wrap: break-word;
 `
 
-const ProfilePosts: FC<{ list: MerchantPost[] }> = ({ list }) => {
+const ProfilePosts: FC<{ list: CommunityPost[] }> = ({ list }) => {
   return (
     <>
       {list.map(({ id, time, data, merchant }, index) => {

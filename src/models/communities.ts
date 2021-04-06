@@ -10,6 +10,8 @@ const initialState: CommunitiesState = {
   community: null,
   posts: [],
   postsMeta: { ...API.initialListMeta },
+  feed: [],
+  feedMeta: { ...API.initialListMeta },
 }
 
 export default createModel<RootModel>()({
@@ -29,6 +31,12 @@ export default createModel<RootModel>()({
       { posts, postsMeta }: Pick<CommunitiesState, 'posts' | 'postsMeta'>,
     ) {
       return { ...state, posts, postsMeta }
+    },
+    setFeed(
+      state,
+      { feed, feedMeta }: Pick<CommunitiesState, 'feed' | 'feedMeta'>,
+    ) {
+      return { ...state, feed, feedMeta }
     },
   },
   effects: (dispatch) => ({
@@ -52,6 +60,14 @@ export default createModel<RootModel>()({
       >(`communities/${id}/posts`)
 
       dispatch.communities.setPosts({ posts, postsMeta })
+    },
+    async fetchFeed() {
+      const { data: feed, meta: feedMeta } = await API.get<
+        CommunitiesState['feed'],
+        CommunitiesState['feedMeta']
+      >(`communities/feed`)
+
+      dispatch.communities.setFeed({ feed, feedMeta })
     },
   }),
 })

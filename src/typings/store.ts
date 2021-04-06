@@ -1,4 +1,4 @@
-import { Device, Community, MerchantPost, ListMeta } from '.'
+import { Device, Community, CommunityPost, ListMeta } from '.'
 import { Toast } from './ui'
 
 export interface GlobalState {
@@ -9,8 +9,10 @@ export interface CommunitiesState {
   list: Community[]
   meta: ListMeta
   community: Community | null
-  posts: MerchantPost[]
+  posts: CommunityPost[]
   postsMeta: ListMeta
+  feed: CommunityPost[]
+  feedMeta: ListMeta
 }
 
 export interface UIState {

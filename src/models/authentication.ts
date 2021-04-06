@@ -41,8 +41,6 @@ export default createModel<RootModel>()({
     async logout() {
       API.delete('auth/logout', {})
 
-      ErrorReporting.setUser(null)
-
       dispatch.authentication.deleteSession()
     },
     async login({ pin }: PinPayload, state) {
@@ -106,6 +104,8 @@ export default createModel<RootModel>()({
     },
     async deleteSession() {
       dispatch.authentication.reset()
+
+      ErrorReporting.setUser(null)
 
       return signOut({ redirect: false })
     },
