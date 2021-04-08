@@ -9,7 +9,7 @@ import PersonalInfo from './components/PersonalInfo'
 import Security from './components/Security'
 import Login from './components/Login'
 
-const AuthModal: FC<{}> = () => {
+const AuthModal: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
   const { authModalOpen, user } = useSelector(
     ({ ui: { authModalOpen }, authentication: { user } }: RootState) => ({
       authModalOpen,
@@ -40,7 +40,7 @@ const AuthModal: FC<{}> = () => {
           id: 'security',
           title: 'Security',
           subtitle: 'Create PIN',
-          content: <Security />,
+          content: <Security onSuccess={onSuccess} />,
         },
       ]
     } else {
@@ -55,7 +55,7 @@ const AuthModal: FC<{}> = () => {
           id: 'login',
           title: 'Login',
           subtitle: 'Enter PIN',
-          content: <Login />,
+          content: <Login onSuccess={onSuccess} />,
         },
       ]
     }

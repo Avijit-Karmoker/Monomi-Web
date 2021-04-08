@@ -19,7 +19,7 @@ import { pinValidationRegExp } from '@/config'
 
 type Payload = PinPayload & { pinRepeat: string }
 
-const Security: FC = () => {
+const Security: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
   const { user } = useSelector(({ authentication: { user } }: RootState) => ({
     user,
   }))
@@ -42,6 +42,8 @@ const Security: FC = () => {
 
         dispatch.ui.setAuthModalOpen(false)
         dispatch.ui.addToast({ title: 'Signed in', type: 'success' })
+
+        onSuccess?.()
       } catch (error) {
         setAPIErrors(setError, error)
       }

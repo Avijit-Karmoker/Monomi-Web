@@ -52,7 +52,6 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
         await dispatch.user.updateUser(data)
         stepperRef.current!.next()
       } catch (error) {
-        console.log({ error })
         setAPIErrors(setError, error)
       }
     },
@@ -142,7 +141,8 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
                   defaultValue={
                     value
                       ? CountryRegionData.filter(
-                          (item) => value === item[1],
+                          (item) =>
+                            value.toLowerCase() === item[1].toLowerCase(),
                         ).map(([label, value]) => ({ label, value }))
                       : null
                   }

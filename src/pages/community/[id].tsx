@@ -3,9 +3,10 @@ import { GetServerSideProps } from 'next'
 import Profile from '@/components/Profile'
 import { Dispatch, RootState } from '@/store'
 import { useDispatch, useSelector } from 'react-redux'
-import { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import AuthModal from '@/components/AuthModal'
-import { useSession, getSession } from 'next-auth/client'
+import { getSession } from 'next-auth/client'
+import JoinModal from '@/components/JoinModal'
 
 export default function Community() {
   const { community, posts, list, user } = useSelector(
@@ -23,13 +24,15 @@ export default function Community() {
     communities.fetchList()
   }, [])
 
+  const openJoinModal = useCallback(() => ui.setJoinModalOpen(true), [ui])
+
   const handleJoin = useCallback(() => {
     if (user?.status === 'active') {
-      ui.addToast({ title: 'Joined!', type: 'success' })
+      openJoinModal()
     } else {
       ui.setAuthModalOpen(true)
     }
-  }, [user, ui])
+  }, [user, ui, openJoinModal])
 
   return (
     <>
@@ -41,7 +44,8 @@ export default function Community() {
           onJoin={handleJoin}
         />
       ) : null}
-      <AuthModal />
+      <AuthModal onSuccess={openJoinModal} />
+      <JoinModal />
     </>
   )
 }

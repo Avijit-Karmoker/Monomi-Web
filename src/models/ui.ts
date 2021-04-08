@@ -6,6 +6,7 @@ import { RootModel } from '.'
 export default createModel<RootModel>()({
   state: {
     authModalOpen: false,
+    joinModalOpen: false,
     toasts: [],
   } as UIState,
   reducers: {
@@ -13,6 +14,12 @@ export default createModel<RootModel>()({
       return {
         ...state,
         authModalOpen,
+      }
+    },
+    setJoinModalOpen(state, joinModalOpen: UIState['joinModalOpen']) {
+      return {
+        ...state,
+        joinModalOpen,
       }
     },
     addToast(state, toast: Toast) {

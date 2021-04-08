@@ -3,7 +3,7 @@ import { Dispatch, RootState } from '@/store'
 import { PinPayload } from '@/typings'
 import { setAPIErrors } from '@/utils'
 import { setLanguage } from '@/utils/Internationalization'
-import React, { FC, useCallback } from 'react'
+import React, { FC, RefObject, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -15,8 +15,9 @@ import {
   Label,
   Row,
 } from 'reactstrap'
+import type Stepper from 'bs-stepper'
 
-const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
+const Login: FC<{ stepperRef: RefObject<Stepper> }> = () => {
   const { user } = useSelector(({ authentication: { user } }: RootState) => ({
     user,
   }))
@@ -33,28 +34,8 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
     async (payload: PinPayload) => {
       try {
         clearErrors()
-
-        await dispatch.authentication.login(payload)
-
-        const { localization } = await dispatch.user.fetchUser()
-
-        await setLanguage(localization)
-
-        dispatch.ui.setAuthModalOpen(false)
-        dispatch.ui.addToast({ title: 'Signed in', type: 'success' })
-
-        onSuccess?.()
       } catch (error) {
-        if (error.status === 401) {
-          setError('pin', { type: 'server' })
-        } else if (error.status === 403) {
-          setError('pin', { type: 'server' })
-
-          const [{ title, detail }] = error.errors
-          dispatch.ui.addToast({ title, message: detail, type: 'warning' })
-        } else {
-          setAPIErrors(setError, error)
-        }
+        setAPIErrors(setError, error)
       }
     },
     [dispatch, clearErrors, setError],

@@ -2,7 +2,12 @@ import { createModel } from '@rematch/core'
 
 import API from '@/utils/API'
 import { RootModel } from '.'
-import { CommunitiesState, Community } from '@/typings'
+import {
+  Checkout,
+  CheckoutPayload,
+  CommunitiesState,
+  Community,
+} from '@/typings'
 
 const initialState: CommunitiesState = {
   list: [],
@@ -12,6 +17,7 @@ const initialState: CommunitiesState = {
   postsMeta: { ...API.initialListMeta },
   feed: [],
   feedMeta: { ...API.initialListMeta },
+  checkout: null,
 }
 
 export default createModel<RootModel>()({
@@ -37,6 +43,9 @@ export default createModel<RootModel>()({
       { feed, feedMeta }: Pick<CommunitiesState, 'feed' | 'feedMeta'>,
     ) {
       return { ...state, feed, feedMeta }
+    },
+    setCheckout(state, checkout: CommunitiesState['checkout']) {
+      return { ...state, checkout }
     },
   },
   effects: (dispatch) => ({
@@ -68,6 +77,15 @@ export default createModel<RootModel>()({
       >(`communities/feed`)
 
       dispatch.communities.setFeed({ feed, feedMeta })
+    },
+    async fetchCheckout(payload: CheckoutPayload, state) {
+      const { id } = state.communities.community!
+      const { data } = await API.post<Checkout>(
+        `communities/${id}/checkouts`,
+        payload,
+      )
+
+      dispatch.communities.setCheckout(data)
     },
   }),
 })
