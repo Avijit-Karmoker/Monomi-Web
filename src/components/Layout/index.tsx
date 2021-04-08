@@ -34,7 +34,7 @@ const Router: FC = ({ children }) => {
           {children}
         </LayoutWrapper>
       </HorizontalLayout>
-      <ToastContainer newestOnTop closeOnClick={false} />
+      <ToastContainer newestOnTop />
     </>
   )
 }

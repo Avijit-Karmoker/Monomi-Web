@@ -10,6 +10,7 @@ export const languages = [
     abbr: 'LT',
     code: 'LT',
     dialCodes: ['370'],
+    default: true,
   },
   {
     id: 'en-us',
@@ -17,7 +18,6 @@ export const languages = [
     abbr: 'EN',
     code: 'US',
     dialCodes: ['1'],
-    default: true,
   },
 ]
 

@@ -10,6 +10,7 @@ export type Language = {
   id: string
   title: string
   abbr: string
+  code: string
   dialCodes: string[]
   default: boolean
 }

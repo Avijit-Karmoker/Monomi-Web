@@ -31,8 +31,6 @@ export default function Community() {
     }
   }, [user, ui])
 
-  const [session, loading] = useSession()
-  console.log({ session })
   return (
     <>
       {community ? (

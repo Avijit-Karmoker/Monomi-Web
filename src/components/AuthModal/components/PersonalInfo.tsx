@@ -1,9 +1,9 @@
 import RippleButton from '@/components/RippleButton'
 import { RootState, Dispatch } from '@/store'
-import { OnboardingUserPayload } from '@/typings'
+import { EntityAddress, OnboardingUserPayload } from '@/typings'
 import { setAPIErrors } from '@/utils'
 import React, { FC, RefObject, useCallback } from 'react'
-import { Controller, useForm } from 'react-hook-form'
+import { Controller, FieldErrors, useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   Col,
@@ -18,7 +18,8 @@ import type Stepper from 'bs-stepper'
 import Flatpickr from 'react-flatpickr'
 import classnames from 'classnames'
 import Select from 'react-select'
-import { genders } from '@/config'
+import { genders, defaultLanguage } from '@/config'
+import { CountryRegionData } from 'react-country-region-selector'
 
 const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
   stepperRef,
@@ -29,13 +30,18 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
   const dispatch = useDispatch<Dispatch>()
   const {
     register,
-    errors,
     handleSubmit,
     setError,
     clearErrors,
     control,
+    formState: { errors },
   } = useForm<OnboardingUserPayload>({
-    defaultValues: { birthDate: null, gender: null, ...user },
+    defaultValues: {
+      birthDate: null,
+      gender: null,
+      address: { country: defaultLanguage.code },
+      ...user,
+    },
   })
 
   const update = useCallback(
@@ -124,6 +130,41 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
             <Input type='hidden' name='gender' />
             <Label for='gender'>Gender</Label>
             <FormFeedback>{errors.gender?.message}</FormFeedback>
+          </FormGroup>
+          <FormGroup className='form-label-group'>
+            <Controller
+              control={control}
+              id='address.country'
+              name='address.country'
+              rules={{ required: true }}
+              render={({ onChange, value }) => (
+                <Select
+                  defaultValue={
+                    value
+                      ? CountryRegionData.filter(
+                          (item) => value === item[1],
+                        ).map(([label, value]) => ({ label, value }))
+                      : null
+                  }
+                  onChange={(option) => onChange(option?.value)}
+                  options={CountryRegionData.map(([label, value]) => ({
+                    label,
+                    value,
+                  }))}
+                  className={classnames('react-select', {
+                    'is-invalid': !!(errors.address as FieldErrors<EntityAddress>)
+                      ?.country,
+                  })}
+                  classNamePrefix='select'
+                  placeholder='Select...'
+                />
+              )}
+            />
+            <Input type='hidden' name='address.country' />
+            <Label for='address.country'>Country</Label>
+            <FormFeedback>
+              {(errors.address as FieldErrors<EntityAddress>)?.country?.message}
+            </FormFeedback>
           </FormGroup>
         </Col>
       </Row>
