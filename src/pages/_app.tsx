@@ -6,6 +6,7 @@ import createCache from '@emotion/cache'
 import theme from '@/utils/theme'
 import { Provider as StoreProvider } from 'react-redux'
 import { useStore } from '../store'
+import { fonts } from '../config'
 import { PersistGate } from 'redux-persist/integration/react'
 import { getPersistor } from '@rematch/persist'
 import Layout from '@/components/Layout'
@@ -51,10 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
               content='initial-scale=1, width=device-width'
             />
             <meta name='theme-color' content={theme.colors.primary} />
-            <link
-              rel='stylesheet'
-              href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600'
-            />
+            <link rel='stylesheet' href={fonts.url} />
           </Head>
 
           <ThemeProvider theme={theme}>

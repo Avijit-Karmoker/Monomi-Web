@@ -7,6 +7,11 @@ import React, { useCallback, useEffect } from 'react'
 import AuthModal from '@/components/AuthModal'
 import { getSession } from 'next-auth/client'
 import JoinModal from '@/components/JoinModal'
+import PaymentsManager from '@/utils/PaymentsManager'
+import { Elements } from '@stripe/react-stripe-js'
+import { StripeElementLocale } from '@stripe/stripe-js'
+import { getLocale } from '@/utils/Internationalization'
+import { fonts } from '@/config'
 
 export default function Community() {
   const { community, posts, list, user } = useSelector(
@@ -15,27 +20,41 @@ export default function Community() {
       user,
     }),
   )
-  const { communities, ui } = useDispatch<Dispatch>()
+  const { communities, ui, payments } = useDispatch<Dispatch>()
   const { id } = useRouter().query
 
   useEffect(() => {
     communities.fetchCommunity(id as string)
     communities.fetchPosts(id as string)
     communities.fetchList()
+
+    if (user?.status === 'active') {
+      payments.fetchProvider()
+    }
   }, [])
 
-  const openJoinModal = useCallback(() => ui.setJoinModalOpen(true), [ui])
+  const startJoinFlow = useCallback(() => {
+    payments.fetchProvider()
+
+    ui.setJoinModalOpen(true)
+  }, [ui])
 
   const handleJoin = useCallback(() => {
     if (user?.status === 'active') {
-      openJoinModal()
+      startJoinFlow()
     } else {
       ui.setAuthModalOpen(true)
     }
-  }, [user, ui, openJoinModal])
+  }, [user, ui, startJoinFlow])
 
   return (
-    <>
+    <Elements
+      stripe={PaymentsManager.instance}
+      options={{
+        fonts: [{ cssSrc: fonts.url }],
+        locale: getLocale() as StripeElementLocale,
+      }}
+    >
       {community ? (
         <Profile
           community={community}
@@ -44,9 +63,9 @@ export default function Community() {
           onJoin={handleJoin}
         />
       ) : null}
-      <AuthModal onSuccess={openJoinModal} />
+      <AuthModal onSuccess={startJoinFlow} />
       <JoinModal />
-    </>
+    </Elements>
   )
 }
 

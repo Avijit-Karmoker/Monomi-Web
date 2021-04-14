@@ -260,8 +260,8 @@
     warning "^4.0.3"
 
 "@monomi/rematch@git+ssh://git@gitlab.com/monomi/rematch-models":
-  version "0.0.4"
-  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#903141f3246a40a11a71aa57de1dd9e9579fadac"
+  version "0.0.7"
+  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#b8f191d1a530b29576ac6f55837f50ed43913d17"
   dependencies:
     "@rematch/core" "^2.0.0"
     redux "^4.0.5"
@@ -418,6 +418,18 @@
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@sqltools/formatter/-/formatter-1.2.2.tgz#9390a8127c0dcba61ebd7fdcc748655e191bdd68"
   integrity sha512-/5O7Fq6Vnv8L6ucmPjaWbVG1XkP4FO+w5glqfkIsq3Xw4oyNAdJddbnYodNDAfjVUvo/rrSCTom4kAND7T1o5Q==
+
+"@stripe/react-stripe-js@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.4.0.tgz#a67e72202297fc409dc2c8c4f3fb98e0b61fa06d"
+  integrity sha512-Pz5QmG8PgJ3pi8gOWxlngk+ns63p2L1Ds192fn55ykZNRKfGz3G6sfssUVThHn/NAt2Hp1eCEsy/hvlKnXJI6g==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@stripe/stripe-js@^1.13.2":
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.13.2.tgz#bb2f561085b5dd091355df871d432b8e1fd467f6"
+  integrity sha512-fycUk7ECukNc31lD5apcrUgdRC1BfiIacs+CpacoCjOgo3ablolnWCvDQWMmVWtODYa8bBv2dlBla+Edc5OvZg==
 
 "@types/classnames@^2.2.11":
   version "2.2.11"

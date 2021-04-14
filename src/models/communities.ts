@@ -7,6 +7,11 @@ import {
   CheckoutPayload,
   CommunitiesState,
   Community,
+  CreatePaymentIntentPayload,
+  CreatePaymentSubscriptionPayload,
+  PaymentClientMeta,
+  PaymentIntent,
+  PaymentSubscription,
 } from '@/typings'
 
 const initialState: CommunitiesState = {
@@ -86,6 +91,25 @@ export default createModel<RootModel>()({
       )
 
       dispatch.communities.setCheckout(data)
+    },
+    async subscribe(payload: CreatePaymentSubscriptionPayload) {
+      const { data } = await API.post<PaymentSubscription>(
+        'payments/subscriptions',
+        payload,
+      )
+
+      return data
+    },
+    async unsubscribe({ id }: Pick<PaymentSubscription, 'id'>) {
+      await API.delete(`payments/subscriptions/${id}`)
+    },
+    async createPaymentIntent(payload: CreatePaymentIntentPayload) {
+      const { meta } = await API.post<PaymentIntent, PaymentClientMeta>(
+        'payments/intents',
+        payload,
+      )
+
+      await dispatch.payments.confirmPayment(meta)
     },
   }),
 })

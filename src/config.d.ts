@@ -8,7 +8,7 @@ declare const defaultLanguage: Language
 declare const translationNamespaces: string[]
 declare const pinValidationRegExp: RegExp
 declare const genders: Gender[]
-declare const fonts: { light: string; bold: string }
+declare const fonts: { light: string; bold: string; url: string }
 
 export {
   baseUrl,

@@ -1,78 +1,120 @@
 import RippleButton from '@/components/RippleButton'
 import { Dispatch, RootState } from '@/store'
-import { PinPayload } from '@/typings'
-import { setAPIErrors } from '@/utils'
-import { setLanguage } from '@/utils/Internationalization'
 import React, { FC, RefObject, useCallback } from 'react'
-import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  Col,
-  Form,
-  FormFeedback,
-  FormGroup,
-  Input,
-  Label,
-  Row,
-} from 'reactstrap'
+import { Col, Row } from 'reactstrap'
 import type Stepper from 'bs-stepper'
+import { formatMoney } from '@/utils'
+import { DateTime } from 'luxon'
 
-const Login: FC<{ stepperRef: RefObject<Stepper> }> = () => {
-  const { user } = useSelector(({ authentication: { user } }: RootState) => ({
-    user,
-  }))
-  const dispatch = useDispatch<Dispatch>()
-  const {
-    register,
-    errors,
-    handleSubmit,
-    setError,
-    clearErrors,
-  } = useForm<PinPayload>()
-
-  const update = useCallback(
-    async (payload: PinPayload) => {
-      try {
-        clearErrors()
-      } catch (error) {
-        setAPIErrors(setError, error)
-      }
-    },
-    [dispatch, clearErrors, setError],
+const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
+  const { checkout, methods, community } = useSelector(
+    ({ payments, communities }: RootState) => ({
+      checkout: communities.checkout,
+      community: communities.community,
+      methods: payments.methods,
+    }),
   )
+  const { communities, ui } = useDispatch<Dispatch>()
+
+  const submit = useCallback(async () => {
+    try {
+      const amounts = {
+        amount: checkout!.amount.value,
+        feeAndTax: checkout!.feeAndTax.value,
+        totalAmount: checkout!.totalAmount.value,
+        currency: 'eur',
+      }
+
+      await communities.subscribe({
+        amount: amounts.amount,
+        currency: amounts.currency,
+        merchantId: community!.id,
+        frequency: 'month',
+      })
+
+      await communities.createPaymentIntent({
+        ...amounts,
+        recipientId: community!.id,
+        scheduledAt: DateTime.local().toISO(),
+      })
+
+      ui.addToast({
+        title: 'Payment successful',
+        message: 'You are now a member',
+        type: 'success',
+      })
+
+      ui.setJoinModalOpen(false)
+    } catch (error) {
+      console.log({ error })
+      const { message, code, errors, status } = error
+
+      if (code !== 'cancelled') {
+        ui.addToast({
+          title: status === 402 ? errors[0].detail : 'Payment method failed',
+          message: `Check details and retry.\n${message || ''}`,
+          type: 'error',
+        })
+      }
+    }
+  }, [checkout, communities, ui])
+  const paymentMethod = methods.length ? methods[0] : null
 
   return (
-    <Form onSubmit={handleSubmit(update)}>
-      <Row>
-        <Col sm='12'>
-          <FormGroup className='form-label-group'>
-            <Input
-              autoComplete='username'
-              defaultValue={user?.email || ''}
-              type='hidden'
-            />
-            <Input
-              autoComplete='current-password'
-              type='password'
-              name='pin'
-              placeholder='PIN'
-              invalid={!!errors.pin}
-              innerRef={register({
-                required: true,
-                maxLength: 4,
-                minLength: 4,
-              })}
-            />
-            <Label for='email'>PIN</Label>
-            <FormFeedback>{errors.pin?.message}</FormFeedback>
-          </FormGroup>
-        </Col>
-      </Row>
-      <RippleButton color='primary' type='submit' className='mb-1'>
-        Next
-      </RippleButton>
-    </Form>
+    <Row>
+      <Col sm='12' className='checkout-options'>
+        <div className='price-details'>
+          <label className='section-label mb-1'>Payment method</label>
+          <ul className='list-unstyled'>
+            <li className='price-detail'>
+              <div className='detail-title'>
+                {paymentMethod?.details.scheme?.toLocaleUpperCase()}
+              </div>
+              <div className='detail-amt'>
+                {paymentMethod?.details.lastFour?.padStart(16, '*')}
+              </div>
+            </li>
+          </ul>
+          <hr />
+          <label className='section-label mb-1'>Price details</label>
+          {checkout ? (
+            <>
+              <ul className='list-unstyled'>
+                <li className='price-detail'>
+                  <div className='detail-title'>
+                    {community!.name} membership
+                  </div>
+                  <div className='detail-amt'>
+                    {formatMoney(checkout.amount)}
+                  </div>
+                </li>
+                <li className='price-detail'>
+                  <div className='detail-title'>Fee & Tax</div>
+                  <div className='detail-amt'>
+                    {formatMoney(checkout.feeAndTax)}
+                  </div>
+                </li>
+              </ul>
+              <hr />
+              <ul className='list-unstyled'>
+                <li className='price-detail'>
+                  <div className='detail-title detail-total'>Total</div>
+                  <div className='detail-amt font-weight-bolder'>
+                    {formatMoney(checkout.totalAmount)}
+                  </div>
+                </li>
+              </ul>
+            </>
+          ) : null}
+
+          <RippleButton block color='primary' onClick={submit} className='mb-1'>
+            Pay
+          </RippleButton>
+        </div>
+      </Col>
+    </Row>
   )
 }
 
-export default Login
+export default Checkout

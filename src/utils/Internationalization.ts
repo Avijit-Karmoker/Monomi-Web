@@ -36,6 +36,8 @@ export default i18n
 
 export const getLanguage = () => i18n.language
 
+export const getLocale = () => getLanguage().substring(0, 2)
+
 export const setLanguage = (language: string) => {
   return new Promise((resolve, reject) => {
     i18n.changeLanguage(language, (error, t) => {

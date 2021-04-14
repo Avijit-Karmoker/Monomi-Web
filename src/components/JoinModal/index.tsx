@@ -6,6 +6,7 @@ import Wizard from '../Wizard'
 import Stepper from 'bs-stepper'
 import Amount from './components/Amount'
 import Checkout from './components/Checkout'
+import Billing from './components/Billing'
 
 const JoinModal: FC<{}> = () => {
   const { joinModalOpen, user } = useSelector(
@@ -28,6 +29,12 @@ const JoinModal: FC<{}> = () => {
         content: <Amount stepperRef={stepperRef} />,
       },
       {
+        id: 'billing',
+        title: 'Billing',
+        subtitle: 'Credit card details',
+        content: <Billing stepperRef={stepperRef} />,
+      },
+      {
         id: 'checkout',
         title: 'Checkout',
         subtitle: 'Confirm purchase',
@@ -44,7 +51,7 @@ const JoinModal: FC<{}> = () => {
     >
       <ModalHeader toggle={handleClose}>Join</ModalHeader>
       <ModalBody>
-        <div className='vertical-wizard mt-1'>
+        <div className='vertical-wizard mt-1 ecommerce-application'>
           <Wizard type='modern-vertical' ref={stepperRef} steps={steps} />
         </div>
       </ModalBody>
