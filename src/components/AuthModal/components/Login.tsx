@@ -2,7 +2,7 @@ import RippleButton from '@/components/RippleButton'
 import { Dispatch, RootState } from '@/store'
 import { PinPayload } from '@/typings'
 import { setAPIErrors } from '@/utils'
-import { setLanguage } from '@/utils/Internationalization'
+import { useRouter } from 'next/router'
 import React, { FC, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
@@ -17,9 +17,12 @@ import {
 } from 'reactstrap'
 
 const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
-  const { user } = useSelector(({ authentication: { user } }: RootState) => ({
-    user,
-  }))
+  const { user, locale } = useSelector(
+    ({ authentication: { user }, global }: RootState) => ({
+      user,
+      locale: global.locale,
+    }),
+  )
   const dispatch = useDispatch<Dispatch>()
   const {
     register,
@@ -28,6 +31,7 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
     setError,
     clearErrors,
   } = useForm<PinPayload>()
+  const router = useRouter()
 
   const update = useCallback(
     async (payload: PinPayload) => {
@@ -37,8 +41,11 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
         await dispatch.authentication.login(payload)
 
         const { localization } = await dispatch.user.fetchUser()
-
-        await setLanguage(localization)
+        if (localization !== locale) {
+          router.replace(router.asPath, router.asPath, {
+            locale: localization,
+          })
+        }
 
         dispatch.ui.setAuthModalOpen(false)
         dispatch.ui.addToast({ title: 'Signed in', type: 'success' })

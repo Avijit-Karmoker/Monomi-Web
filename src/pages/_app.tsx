@@ -11,17 +11,20 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { getPersistor } from '@rematch/persist'
 import Layout from '@/components/Layout'
 import { Provider as SessionProvider } from 'next-auth/client'
+import { appWithTranslation } from 'next-i18next'
 
 import '@/components/RippleButton/index.scss'
 import '@/styles/iconfont.css'
 import '@/styles/scss/index.scss'
+import { useRouter } from 'next/router'
 
 export const cache = createCache({ key: 'css', prepend: true })
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   console.log({ pageProps })
   const store = useStore(pageProps.initialReduxState)
   const persistor = getPersistor()
+  const router = useRouter()
 
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -32,7 +35,13 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [])
 
   useEffect(() => {
-    store.dispatch.global.fetchDevice()
+    const { fetchDevice, setLocale } = store.dispatch.global
+
+    if (router.locale) {
+      setLocale(router.locale)
+    }
+
+    fetchDevice()
   }, [])
 
   return (
@@ -67,3 +76,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </SessionProvider>
   )
 }
+
+export default appWithTranslation(App)

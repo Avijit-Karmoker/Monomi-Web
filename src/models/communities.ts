@@ -65,6 +65,8 @@ export default createModel<RootModel>()({
     async fetchCommunity(id: Community['id']) {
       const { data } = await API.get<Community>(`communities/${id}`)
 
+      dispatch.communities.fetchPosts(id)
+
       dispatch.communities.setCommunity(data)
     },
     async fetchPosts(id: Community['id']) {
@@ -92,7 +94,7 @@ export default createModel<RootModel>()({
 
       dispatch.communities.setCheckout(data)
     },
-    async subscribe(payload: CreatePaymentSubscriptionPayload) {
+    async subscribe(payload: CreatePaymentSubscriptionPayload, state) {
       const { data } = await API.post<PaymentSubscription>(
         'payments/subscriptions',
         payload,

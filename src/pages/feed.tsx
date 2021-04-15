@@ -11,7 +11,7 @@ import Image from 'next/image'
 import { DateTime } from 'luxon'
 
 export default function Community() {
-  const { user, feed, feedMeta } = useSelector(
+  const { user, feed } = useSelector(
     ({ authentication: { user }, communities }: RootState) => ({
       user,
       feed: communities.feed,

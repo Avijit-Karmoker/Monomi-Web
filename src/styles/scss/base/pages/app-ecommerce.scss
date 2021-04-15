@@ -157,8 +157,7 @@ $search-bar-height: 48px;
   }
 
   // Search bar
-  .search-product,
-  .input-group-text {
+  .search-product {
     height: $search-bar-height;
     border: none;
     font-size: 0.95rem;

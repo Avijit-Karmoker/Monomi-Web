@@ -4,10 +4,12 @@ import DeviceDetector from 'device-detector-js'
 
 import { GlobalState } from '@/typings'
 import { RootModel } from '.'
+import { defaultLanguage } from '@/config'
 
 export default createModel<RootModel>()({
   state: {
     device: null,
+    locale: defaultLanguage.id,
   } as GlobalState,
   reducers: {
     setDevice(state, device: GlobalState['device']) {
@@ -18,6 +20,9 @@ export default createModel<RootModel>()({
     },
     changeDevice(state, device: Partial<GlobalState['device']>) {
       return { ...state, device: { ...state.device!, ...device } }
+    },
+    setLocale(state, locale: GlobalState['locale']) {
+      return { ...state, locale }
     },
   },
   effects: (dispatch) => ({

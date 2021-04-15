@@ -15,11 +15,11 @@ const Router: FC = ({ children }) => {
 
   useEffect(() => {
     if (toasts.length) {
-      toasts.forEach(({ type, ...item }) =>
-        toast(<ToastMessage {...item} type={type} />, { type }),
-      )
+      const [item] = toasts
 
-      ui.clearToasts()
+      toast(<ToastMessage {...item} />, { type: item.type })
+
+      ui.removeToast(item)
     }
   }, [toasts, ui])
 

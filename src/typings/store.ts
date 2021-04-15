@@ -3,6 +3,7 @@ import { Toast } from './ui'
 
 export interface GlobalState {
   device: Device | null
+  locale: string
 }
 
 export interface CommunitiesState {

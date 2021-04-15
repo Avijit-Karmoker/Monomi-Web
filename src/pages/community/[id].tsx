@@ -10,9 +10,9 @@ import JoinModal from '@/components/JoinModal'
 import PaymentsManager from '@/utils/PaymentsManager'
 import { Elements } from '@stripe/react-stripe-js'
 import { StripeElementLocale } from '@stripe/stripe-js'
-import { getLocale } from '@/utils/Internationalization'
 import { fonts } from '@/config'
 import RippleButton from '@/components/RippleButton'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function Community() {
   const { community, posts, list, user } = useSelector(
@@ -22,11 +22,10 @@ export default function Community() {
     }),
   )
   const { communities, ui, payments } = useDispatch<Dispatch>()
-  const { id } = useRouter().query
+  const { query, locale } = useRouter()
+  const { id } = query
 
   useEffect(() => {
-    communities.fetchCommunity(id as string)
-    communities.fetchPosts(id as string)
     communities.fetchList()
 
     if (user?.status === 'active') {
@@ -34,11 +33,22 @@ export default function Community() {
     }
   }, [])
 
-  const startJoinFlow = useCallback(() => {
-    payments.fetchInitialPaymentData()
+  useEffect(() => {
+    communities.fetchCommunity(id as string)
+  }, [user?.id, id])
 
-    ui.setJoinModalOpen(true)
-  }, [ui, payments])
+  const startJoinFlow = useCallback(() => {
+    if (community?.subscription) {
+      ui.addToast({
+        title: "You're already a member of this community",
+        type: 'success',
+      })
+    } else {
+      payments.fetchInitialPaymentData()
+
+      ui.setJoinModalOpen(true)
+    }
+  }, [ui, payments, community])
 
   const handleJoin = useCallback(() => {
     if (user?.status === 'active') {
@@ -53,7 +63,7 @@ export default function Community() {
       stripe={PaymentsManager.instance}
       options={{
         fonts: [{ cssSrc: fonts.url }],
-        locale: getLocale() as StripeElementLocale,
+        locale: locale as StripeElementLocale,
       }}
     >
       {community ? (
@@ -81,10 +91,11 @@ export default function Community() {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  console.log('Community id:', context.query.id)
+  console.log('Community id:', context.query.id, context.locale)
   return {
     props: {
       session: await getSession(context),
+      ...(await serverSideTranslations(context.locale!, ['common'])),
     },
   }
 }

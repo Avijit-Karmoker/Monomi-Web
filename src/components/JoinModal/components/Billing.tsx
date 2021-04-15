@@ -1,6 +1,6 @@
 import RippleButton from '@/components/RippleButton'
 import { Dispatch, RootState } from '@/store'
-import React, { FC, RefObject, useCallback } from 'react'
+import React, { FC, RefObject, useCallback, useMemo } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form } from 'reactstrap'
@@ -20,12 +20,14 @@ const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
   const submit = useCallback(async () => {
     const cardElement = elements?.getElement(CardElement)
 
-    if (!cardElement) {
+    if (!cardElement && !methods.length) {
       return
     }
 
     try {
-      if (methods.length) {
+      if (cardElement) {
+        await payments.createMethod(cardElement)
+      } else {
         const inactiveMethod = methods.find(
           ({ status }) => status === 'inactive',
         )
@@ -33,8 +35,6 @@ const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
         if (inactiveMethod) {
           await payments.retryMethodAuthorization(inactiveMethod)
         }
-      } else {
-        await payments.createMethod(cardElement)
       }
 
       stepperRef.current?.next()
@@ -55,27 +55,39 @@ const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
     }
   }, [elements, payments, stepperRef, methods])
 
+  const initialPaymentMethod = useMemo(
+    () => (methods.length ? methods[0] : null),
+    [],
+  )
+
   return (
     <Form className='d-flex flex-column' onSubmit={handleSubmit(submit)}>
-      <CardElement
-        className='form-group'
-        options={{
-          hidePostalCode: true,
-          style: {
-            base: {
-              fontFamily: 'Montserrat',
-              fontSize: '14px',
-              color: colors.primary,
-              '::placeholder': {
-                color: colors.textInverse,
+      {initialPaymentMethod ? (
+        <h5>
+          {initialPaymentMethod.details.scheme?.toLocaleUpperCase()}{' '}
+          {initialPaymentMethod.details.lastFour?.padStart(16, '*')}
+        </h5>
+      ) : (
+        <CardElement
+          className='form-group'
+          options={{
+            hidePostalCode: true,
+            style: {
+              base: {
+                fontFamily: 'Montserrat',
+                fontSize: '14px',
+                color: colors.primary,
+                '::placeholder': {
+                  color: colors.textInverse,
+                },
+              },
+              invalid: {
+                color: colors.error,
               },
             },
-            invalid: {
-              color: colors.error,
-            },
-          },
-        }}
-      />
+          }}
+        />
+      )}
       <RippleButton type='submit' className='mb-1 align-self-start'>
         Next
       </RippleButton>

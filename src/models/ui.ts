@@ -25,8 +25,8 @@ export default createModel<RootModel>()({
     addToast(state, toast: Toast) {
       return { ...state, toasts: [...state.toasts, toast] }
     },
-    clearToasts(state) {
-      return { ...state, toasts: [] }
+    removeToast(state, toast: Toast) {
+      return { ...state, toasts: state.toasts.filter((item) => item !== toast) }
     },
   },
   effects: (dispatch) => ({}),

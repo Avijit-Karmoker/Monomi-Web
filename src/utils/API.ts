@@ -1,7 +1,6 @@
 import { Deserializer } from 'jsonapi-serializer'
 import store from '../store'
 import { baseUrl } from '@/config'
-import { getLanguage, getFixedT } from './Internationalization'
 import {
   APIErrorResponse,
   APIOptions,
@@ -19,11 +18,12 @@ const defaultHeaders = {
 }
 
 function requestHeaders() {
-  const { token } = store!.getState().authentication
+  const { authentication, global } = store!.getState()
+  const { token } = authentication
 
   const headers = new Headers({
     ...defaultHeaders,
-    'Accept-Language': getLanguage(),
+    'Accept-Language': global.locale,
   })
 
   if (token) {
@@ -114,28 +114,29 @@ async function handleRequest<Response, Meta>(
     return await handleResponse<Response, Meta>(response)
   } catch (error) {
     const serviceUnavailable = !error.status
+    const { getState, dispatch } = store!
+    const { authentication, ui } = dispatch
 
     if (serviceUnavailable || error.status >= 500) {
-      const t = getFixedT()
-
-      // window.alert(
-      //   serviceUnavailable
-      //     ? t('common:serviceUnavailable')
-      //     : t('common:serverError'),
-      //   `${t('common:code')}: ${error.status || error.message}`,
-      // )
+      ui.addToast({
+        title: serviceUnavailable
+          ? 'common:serviceUnavailable'
+          : 'common:serverError',
+        message: `${'common:code'}: ${error.status || error.message}`,
+        type: 'error',
+      })
     } else if (error.status === 429) {
       const [{ title, detail }] = (error as APIErrorResponse).errors
 
-      store!.dispatch.ui.addToast({
+      ui.addToast({
         title,
         message: detail,
         type: 'error',
       })
     } else if (error.status === 401 && options.fetchRefreshToken) {
-      if (store!.getState().authentication.refreshToken) {
+      if (getState().authentication.refreshToken) {
         try {
-          await store!.dispatch.authentication.fetchToken()
+          await authentication.fetchToken()
 
           return handleRequest<Response, Meta>(method, path, payload)
         } catch (error) {

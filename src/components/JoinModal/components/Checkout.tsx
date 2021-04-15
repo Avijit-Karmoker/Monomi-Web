@@ -39,6 +39,8 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
         scheduledAt: DateTime.local().toISO(),
       })
 
+      communities.fetchCommunity(community!.id)
+
       ui.addToast({
         title: 'Payment successful',
         message: 'You are now a member',

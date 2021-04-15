@@ -7,7 +7,7 @@ import {
   EntityAddress,
 } from '@/typings'
 import { UseFormMethods } from 'react-hook-form'
-import { getLanguage } from './Internationalization'
+import store from '@/store'
 
 export const noop = () => {}
 
@@ -27,7 +27,7 @@ export function formatMoney(
   { value, unit, currency }: Money,
   options: Intl.NumberFormatOptions = {},
 ) {
-  const format = Intl.NumberFormat(getLanguage(), {
+  const format = Intl.NumberFormat(store!.getState().global.locale, {
     style: 'currency',
     currency,
     ...options,

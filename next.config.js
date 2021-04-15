@@ -1,3 +1,4 @@
+const { i18n } = require('./next-i18next.config')
 const withTM = require('next-transpile-modules')(['@monomi/rematch'])
 
 module.exports = withTM({
@@ -7,4 +8,5 @@ module.exports = withTM({
   typescript: {
     ignoreBuildErrors: true,
   },
+  i18n,
 })

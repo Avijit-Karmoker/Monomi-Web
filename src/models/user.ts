@@ -1,14 +1,12 @@
 import { createModel } from '@rematch/core'
-
 import API from '@/utils/API'
-import { getLanguage } from '@/utils/Internationalization'
 import { getChanges } from '@/utils'
 import ErrorReporting from '@/utils/ErrorReporting'
 import { RootModel } from '.'
 import {
   AuthenticationPayload,
   AuthMeta,
-  OnboardingPayload,
+  UpdateUserPayload,
   User,
 } from '@/typings'
 
@@ -17,11 +15,12 @@ export default createModel<RootModel>()({
   reducers: {},
   effects: (dispatch) => ({
     async createUser({ email }: AuthenticationPayload, state) {
+      const { device, locale: localization } = state.global
       const payload = {
         email,
-        localization: getLanguage().toLowerCase(),
+        localization,
+        device,
         termsConditionsSigned: true,
-        device: state.global.device,
       }
 
       const response = await API.post<User, AuthMeta>('users', payload)
@@ -30,7 +29,7 @@ export default createModel<RootModel>()({
 
       return response
     },
-    async updateUser(payload: OnboardingPayload, state) {
+    async updateUser(payload: UpdateUserPayload, state) {
       const { user } = state.authentication
 
       if (user) {
