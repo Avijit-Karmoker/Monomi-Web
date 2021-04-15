@@ -95,7 +95,7 @@ export const initializeStore = (preloadedState: any) => {
   return _store
 }
 
-export function useStore(initialState: any) {
+export function useStore(initialState?: any) {
   console.log({ initialState })
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store

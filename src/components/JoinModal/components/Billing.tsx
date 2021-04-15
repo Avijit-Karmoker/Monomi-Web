@@ -76,11 +76,7 @@ const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
           },
         }}
       />
-      <RippleButton
-        color='primary'
-        type='submit'
-        className='mb-1 align-self-start'
-      >
+      <RippleButton type='submit' className='mb-1 align-self-start'>
         Next
       </RippleButton>
     </Form>

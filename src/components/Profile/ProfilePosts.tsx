@@ -2,7 +2,7 @@ import { FC } from 'react'
 import classnames from 'classnames'
 import Avatar from '@/components/Avatar'
 import { Heart, MessageSquare, Share2 } from 'react-feather'
-import { Card, CardBody, CardText, Row, Col } from 'reactstrap'
+import { Card, CardBody, Row, Col, Badge } from 'reactstrap'
 import { CommunityPost } from '@/typings'
 import { DateTime } from 'luxon'
 import styled from '@emotion/styled'
@@ -19,7 +19,7 @@ const Content = styled.pre`
 const ProfilePosts: FC<{ list: CommunityPost[] }> = ({ list }) => {
   return (
     <>
-      {list.map(({ id, time, data, merchant }, index) => {
+      {list.map(({ id, time, data, merchant, type }, index) => {
         return (
           <Card className='post' key={id}>
             <CardBody>
@@ -39,6 +39,13 @@ const ProfilePosts: FC<{ list: CommunityPost[] }> = ({ list }) => {
                   </small>
                 </div>
               </div>
+              {type === 'free' ? (
+                <div className='my-1 py-25'>
+                  <Badge className='mr-50' color='light-success' pill>
+                    Free
+                  </Badge>
+                </div>
+              ) : null}
               <Content>{data.text}</Content>
               {data.image ? (
                 <img

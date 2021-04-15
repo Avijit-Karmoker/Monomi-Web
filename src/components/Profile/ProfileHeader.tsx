@@ -1,17 +1,17 @@
 import { Community } from '@/typings'
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Card, CardImg, Navbar } from 'reactstrap'
 import RippleButton from '@/components/RippleButton'
 import { css } from '@emotion/css'
 
-type Props = Community & { onJoin(): void }
+type Props = Community & { actionButton?: ReactNode }
 
 const ProfileHeader: FC<Props> = ({
   coverUrl,
   logoUrl,
   name,
   entityName,
-  onJoin,
+  actionButton,
 }) => {
   return (
     <Card className='profile-header mb-2'>
@@ -37,9 +37,7 @@ const ProfileHeader: FC<Props> = ({
       </div>
       <div className='profile-header-nav'>
         <Navbar className='justify-content-end w-100' expand='md' light>
-          <RippleButton onClick={onJoin}>
-            <span className='font-weight-bold d-md-block'>Join</span>
-          </RippleButton>
+          {actionButton}
         </Navbar>
       </div>
     </Card>

@@ -5,19 +5,19 @@ import { Row, Col } from 'reactstrap'
 import ProfileLatestPhotos from './ProfileLatestPhotos'
 import ProfileSuggestedPages from './ProfileSuggestedPages'
 import { Community, CommunityPost } from '@/typings'
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 const Profile: FC<{
   community: Community
   posts: CommunityPost[]
   suggested: Community[]
-  onJoin(): void
-}> = ({ community, posts, suggested, onJoin }) => {
+  actionButton?: ReactNode
+}> = ({ community, posts, suggested, actionButton }) => {
   return (
     <div id='user-profile'>
       <Row>
         <Col sm='12'>
-          <ProfileHeader {...community} onJoin={onJoin} />
+          <ProfileHeader {...community} actionButton={actionButton} />
         </Col>
       </Row>
       <section id='profile-info'>

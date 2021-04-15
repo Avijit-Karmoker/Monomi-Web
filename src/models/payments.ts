@@ -134,5 +134,18 @@ export default createModel<RootModel>()({
         }
       }
     },
+    async fetchInitialPaymentData() {
+      await Promise.all([
+        dispatch.payments.fetchProvider(),
+        dispatch.payments.fetchMethods(),
+      ])
+    },
+  }),
+  selectors: (slice) => ({
+    activePaymentMethod() {
+      return slice(({ methods }) =>
+        methods.find(({ status }) => status === 'active'),
+      )
+    },
   }),
 })

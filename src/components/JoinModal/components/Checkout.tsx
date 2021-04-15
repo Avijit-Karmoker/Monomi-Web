@@ -1,5 +1,5 @@
 import RippleButton from '@/components/RippleButton'
-import { Dispatch, RootState } from '@/store'
+import { Dispatch, RootState, useStore } from '@/store'
 import React, { FC, RefObject, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Col, Row } from 'reactstrap'
@@ -8,33 +8,33 @@ import { formatMoney } from '@/utils'
 import { DateTime } from 'luxon'
 
 const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
-  const { checkout, methods, community } = useSelector(
-    ({ payments, communities }: RootState) => ({
-      checkout: communities.checkout,
-      community: communities.community,
-      methods: payments.methods,
+  const store = useStore()
+  const { checkout, community, paymentMethod } = useSelector(
+    (rootState: RootState) => ({
+      checkout: rootState.communities.checkout,
+      community: rootState.communities.community,
+      paymentMethod: store.select.payments.activePaymentMethod(rootState),
     }),
   )
   const { communities, ui } = useDispatch<Dispatch>()
 
   const submit = useCallback(async () => {
     try {
-      const amounts = {
+      const subscriptionAmount = {
         amount: checkout!.amount.value,
-        feeAndTax: checkout!.feeAndTax.value,
-        totalAmount: checkout!.totalAmount.value,
         currency: 'eur',
       }
 
       await communities.subscribe({
-        amount: amounts.amount,
-        currency: amounts.currency,
+        ...subscriptionAmount,
         merchantId: community!.id,
         frequency: 'month',
       })
 
       await communities.createPaymentIntent({
-        ...amounts,
+        ...subscriptionAmount,
+        feeAndTax: checkout!.feeAndTax.value,
+        totalAmount: checkout!.totalAmount.value,
         recipientId: community!.id,
         scheduledAt: DateTime.local().toISO(),
       })
@@ -58,8 +58,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
         })
       }
     }
-  }, [checkout, communities, ui])
-  const paymentMethod = methods.length ? methods[0] : null
+  }, [checkout, communities, ui, community])
 
   return (
     <Row>
@@ -108,7 +107,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
             </>
           ) : null}
 
-          <RippleButton block color='primary' onClick={submit} className='mb-1'>
+          <RippleButton block onClick={submit} className='mb-1'>
             Pay
           </RippleButton>
         </div>

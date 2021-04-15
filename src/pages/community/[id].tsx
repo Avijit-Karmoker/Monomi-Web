@@ -12,6 +12,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { StripeElementLocale } from '@stripe/stripe-js'
 import { getLocale } from '@/utils/Internationalization'
 import { fonts } from '@/config'
+import RippleButton from '@/components/RippleButton'
 
 export default function Community() {
   const { community, posts, list, user } = useSelector(
@@ -29,15 +30,15 @@ export default function Community() {
     communities.fetchList()
 
     if (user?.status === 'active') {
-      payments.fetchProvider()
+      payments.fetchInitialPaymentData()
     }
   }, [])
 
   const startJoinFlow = useCallback(() => {
-    payments.fetchProvider()
+    payments.fetchInitialPaymentData()
 
     ui.setJoinModalOpen(true)
-  }, [ui])
+  }, [ui, payments])
 
   const handleJoin = useCallback(() => {
     if (user?.status === 'active') {
@@ -60,7 +61,17 @@ export default function Community() {
           community={community}
           posts={posts}
           suggested={list.filter((item) => item.id !== id)}
-          onJoin={handleJoin}
+          actionButton={
+            community.subscription ? (
+              <RippleButton color='success'>
+                <span className='font-weight-bold d-md-block'>Member</span>
+              </RippleButton>
+            ) : (
+              <RippleButton onClick={handleJoin}>
+                <span className='font-weight-bold d-md-block'>Join</span>
+              </RippleButton>
+            )
+          }
         />
       ) : null}
       <AuthModal onSuccess={startJoinFlow} />

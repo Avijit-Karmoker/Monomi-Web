@@ -64,7 +64,7 @@ const Account: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
           </FormGroup>
         </Col>
       </Row>
-      <RippleButton color='primary' type='submit' className='mb-1'>
+      <RippleButton type='submit' className='mb-1'>
         Next
       </RippleButton>
     </Form>

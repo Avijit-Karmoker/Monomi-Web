@@ -4,7 +4,6 @@ import { Dispatch, RootState } from '@/store'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, Fragment } from 'react'
 import { getSession } from 'next-auth/client'
-import classnames from 'classnames'
 import Avatar from '@/components/Avatar'
 import { Card, CardBody, CardText, CardImg, Badge, Media } from 'reactstrap'
 import Link from 'next/link'
@@ -70,13 +69,7 @@ export default function Community() {
                       </Media>
                       {post.type === 'free' ? (
                         <div className='my-1 py-25'>
-                          <Badge
-                            className={classnames({
-                              'mr-50': true,
-                            })}
-                            color='light-success'
-                            pill
-                          >
+                          <Badge className='mr-50' color='light-success' pill>
                             Free
                           </Badge>
                         </div>
