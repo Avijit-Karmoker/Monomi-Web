@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
+import { GetServerSideProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 const Title = styled.h1`
   font-size: 50px;
@@ -7,10 +10,12 @@ const Title = styled.h1`
 `
 
 export default function Home() {
+  const { t } = useTranslation('common')
+
   return (
     <div className='container'>
       <main>
-        <Title>Vo čia title</Title>
+        <Title>{t('error')}</Title>
         <h1 className='title'>
           Suka{' '}
           <Link href='/community/suka'>
@@ -185,4 +190,12 @@ export default function Home() {
       `}</style>
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(context.locale!, ['common'])),
+    },
+  }
 }

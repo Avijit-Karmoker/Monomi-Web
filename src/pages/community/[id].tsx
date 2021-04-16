@@ -13,6 +13,7 @@ import { StripeElementLocale } from '@stripe/stripe-js'
 import { fonts } from '@/config'
 import RippleButton from '@/components/RippleButton'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'react-i18next'
 
 export default function Community() {
   const { community, posts, list, user } = useSelector(
@@ -58,6 +59,8 @@ export default function Community() {
     }
   }, [user, ui, startJoinFlow])
 
+  const { t } = useTranslation(['common', 'community'])
+
   return (
     <Elements
       stripe={PaymentsManager.instance}
@@ -74,11 +77,13 @@ export default function Community() {
           actionButton={
             community.subscription ? (
               <RippleButton color='success'>
-                <span className='font-weight-bold d-md-block'>Member</span>
+                <span className='font-weight-bold d-md-block'>
+                  {t('community:confirm')}
+                </span>
               </RippleButton>
             ) : (
               <RippleButton onClick={handleJoin}>
-                <span className='font-weight-bold d-md-block'>Join</span>
+                <span className='font-weight-bold d-md-block'>{t('join')}</span>
               </RippleButton>
             )
           }
@@ -92,10 +97,14 @@ export default function Community() {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   console.log('Community id:', context.query.id, context.locale)
+
   return {
     props: {
       session: await getSession(context),
-      ...(await serverSideTranslations(context.locale!, ['common'])),
+      ...(await serverSideTranslations(context.locale!, [
+        'common',
+        'community',
+      ])),
     },
   }
 }

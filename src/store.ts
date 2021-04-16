@@ -76,7 +76,6 @@ export function waitForPersistor() {
 }
 
 export const initializeStore = (preloadedState: any) => {
-  console.log({ preloadedState })
   let _store = store ?? createStore()
 
   // After navigating to a page with an initial Redux state, merge that state
@@ -96,7 +95,6 @@ export const initializeStore = (preloadedState: any) => {
 }
 
 export function useStore(initialState?: any) {
-  console.log({ initialState })
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store
 }
