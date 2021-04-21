@@ -18,7 +18,6 @@ import NavbarComponent from './components/navbar'
 import FooterComponent from './components/footer'
 
 // ** Custom Hooks
-import { useRTL } from '@/hooks/useRTL'
 import { useSkin } from '@/hooks/useSkin'
 import { useNavbarType } from '@/hooks/useNavbarType'
 import { useFooterType } from '@/hooks/useFooterType'

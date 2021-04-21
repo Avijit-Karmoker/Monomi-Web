@@ -7,6 +7,7 @@ import { Form } from 'reactstrap'
 import type Stepper from 'bs-stepper'
 import { CardElement, useElements } from '@stripe/react-stripe-js'
 import colors from '@/utils/colors'
+import { useTranslation } from 'react-i18next'
 
 const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
   const { methods } = useSelector(({ payments }: RootState) => ({
@@ -14,6 +15,8 @@ const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
   }))
   const { payments, ui } = useDispatch<Dispatch>()
   const { handleSubmit } = useForm()
+
+  const { t } = useTranslation(['common', 'community'])
 
   const elements = useElements()
 
@@ -39,14 +42,15 @@ const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
 
       stepperRef.current?.next()
     } catch (error) {
-      console.log({ error })
       const { message, code, errors, status } = error
 
       if (code !== 'cancelled') {
         ui.addToast({
           title:
-            status === 402 ? errors[0].detail : 'Adding payment method failed',
-          message: `Check details and retry.\n${message || ''}`,
+            status === 402
+              ? errors[0].detail
+              : t('community:addingPaymentMethodFailed'),
+          message: `${t('community:checkDetailsAndRetry')}${message || ''}`,
           type: 'error',
         })
       }
@@ -89,7 +93,7 @@ const Billing: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
         />
       )}
       <RippleButton type='submit' className='mb-1 align-self-start'>
-        Next
+        {t('next')}
       </RippleButton>
     </Form>
   )

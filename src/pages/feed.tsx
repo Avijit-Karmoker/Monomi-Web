@@ -9,6 +9,10 @@ import { Card, CardBody, CardText, CardImg, Badge, Media } from 'reactstrap'
 import Link from 'next/link'
 import Image from 'next/image'
 import { DateTime } from 'luxon'
+import { useTranslation } from 'react-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+const namespaces = ['common', 'feed']
 
 export default function Community() {
   const { user, feed } = useSelector(
@@ -29,11 +33,15 @@ export default function Community() {
     }
   }, [user, communities, router])
 
+  const { t } = useTranslation(namespaces)
+
   return (
     <Fragment>
       <div className='content-header row'>
         <div className='content-header-left col-12 mb-2'>
-          <h2 className='content-header-title float-left mb-0'>Feed</h2>
+          <h2 className='content-header-title float-left mb-0'>
+            {t('feed:title')}
+          </h2>
         </div>
       </div>
       <div className='blog-wrapper'>
@@ -53,7 +61,9 @@ export default function Community() {
                           imgWidth='24'
                         />
                         <Media body>
-                          <small className='text-muted mr-25'>by</small>
+                          <small className='text-muted mr-25'>
+                            {t('feed:by')}
+                          </small>
                           <small>
                             <Link href={`/community/${post.merchant.id}`}>
                               <a className='text-body'>{post.merchant.name}</a>
@@ -70,7 +80,7 @@ export default function Community() {
                       {post.type === 'free' ? (
                         <div className='my-1 py-25'>
                           <Badge className='mr-50' color='light-success' pill>
-                            Free
+                            {t('free')}
                           </Badge>
                         </div>
                       ) : null}
@@ -115,6 +125,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   return {
-    props: {},
+    props: {
+      session,
+      ...(await serverSideTranslations(context.locale!, namespaces)),
+    },
   }
 }

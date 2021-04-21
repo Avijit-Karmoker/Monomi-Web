@@ -20,6 +20,7 @@ import classnames from 'classnames'
 import Select from 'react-select'
 import { genders, defaultLanguage } from '@/config'
 import { CountryRegionData } from 'react-country-region-selector'
+import { useTranslation } from 'react-i18next'
 
 const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
   stepperRef,
@@ -44,6 +45,8 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
     },
   })
 
+  const { t } = useTranslation('common')
+
   const update = useCallback(
     async (data: OnboardingUserPayload) => {
       try {
@@ -66,21 +69,21 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
             <Input
               type='text'
               name='firstName'
-              placeholder='First name'
+              placeholder={t('firstName')}
               invalid={!!errors.firstName}
               innerRef={register({ required: true })}
             />
-            <Label for='firstName'>First name</Label>
+            <Label for='firstName'>{t('firstName')}</Label>
           </FormGroup>
           <FormGroup className='form-label-group'>
             <Input
               type='text'
               name='lastName'
-              placeholder='Last name'
+              placeholder={t('lastName')}
               invalid={!!errors.lastName}
               innerRef={register({ required: true })}
             />
-            <Label for='lastName'>Last name</Label>
+            <Label for='lastName'>{t('lastName')}</Label>
           </FormGroup>
           <FormGroup className='form-label-group'>
             <Controller
@@ -100,11 +103,11 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
                     altFormat: 'F j, Y',
                     dateFormat: 'Y-m-d',
                   }}
-                  placeholder='Select...'
+                  placeholder={t('select')}
                 />
               )}
             />
-            <Label for='birthDate'>Date of birth</Label>
+            <Label for='birthDate'>{t('birthDate')}</Label>
             <FormFeedback>{errors.birthDate?.message}</FormFeedback>
           </FormGroup>
           <FormGroup className='form-label-group'>
@@ -117,17 +120,20 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
                 <Select
                   defaultValue={value ? { label: value, value } : null}
                   onChange={(option) => onChange(option?.value)}
-                  options={genders.map((value) => ({ label: value, value }))}
+                  options={genders.map((value) => ({
+                    label: t(`genders.${value}`),
+                    value,
+                  }))}
                   className={classnames('react-select', {
                     'is-invalid': !!errors.gender,
                   })}
                   classNamePrefix='select'
-                  placeholder='Select...'
+                  placeholder={t('select')}
                 />
               )}
             />
             <Input type='hidden' name='gender' />
-            <Label for='gender'>Gender</Label>
+            <Label for='gender'>{t('gender')}</Label>
             <FormFeedback>{errors.gender?.message}</FormFeedback>
           </FormGroup>
           <FormGroup className='form-label-group'>
@@ -156,12 +162,12 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
                       ?.country,
                   })}
                   classNamePrefix='select'
-                  placeholder='Select...'
+                  placeholder={t('select')}
                 />
               )}
             />
             <Input type='hidden' name='address.country' />
-            <Label for='address.country'>Country</Label>
+            <Label for='address.country'>{t('country')}</Label>
             <FormFeedback>
               {(errors.address as FieldErrors<EntityAddress>)?.country?.message}
             </FormFeedback>
@@ -169,7 +175,7 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
         </Col>
       </Row>
       <RippleButton type='submit' className='mb-1'>
-        Next
+        {t('next')}
       </RippleButton>
     </Form>
   )

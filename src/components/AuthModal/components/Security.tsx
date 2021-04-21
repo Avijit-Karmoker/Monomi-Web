@@ -16,6 +16,7 @@ import {
   Row,
 } from 'reactstrap'
 import { pinValidationRegExp } from '@/config'
+import { useTranslation } from 'next-i18next'
 
 type Payload = PinPayload & { pinRepeat: string }
 
@@ -33,6 +34,8 @@ const Security: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
     getValues,
   } = useForm<Payload>()
 
+  const { t } = useTranslation('common')
+
   const update = useCallback(
     async ({ pin }: Payload) => {
       try {
@@ -41,7 +44,7 @@ const Security: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
         await dispatch.user.updateUser({ pin })
 
         dispatch.ui.setAuthModalOpen(false)
-        dispatch.ui.addToast({ title: 'Signed in', type: 'success' })
+        dispatch.ui.addToast({ title: t('signedIn'), type: 'success' })
 
         onSuccess?.()
       } catch (error) {
@@ -65,21 +68,23 @@ const Security: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
               autoComplete='new-password'
               type='password'
               name='pin'
-              placeholder='PIN'
+              placeholder={t('pin')}
               invalid={!!errors.pin}
               innerRef={register({
                 required: true,
                 maxLength: 4,
                 minLength: 4,
                 validate: (value) =>
-                  value.match(pinValidationRegExp) ? 'PIN too easy' : true,
+                  value.match(pinValidationRegExp)
+                    ? (t('easyPin') as string)
+                    : true,
               })}
             />
-            <Label for='email'>PIN</Label>
+            <Label for='email'>{t('pin')}</Label>
             {errors.pin?.message ? (
               <FormFeedback>{errors.pin.message}</FormFeedback>
             ) : (
-              <FormText>Create a PIN of 4 digits</FormText>
+              <FormText>{t('create4DigitPin')}</FormText>
             )}
           </FormGroup>
           <FormGroup className='form-label-group'>
@@ -87,21 +92,21 @@ const Security: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
               autoComplete='new-password'
               type='password'
               name='pinRepeat'
-              placeholder='Repeat PIN'
+              placeholder={t('repeatPin')}
               invalid={!!errors.pinRepeat}
               innerRef={register({
                 required: true,
                 validate: (value) =>
-                  value === getValues('pin') || 'PINs must match',
+                  value === getValues('pin') || (t('pinMatch') as string),
               })}
             />
-            <Label for='email'>Repeat PIN</Label>
+            <Label for='email'>{t('repeatPin')}</Label>
             <FormFeedback>{errors.pinRepeat?.message}</FormFeedback>
           </FormGroup>
         </Col>
       </Row>
       <RippleButton type='submit' className='mb-1'>
-        Next
+        {t('next')}
       </RippleButton>
     </Form>
   )

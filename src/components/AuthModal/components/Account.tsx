@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { Col, Form, FormGroup, FormText, Input, Label, Row } from 'reactstrap'
 import type Stepper from 'bs-stepper'
+import { useTranslation } from 'next-i18next'
 
 const Account: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
   const { user } = useSelector(({ authentication: { user } }: RootState) => ({
@@ -20,6 +21,8 @@ const Account: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
     setError,
     clearErrors,
   } = useForm<AuthenticationPayload>()
+
+  const { t } = useTranslation('common')
 
   const authenticate = useCallback(
     async (data: AuthenticationPayload) => {
@@ -50,22 +53,22 @@ const Account: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
               defaultValue={user?.email || ''}
               type='text'
               name='email'
-              placeholder='Email'
+              placeholder={t('email')}
               invalid={!!errors.email}
               innerRef={register({
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               })}
             />
-            <Label for='email'>Email</Label>
+            <Label for='email'>{t('email')}</Label>
             <FormText className='text-muted'>
-              By continuing you agree to terms and conditions
+              {t('continueAgreeToTermsAndConditions')}
             </FormText>
           </FormGroup>
         </Col>
       </Row>
       <RippleButton type='submit' className='mb-1'>
-        Next
+        {t('next')}
       </RippleButton>
     </Form>
   )

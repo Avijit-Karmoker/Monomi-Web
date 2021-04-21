@@ -7,6 +7,7 @@ import {
   APIRequest,
   APIResponse,
 } from '@/typings'
+import { i18n } from 'next-i18next'
 
 const deserializer = new Deserializer({ keyForAttribute: 'camelCase' })
 
@@ -118,11 +119,11 @@ async function handleRequest<Response, Meta>(
     const { authentication, ui } = dispatch
 
     if (serviceUnavailable || error.status >= 500) {
+      const t = i18n?.getFixedT(i18n.language, 'common')!
+
       ui.addToast({
-        title: serviceUnavailable
-          ? 'common:serviceUnavailable'
-          : 'common:serverError',
-        message: `${'common:code'}: ${error.status || error.message}`,
+        title: serviceUnavailable ? t('serviceUnavailable') : t('serverError'),
+        message: `${t('code')}: ${error.status || error.message}`,
         type: 'error',
       })
     } else if (error.status === 429) {

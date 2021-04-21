@@ -5,6 +5,7 @@ import { setAPIErrors } from '@/utils'
 import { useRouter } from 'next/router'
 import React, { FC, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   Col,
@@ -33,6 +34,8 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
   } = useForm<PinPayload>()
   const router = useRouter()
 
+  const { t } = useTranslation('common')
+
   const update = useCallback(
     async (payload: PinPayload) => {
       try {
@@ -48,7 +51,7 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
         }
 
         dispatch.ui.setAuthModalOpen(false)
-        dispatch.ui.addToast({ title: 'Signed in', type: 'success' })
+        dispatch.ui.addToast({ title: t('signedIn'), type: 'success' })
 
         onSuccess?.()
       } catch (error) {
@@ -81,7 +84,7 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
               autoComplete='current-password'
               type='password'
               name='pin'
-              placeholder='PIN'
+              placeholder={t('pin')}
               invalid={!!errors.pin}
               innerRef={register({
                 required: true,
@@ -89,13 +92,13 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
                 minLength: 4,
               })}
             />
-            <Label for='email'>PIN</Label>
+            <Label for='email'>{t('pin')}</Label>
             <FormFeedback>{errors.pin?.message}</FormFeedback>
           </FormGroup>
         </Col>
       </Row>
       <RippleButton type='submit' className='mb-1'>
-        Next
+        {t('next')}
       </RippleButton>
     </Form>
   )

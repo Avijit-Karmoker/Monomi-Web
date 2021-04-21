@@ -7,16 +7,18 @@ import Stepper from 'bs-stepper'
 import Amount from './components/Amount'
 import Checkout from './components/Checkout'
 import Billing from './components/Billing'
+import { useTranslation } from 'next-i18next'
 
 const JoinModal: FC<{}> = () => {
-  const { joinModalOpen, user } = useSelector(
-    ({ ui: { joinModalOpen }, authentication: { user } }: RootState) => ({
+  const { joinModalOpen } = useSelector(
+    ({ ui: { joinModalOpen } }: RootState) => ({
       joinModalOpen,
-      user,
     }),
   )
   const { ui } = useDispatch<Dispatch>()
   const stepperRef = useRef<Stepper>(null)
+
+  const { t } = useTranslation(['common', 'community'])
 
   const handleClose = useCallback(() => ui.setJoinModalOpen(false), [ui])
 
@@ -24,20 +26,20 @@ const JoinModal: FC<{}> = () => {
     return [
       {
         id: 'amount',
-        title: 'Amount',
-        subtitle: 'Once per month',
+        title: t('amount'),
+        subtitle: t('community:oncePerMonth'),
         content: <Amount stepperRef={stepperRef} />,
       },
       {
         id: 'billing',
-        title: 'Billing',
-        subtitle: 'Credit card details',
+        title: t('community:billing'),
+        subtitle: t('community:creditCardDetails'),
         content: <Billing stepperRef={stepperRef} />,
       },
       {
         id: 'checkout',
-        title: 'Checkout',
-        subtitle: 'Confirm purchase',
+        title: t('community:checkout'),
+        subtitle: t('community:confirmPurchase'),
         content: <Checkout stepperRef={stepperRef} />,
       },
     ]
@@ -49,7 +51,7 @@ const JoinModal: FC<{}> = () => {
       className='modal-dialog-centered modal-lg'
       toggle={handleClose}
     >
-      <ModalHeader toggle={handleClose}>Join</ModalHeader>
+      <ModalHeader toggle={handleClose}>{t('join')}</ModalHeader>
       <ModalBody>
         <div className='vertical-wizard mt-1 ecommerce-application'>
           <Wizard type='modern-vertical' ref={stepperRef} steps={steps} />

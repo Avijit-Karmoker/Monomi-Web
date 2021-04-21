@@ -17,6 +17,7 @@ import {
   Row,
 } from 'reactstrap'
 import type Stepper from 'bs-stepper'
+import { useTranslation } from 'react-i18next'
 
 const Amount: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
   const { communities } = useDispatch<Dispatch>()
@@ -27,6 +28,8 @@ const Amount: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
     setError,
     clearErrors,
   } = useForm<CheckoutPayload>()
+
+  const { t } = useTranslation('common')
 
   const authenticate = useCallback(
     async (data: CheckoutPayload) => {
@@ -52,7 +55,7 @@ const Amount: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
               <Input
                 type='number'
                 name='amount'
-                placeholder='Amount'
+                placeholder={t('amount')}
                 invalid={!!errors.amount}
                 step='.01'
                 innerRef={register({
@@ -65,12 +68,12 @@ const Amount: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
                 <InputGroupText>&euro;</InputGroupText>
               </InputGroupAddon>
             </InputGroup>
-            <Label for='amount'>Amount</Label>
+            <Label for='amount'>{t('amount')}</Label>
           </FormGroup>
         </Col>
       </Row>
       <RippleButton type='submit' className='mb-1'>
-        Next
+        {t('next')}
       </RippleButton>
     </Form>
   )

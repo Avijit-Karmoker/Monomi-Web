@@ -8,6 +8,7 @@ import Account from './components/Account'
 import PersonalInfo from './components/PersonalInfo'
 import Security from './components/Security'
 import Login from './components/Login'
+import { useTranslation } from 'next-i18next'
 
 const AuthModal: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
   const { authModalOpen, user } = useSelector(
@@ -19,6 +20,8 @@ const AuthModal: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
   const { ui } = useDispatch<Dispatch>()
   const stepperRef = useRef<Stepper>(null)
 
+  const { t } = useTranslation('common')
+
   const handleClose = useCallback(() => ui.setAuthModalOpen(false), [ui])
 
   const steps = useMemo(() => {
@@ -26,20 +29,20 @@ const AuthModal: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
       return [
         {
           id: 'account',
-          title: 'Account',
-          subtitle: 'Email',
+          title: t('account'),
+          subtitle: t('email'),
           content: <Account stepperRef={stepperRef} />,
         },
         {
           id: 'personal',
-          title: 'Personal',
-          subtitle: 'Fill info',
+          title: t('personal'),
+          subtitle: t('fillInfo'),
           content: <PersonalInfo stepperRef={stepperRef} />,
         },
         {
           id: 'security',
-          title: 'Security',
-          subtitle: 'Create PIN',
+          title: t('security'),
+          subtitle: t('createPin'),
           content: <Security onSuccess={onSuccess} />,
         },
       ]
@@ -47,14 +50,14 @@ const AuthModal: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
       return [
         {
           id: 'account',
-          title: 'Account',
-          subtitle: 'Email',
+          title: t('account'),
+          subtitle: t('email'),
           content: <Account stepperRef={stepperRef} />,
         },
         {
           id: 'login',
-          title: 'Login',
-          subtitle: 'Enter PIN',
+          title: t('login'),
+          subtitle: t('enterPin'),
           content: <Login onSuccess={onSuccess} />,
         },
       ]
@@ -67,7 +70,7 @@ const AuthModal: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
       className='modal-dialog-centered modal-lg'
       toggle={handleClose}
     >
-      <ModalHeader toggle={handleClose}>Join</ModalHeader>
+      <ModalHeader toggle={handleClose}>{t('join')}</ModalHeader>
       <ModalBody>
         <div className='vertical-wizard mt-1'>
           <Wizard type='modern-vertical' ref={stepperRef} steps={steps} />

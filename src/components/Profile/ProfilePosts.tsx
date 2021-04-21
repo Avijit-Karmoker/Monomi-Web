@@ -6,6 +6,7 @@ import { Card, CardBody, Row, Col, Badge } from 'reactstrap'
 import { CommunityPost } from '@/typings'
 import { DateTime } from 'luxon'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 const Content = styled.pre`
   background: none;
@@ -17,6 +18,8 @@ const Content = styled.pre`
 `
 
 const ProfilePosts: FC<{ list: CommunityPost[] }> = ({ list }) => {
+  const { t } = useTranslation('common')
+
   return (
     <>
       {list.map(({ id, time, data, merchant, type }, index) => {
@@ -42,7 +45,7 @@ const ProfilePosts: FC<{ list: CommunityPost[] }> = ({ list }) => {
               {type === 'free' ? (
                 <div className='my-1 py-25'>
                   <Badge className='mr-50' color='light-success' pill>
-                    Free
+                    {t('free')}
                   </Badge>
                 </div>
               ) : null}

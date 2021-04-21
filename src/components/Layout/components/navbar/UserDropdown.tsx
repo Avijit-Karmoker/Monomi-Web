@@ -10,6 +10,7 @@ import { Power, Home } from 'react-feather'
 import { useDispatch, useSelector } from 'react-redux'
 import Link from 'next/link'
 import { useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const UserDropdown = () => {
   const { user } = useSelector(({ authentication: { user } }: RootState) => ({
@@ -24,6 +25,8 @@ const UserDropdown = () => {
   const toggle = useCallback(() => setDropdownOpen((prevState) => !prevState), [
     setDropdownOpen,
   ])
+
+  const { t } = useTranslation('common')
 
   let status
   if (user?.status === 'active') {
@@ -58,13 +61,13 @@ const UserDropdown = () => {
         <DropdownItem tag={Link} href='/feed'>
           <a className='dropdown-item' role='menuitem' onClick={toggle}>
             <Home size={14} className='mr-75' />
-            <span className='align-middle'>Feed</span>
+            <span className='align-middle'>{t('feed')}</span>
           </a>
         </DropdownItem>
         <DropdownItem divider />
         <DropdownItem tag='a' onClick={logout}>
           <Power size={14} className='mr-75' />
-          <span className='align-middle'>Logout</span>
+          <span className='align-middle'>{t('logout')}</span>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>

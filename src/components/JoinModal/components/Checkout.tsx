@@ -6,6 +6,7 @@ import { Col, Row } from 'reactstrap'
 import type Stepper from 'bs-stepper'
 import { formatMoney } from '@/utils'
 import { DateTime } from 'luxon'
+import { useTranslation } from 'next-i18next'
 
 const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
   const store = useStore()
@@ -17,6 +18,8 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
     }),
   )
   const { communities, ui } = useDispatch<Dispatch>()
+
+  const { t } = useTranslation('community')
 
   const submit = useCallback(async () => {
     try {
@@ -42,20 +45,22 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
       communities.fetchCommunity(community!.id)
 
       ui.addToast({
-        title: 'Payment successful',
-        message: 'You are now a member',
+        title: t('community:paymentSuccessful'),
+        message: t('community:nowAMember'),
         type: 'success',
       })
 
       ui.setJoinModalOpen(false)
     } catch (error) {
-      console.log({ error })
       const { message, code, errors, status } = error
 
       if (code !== 'cancelled') {
         ui.addToast({
-          title: status === 402 ? errors[0].detail : 'Payment method failed',
-          message: `Check details and retry.\n${message || ''}`,
+          title:
+            status === 402
+              ? errors[0].detail
+              : t('community:paymentMethodFailed'),
+          message: `${t('community:checkDetailsAndRetry')}${message || ''}`,
           type: 'error',
         })
       }
@@ -66,7 +71,9 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
     <Row>
       <Col sm='12' className='checkout-options'>
         <div className='price-details'>
-          <label className='section-label mb-1'>Payment method</label>
+          <label className='section-label mb-1'>
+            {t('community:paymentMethod')}
+          </label>
           <ul className='list-unstyled'>
             <li className='price-detail'>
               <div className='detail-title'>
@@ -78,20 +85,22 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
             </li>
           </ul>
           <hr />
-          <label className='section-label mb-1'>Price details</label>
+          <label className='section-label mb-1'>
+            {t('community:priceDetails')}
+          </label>
           {checkout ? (
             <>
               <ul className='list-unstyled'>
                 <li className='price-detail'>
                   <div className='detail-title'>
-                    {community!.name} membership
+                    {community!.name} {t('community:membership')}
                   </div>
                   <div className='detail-amt'>
                     {formatMoney(checkout.amount)}
                   </div>
                 </li>
                 <li className='price-detail'>
-                  <div className='detail-title'>Fee & Tax</div>
+                  <div className='detail-title'>{t('community:feeAndTax')}</div>
                   <div className='detail-amt'>
                     {formatMoney(checkout.feeAndTax)}
                   </div>
@@ -100,7 +109,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
               <hr />
               <ul className='list-unstyled'>
                 <li className='price-detail'>
-                  <div className='detail-title detail-total'>Total</div>
+                  <div className='detail-title detail-total'>{t('total')}</div>
                   <div className='detail-amt font-weight-bolder'>
                     {formatMoney(checkout.totalAmount)}
                   </div>
@@ -110,7 +119,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
           ) : null}
 
           <RippleButton block onClick={submit} className='mb-1'>
-            Pay
+            {t('community:pay')}
           </RippleButton>
         </div>
       </Col>

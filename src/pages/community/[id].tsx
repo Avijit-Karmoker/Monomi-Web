@@ -15,6 +15,8 @@ import RippleButton from '@/components/RippleButton'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'react-i18next'
 
+const namespaces = ['common', 'community']
+
 export default function Community() {
   const { community, posts, list, user } = useSelector(
     ({ communities, authentication: { user } }: RootState) => ({
@@ -41,7 +43,7 @@ export default function Community() {
   const startJoinFlow = useCallback(() => {
     if (community?.subscription) {
       ui.addToast({
-        title: "You're already a member of this community",
+        title: t('community:alreadyMember'),
         type: 'success',
       })
     } else {
@@ -59,7 +61,7 @@ export default function Community() {
     }
   }, [user, ui, startJoinFlow])
 
-  const { t } = useTranslation(['common', 'community'])
+  const { t } = useTranslation(namespaces)
 
   return (
     <Elements
@@ -78,12 +80,14 @@ export default function Community() {
             community.subscription ? (
               <RippleButton color='success'>
                 <span className='font-weight-bold d-md-block'>
-                  {t('community:confirm')}
+                  {t('community:member')}
                 </span>
               </RippleButton>
             ) : (
               <RippleButton onClick={handleJoin}>
-                <span className='font-weight-bold d-md-block'>{t('join')}</span>
+                <span className='font-weight-bold d-md-block'>
+                  {t('community:join')}
+                </span>
               </RippleButton>
             )
           }
@@ -101,10 +105,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       session: await getSession(context),
-      ...(await serverSideTranslations(context.locale!, [
-        'common',
-        'community',
-      ])),
+      ...(await serverSideTranslations(context.locale!, namespaces)),
     },
   }
 }
