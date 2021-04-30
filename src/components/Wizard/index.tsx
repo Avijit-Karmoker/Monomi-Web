@@ -27,7 +27,7 @@ type Props = {
     icon?: ReactNode
   }[]
   className?: any
-  options?: { [key: string]: any }
+  options?: Record<string, any>
 }
 type ShownEvent = Event & {
   detail: { to: number; from: number }

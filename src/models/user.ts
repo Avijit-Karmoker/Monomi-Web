@@ -1,6 +1,5 @@
 import { createModel } from '@rematch/core'
 import API from '@/utils/API'
-import { getChanges } from '@/utils'
 import ErrorReporting from '@/utils/ErrorReporting'
 import { RootModel } from '.'
 import {
@@ -9,6 +8,7 @@ import {
   UpdateUserPayload,
   User,
 } from '@/typings'
+import { getChanges } from '@/utils'
 
 export default createModel<RootModel>()({
   state: {},
@@ -33,7 +33,10 @@ export default createModel<RootModel>()({
       const { user } = state.authentication
 
       if (user) {
-        const changes = getChanges(payload, user)
+        const changes = getChanges<UpdateUserPayload>(
+          payload,
+          user as UpdateUserPayload,
+        )
 
         if (Object.entries(changes).length) {
           const { data } = await API.put<User>('users/me', changes)
