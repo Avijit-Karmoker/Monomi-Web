@@ -19,7 +19,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
   )
   const { communities, ui } = useDispatch<Dispatch>()
 
-  const { t } = useTranslation(['community', 'common'])
+  const { t } = useTranslation(['common', 'community'])
 
   const submit = useCallback(async () => {
     try {
