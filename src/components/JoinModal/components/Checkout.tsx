@@ -19,7 +19,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
   )
   const { communities, ui } = useDispatch<Dispatch>()
 
-  const { t } = useTranslation('community')
+  const { t } = useTranslation(['community', 'common'])
 
   const submit = useCallback(async () => {
     try {
@@ -28,7 +28,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
         currency: 'eur',
       }
 
-      await communities.subscribe({
+      const subscription = await communities.subscribe({
         ...subscriptionAmount,
         merchantId: community!.id,
         frequency: 'month',
@@ -36,6 +36,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
 
       await communities.createPaymentIntent({
         ...subscriptionAmount,
+        subscriptionId: subscription.id,
         feeAndTax: checkout!.feeAndTax.value,
         totalAmount: checkout!.totalAmount.value,
         recipientId: community!.id,

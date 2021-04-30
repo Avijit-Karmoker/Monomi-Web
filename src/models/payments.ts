@@ -138,6 +138,7 @@ export default createModel<RootModel>()({
       await Promise.all([
         dispatch.payments.fetchProvider(),
         dispatch.payments.fetchMethods(),
+        dispatch.payments.fetchSubscriptions(),
       ])
     },
   }),
