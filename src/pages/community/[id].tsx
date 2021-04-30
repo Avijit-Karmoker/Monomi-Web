@@ -40,14 +40,14 @@ export default function Community() {
     communities.fetchCommunity(id as string)
   }, [user?.id, id])
 
-  const startJoinFlow = useCallback(() => {
+  const startJoinFlow = useCallback(async () => {
     if (community?.subscription) {
       ui.addToast({
         title: t('community:alreadyMember'),
         type: 'success',
       })
     } else {
-      payments.fetchInitialPaymentData()
+      await payments.fetchInitialPaymentData()
 
       ui.setJoinModalOpen(true)
     }
