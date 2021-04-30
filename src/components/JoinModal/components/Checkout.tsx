@@ -31,7 +31,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
       const subscription = await communities.subscribe({
         ...subscriptionAmount,
         merchantId: community!.id,
-        frequency: 'month',
+        frequency: 'monthly',
       })
 
       await communities.createPaymentIntent({
