@@ -41,6 +41,8 @@ export default createModel<RootModel>()({
     async logout() {
       API.delete('auth/logout', {})
 
+      dispatch.payments.reset()
+      dispatch.communities.resetUserData()
       dispatch.authentication.deleteSession()
     },
     async login({ pin }: PinPayload, state) {

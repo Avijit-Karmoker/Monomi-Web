@@ -43,7 +43,7 @@ const Checkout: FC<{ stepperRef: RefObject<Stepper> }> = () => {
         scheduledAt: DateTime.local().toISO(),
       })
 
-      communities.fetchCommunity(community!.id)
+      setTimeout(communities.fetchUserData, 1000)
 
       ui.addToast({
         title: t('community:paymentSuccessful'),

@@ -18,30 +18,47 @@ import { useTranslation } from 'react-i18next'
 const namespaces = ['common', 'community']
 
 export default function Community() {
-  const { community, posts, list, user } = useSelector(
-    ({ communities, authentication: { user } }: RootState) => ({
-      ...communities,
-      user,
-    }),
-  )
+  const {
+    community,
+    posts,
+    list,
+    user,
+    selectedId,
+    subscription,
+  } = useSelector(({ communities, authentication: { user } }: RootState) => ({
+    ...communities,
+    user,
+  }))
   const { communities, ui, payments } = useDispatch<Dispatch>()
   const { query, locale } = useRouter()
   const { id } = query
 
   useEffect(() => {
-    communities.fetchList()
-
-    if (user?.status === 'active') {
-      payments.fetchInitialPaymentData()
+    if (typeof id === 'string') {
+      communities.setSelectedId(id)
     }
-  }, [])
+  }, [id])
 
   useEffect(() => {
-    communities.fetchCommunity(id as string)
-  }, [user?.id, id])
+    if (selectedId) {
+      communities.fetchCommunity(selectedId)
+
+      if (user?.status === 'active') {
+        payments.fetchInitialPaymentData()
+      }
+    }
+  }, [selectedId])
+
+  useEffect(() => {
+    communities.fetchUserData()
+  }, [user?.id, selectedId])
+
+  useEffect(() => {
+    communities.fetchList()
+  }, [])
 
   const startJoinFlow = useCallback(async () => {
-    if (community?.subscription) {
+    if (subscription?.status === 'active') {
       ui.addToast({
         title: t('community:alreadyMember'),
         type: 'success',
@@ -51,7 +68,7 @@ export default function Community() {
 
       ui.setJoinModalOpen(true)
     }
-  }, [ui, payments, community])
+  }, [ui, payments, subscription])
 
   const handleJoin = useCallback(() => {
     if (user?.status === 'active') {
@@ -77,7 +94,7 @@ export default function Community() {
           posts={posts}
           suggested={list.filter((item) => item.id !== id)}
           actionButton={
-            community.subscription ? (
+            subscription?.status === 'active' ? (
               <RippleButton color='success'>
                 <span className='font-weight-bold d-md-block'>
                   {t('community:member')}

@@ -14,6 +14,12 @@ import PaymentsManager from '@/utils/PaymentsManager'
 
 export default createModel<RootModel>()({
   ...modelConfig.payments,
+  reducers: {
+    ...modelConfig.payments.reducers,
+    reset(state) {
+      return { ...state, methods: [] }
+    },
+  },
   effects: (dispatch) => ({
     ...modelConfig.payments.effects,
     async fetchProvider(_, state) {
@@ -100,13 +106,6 @@ export default createModel<RootModel>()({
       await API.delete(`payments/methods/${id}`)
       await dispatch.payments.fetchMethods()
     },
-    async fetchSubscriptions() {
-      const { data } = await API.get<PaymentsState['subscriptions']>(
-        'payments/subscriptions',
-      )
-
-      dispatch.payments.setSubscriptions(data)
-    },
     async fetchIntents() {
       const { data } = await API.get<PaymentsState['intents']>(
         'payments/intents',
@@ -138,7 +137,6 @@ export default createModel<RootModel>()({
       await Promise.all([
         dispatch.payments.fetchProvider(),
         dispatch.payments.fetchMethods(),
-        dispatch.payments.fetchSubscriptions(),
       ])
     },
   }),

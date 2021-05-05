@@ -23,6 +23,8 @@ const initialState: CommunitiesState = {
   feed: [],
   feedMeta: { ...API.initialListMeta },
   checkout: null,
+  selectedId: null,
+  subscription: null,
 }
 
 export default createModel<RootModel>()({
@@ -52,6 +54,15 @@ export default createModel<RootModel>()({
     setCheckout(state, checkout: CommunitiesState['checkout']) {
       return { ...state, checkout }
     },
+    setSelectedId(state, selectedId: CommunitiesState['selectedId']) {
+      return { ...state, selectedId }
+    },
+    setSubscription(state, subscription: CommunitiesState['subscription']) {
+      return { ...state, subscription }
+    },
+    resetUserData(state) {
+      return { ...state, checkout: null, subscription: null }
+    },
   },
   effects: (dispatch) => ({
     async fetchList() {
@@ -64,8 +75,6 @@ export default createModel<RootModel>()({
     },
     async fetchCommunity(id: Community['id']) {
       const { data } = await API.get<Community>(`communities/${id}`)
-
-      dispatch.communities.fetchPosts(id)
 
       dispatch.communities.setCommunity(data)
     },
@@ -112,6 +121,32 @@ export default createModel<RootModel>()({
       )
 
       await dispatch.payments.confirmPayment(meta)
+    },
+    async fetchSubscription(_, state) {
+      const { selectedId } = state.communities
+      let filter
+
+      if (selectedId) {
+        filter = { merchant: selectedId }
+      }
+
+      const {
+        data: [subscription],
+      } = await dispatch.payments.fetchSubscriptions({ filter })
+
+      dispatch.communities.setSubscription(subscription || null)
+    },
+    async fetchUserData(_, state) {
+      const { communities, authentication } = state
+      const { selectedId } = communities
+
+      if (selectedId) {
+        dispatch.communities.fetchPosts(selectedId)
+
+        if (authentication.user?.id) {
+          dispatch.communities.fetchSubscription()
+        }
+      }
     },
   }),
 })

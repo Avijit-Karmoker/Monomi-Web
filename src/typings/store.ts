@@ -1,4 +1,11 @@
-import { Device, Community, CommunityPost, ListMeta, Checkout } from '.'
+import {
+  Device,
+  Community,
+  CommunityPost,
+  ListMeta,
+  Checkout,
+  PaymentSubscription,
+} from '.'
 import { Toast } from './ui'
 
 export interface GlobalState {
@@ -15,6 +22,8 @@ export interface CommunitiesState {
   feed: CommunityPost[]
   feedMeta: ListMeta
   checkout: Checkout | null
+  selectedId: string | null
+  subscription: PaymentSubscription | null
 }
 
 export interface UIState {

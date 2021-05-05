@@ -8,6 +8,7 @@ import {
   APIResponse,
 } from '@/typings'
 import { i18n } from 'next-i18next'
+import qs from 'qs'
 
 const deserializer = new Deserializer({ keyForAttribute: 'camelCase' })
 
@@ -93,7 +94,7 @@ async function handleRequest<Response, Meta>(
 
   if (payload) {
     if (method === 'GET') {
-      queryParams = `?${new URLSearchParams(payload)}`
+      queryParams = `?${qs.stringify(payload)}`
     } else {
       if (payload instanceof FormData) {
         requestOptions.body = payload
