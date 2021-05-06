@@ -55,7 +55,7 @@ const Amount: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
               <Input
                 type='number'
                 name='amount'
-                placeholder={t('amount')}
+                placeholder='1.23'
                 invalid={!!errors.amount}
                 step='.01'
                 innerRef={register({
@@ -68,7 +68,8 @@ const Amount: FC<{ stepperRef: RefObject<Stepper> }> = ({ stepperRef }) => {
                 <InputGroupText>&euro;</InputGroupText>
               </InputGroupAddon>
             </InputGroup>
-            <Label for='amount'>{t('amount')}</Label>
+            <Input type='hidden' name='amount' />
+            <Label for='amount'>{t('community:enterSubscriptionAmount')}</Label>
           </FormGroup>
         </Col>
       </Row>
