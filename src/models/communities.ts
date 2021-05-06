@@ -60,9 +60,6 @@ export default createModel<RootModel>()({
     setSubscription(state, subscription: CommunitiesState['subscription']) {
       return { ...state, subscription }
     },
-    resetUserData(state) {
-      return { ...state, checkout: null, subscription: null }
-    },
   },
   effects: (dispatch) => ({
     async fetchList() {
@@ -141,11 +138,22 @@ export default createModel<RootModel>()({
       const { selectedId } = communities
 
       if (selectedId) {
-        dispatch.communities.fetchPosts(selectedId)
+        await Promise.all([
+          authentication.user
+            ? dispatch.communities.fetchSubscription()
+            : Promise.resolve(),
+          dispatch.communities.fetchPosts(selectedId),
+        ])
+      }
+    },
+    async resetUserData(_, state) {
+      const { selectedId } = state.communities
 
-        if (authentication.user?.id) {
-          dispatch.communities.fetchSubscription()
-        }
+      dispatch.communities.setCheckout(null)
+      dispatch.communities.setSubscription(null)
+
+      if (selectedId) {
+        await dispatch.communities.fetchPosts(selectedId)
       }
     },
   }),

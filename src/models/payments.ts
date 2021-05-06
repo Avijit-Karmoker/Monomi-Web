@@ -16,8 +16,8 @@ export default createModel<RootModel>()({
   ...modelConfig.payments,
   reducers: {
     ...modelConfig.payments.reducers,
-    reset(state) {
-      return { ...state, methods: [] }
+    reset({ provider }) {
+      return { ...modelConfig.payments.state, provider }
     },
   },
   effects: (dispatch) => ({

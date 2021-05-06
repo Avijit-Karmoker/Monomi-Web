@@ -43,15 +43,18 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
 
         await dispatch.authentication.login(payload)
 
-        const { localization } = await dispatch.user.fetchUser()
+        dispatch.ui.setAuthModalOpen(false)
+        dispatch.ui.addToast({ title: t('signedIn'), type: 'success' })
+
+        const [{ localization }] = await Promise.all([
+          dispatch.user.fetchUser(),
+          dispatch.communities.fetchUserData(),
+        ])
         if (localization !== locale) {
           router.replace(router.asPath, router.asPath, {
             locale: localization,
           })
         }
-
-        dispatch.ui.setAuthModalOpen(false)
-        dispatch.ui.addToast({ title: t('signedIn'), type: 'success' })
 
         onSuccess?.()
       } catch (error) {
@@ -67,7 +70,7 @@ const Login: FC<{ onSuccess?(): void }> = ({ onSuccess }) => {
         }
       }
     },
-    [dispatch, clearErrors, setError],
+    [dispatch, clearErrors, setError, router, locale],
   )
 
   return (

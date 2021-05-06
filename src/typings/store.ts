@@ -22,7 +22,7 @@ export interface CommunitiesState {
   feed: CommunityPost[]
   feedMeta: ListMeta
   checkout: Checkout | null
-  selectedId: string | null
+  selectedId: Community['id'] | null
   subscription: PaymentSubscription | null
 }
 

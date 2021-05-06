@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 import Profile from '@/components/Profile'
 import { Dispatch, RootState } from '@/store'
 import { useDispatch, useSelector } from 'react-redux'
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 import AuthModal from '@/components/AuthModal'
 import { getSession } from 'next-auth/client'
 import JoinModal from '@/components/JoinModal'
@@ -14,6 +14,7 @@ import { fonts } from '@/config'
 import RippleButton from '@/components/RippleButton'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'react-i18next'
+import useAsyncReference from '@/hooks/useAsyncReference'
 
 const namespaces = ['common', 'community']
 
@@ -32,6 +33,7 @@ export default function Community() {
   const { communities, ui, payments } = useDispatch<Dispatch>()
   const { query, locale } = useRouter()
   const { id } = query
+  const [subscriptionRef] = useAsyncReference(subscription)
 
   useEffect(() => {
     if (typeof id === 'string') {
@@ -43,22 +45,18 @@ export default function Community() {
     if (selectedId) {
       communities.fetchCommunity(selectedId)
 
-      if (user?.status === 'active') {
-        payments.fetchInitialPaymentData()
-      }
+      communities.fetchUserData()
     }
   }, [selectedId])
-
-  useEffect(() => {
-    communities.fetchUserData()
-  }, [user?.id, selectedId])
 
   useEffect(() => {
     communities.fetchList()
   }, [])
 
+  const { t } = useTranslation(namespaces)
+
   const startJoinFlow = useCallback(async () => {
-    if (subscription?.status === 'active') {
+    if (subscriptionRef.current?.status === 'active') {
       ui.addToast({
         title: t('community:alreadyMember'),
         type: 'success',
@@ -68,7 +66,7 @@ export default function Community() {
 
       ui.setJoinModalOpen(true)
     }
-  }, [ui, payments, subscription])
+  }, [ui, payments, subscriptionRef, t])
 
   const handleJoin = useCallback(() => {
     if (user?.status === 'active') {
@@ -77,8 +75,6 @@ export default function Community() {
       ui.setAuthModalOpen(true)
     }
   }, [user, ui, startJoinFlow])
-
-  const { t } = useTranslation(namespaces)
 
   return (
     <Elements
