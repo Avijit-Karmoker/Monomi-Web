@@ -25,9 +25,12 @@ import { useTranslation } from 'react-i18next'
 const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
   stepperRef,
 }) => {
-  const { user } = useSelector(({ authentication: { user } }: RootState) => ({
-    user,
-  }))
+  const { user, locale } = useSelector(
+    ({ authentication: { user }, global: { locale } }: RootState) => ({
+      user,
+      locale,
+    }),
+  )
   const dispatch = useDispatch<Dispatch>()
   const {
     register,
@@ -40,8 +43,13 @@ const PersonalInfo: FC<{ stepperRef: RefObject<Stepper> }> = ({
     defaultValues: {
       birthDate: null,
       gender: null,
-      address: { country: defaultLanguage.code },
       ...user,
+      address: {
+        country:
+          locale == defaultLanguage.id
+            ? defaultLanguage.code
+            : user?.address?.country,
+      },
     },
   })
 
