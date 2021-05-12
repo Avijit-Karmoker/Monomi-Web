@@ -267,8 +267,8 @@
     warning "^4.0.3"
 
 "@monomi/rematch@git+ssh://git@gitlab.com/monomi/rematch-models":
-  version "0.0.9"
-  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#8b2251d1372dded0e574ebd961ca54f724362a9d"
+  version "0.1.0"
+  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#8de5f7c198841b984f525ce1c3ecc5bd66b9f8fb"
   dependencies:
     "@rematch/core" "^2.0.1"
     redux "^4.1.0"
