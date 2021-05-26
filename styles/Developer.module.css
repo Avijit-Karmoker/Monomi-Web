@@ -29,7 +29,7 @@
 
 .icon1{
     width: 14%;
-    background-image: url('../public/images/Ellipse6.png');
+    background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
@@ -42,7 +42,7 @@
 
 .icon2{
     width: 24%;
-    background-image: url('../public/images/Ellipse6.png');
+    background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
@@ -55,7 +55,7 @@
 
 .icon3{
     width: 34%;
-    background-image: url('../public/images/Ellipse6.png');
+    background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
@@ -68,7 +68,7 @@
 
 .icon4{
     width: 22%;
-    background-image: url('../public/images/Ellipse6.png');
+    background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
@@ -116,7 +116,7 @@
 
 .connect{
     background-color: #EDF1F3;
-    background-image: url('../public/images/bg-2.png');
+    background-image: url('../public/assets/images/bg-2.png');
     padding: 70px 112px 70px 90px;
     background-size: 91% 100%;
     background-position: right;

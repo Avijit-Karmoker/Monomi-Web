@@ -1,5 +1,5 @@
 import React from 'react';
-import developerStyle from '../styles/Developer.module.css';
+import developerStyle from '../../styles/Developer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard, faExpandArrowsAlt, faGift, faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,7 +9,7 @@ const ForDevelopers = () => {
             <div className={developerStyle.developerSection}>
                 <div className="row m-0">
                     <div className="col-md-4">
-                        <img className={developerStyle.image} src={"../images/Kurejams.png"} alt="" />
+                        <img className={developerStyle.image} src={"../assets/images/Kurejams.png"} alt="" />
                     </div>
                     <div className="col-md-8">
                         <h1 className={developerStyle.headText}>Kūrėjams</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-import headerStyles from '../styles/Header.module.css';
+import headerStyles from '../../styles/Header.module.css';
 
 const Header = () => {
     return (
@@ -15,7 +15,7 @@ const Header = () => {
                 </div>
                 <div className="col-md-6 p-0">
                     <div className={headerStyles.image}>
-                        <img src={"../images/Hero.png"} alt="img" />
+                        <img src={"../assets/images/Hero.png"} alt="img" />
                     </div>
                 </div>
             </div>

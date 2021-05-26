@@ -1,5 +1,5 @@
 import React from 'react';
-import memberStyles from '../styles/ForMembers.module.css';
+import memberStyles from '../../styles/ForMembers.module.css';
 
 const ForMembers = () => {
     return (
@@ -19,7 +19,7 @@ const ForMembers = () => {
                     </div>
                     <div className="col-md-7 p-0">
                         <div className={memberStyles.image}>
-                            <img src={"../images/Nariams.png"} alt="Nariams" />
+                            <img src={"../assets/images/Nariams.png"} alt="Nariams" />
                         </div>
                     </div>
                 </div>

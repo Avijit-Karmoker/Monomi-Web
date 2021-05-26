@@ -1,4 +1,4 @@
-import styles from '../styles/Layout.module.css';
+import styles from '../../styles/Layout.module.css';
 import ForDevelopers from './ForDevelopers';
 import ForMembers from './ForMembers';
 import Header from './Header';
