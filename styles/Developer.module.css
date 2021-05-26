@@ -1,0 +1,134 @@
+.image{
+    width: 170%;
+    margin-left: -70%;
+}
+
+.developerSection{
+    margin-top: 10%;
+}
+
+.developerDetail{
+    display: flex;
+    margin-left: 50px;
+}
+
+.headText{
+    margin-left: 50px;
+    padding-top: 2%;
+    margin-bottom: 7%;
+    color: #003452;
+}
+
+.singleDetail{
+    width: 32%;
+    padding-right: 10px;
+    margin-right: 50px;
+    margin-bottom: 2%;
+    display: flex;
+}
+
+.icon1{
+    width: 14%;
+    background-image: url('../public/images/Ellipse6.png');
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 3%;
+    color: #fff;
+    background-position: center;
+    margin-right: 20px;
+    margin-top: 2%;
+}
+
+.icon2{
+    width: 24%;
+    background-image: url('../public/images/Ellipse6.png');
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 3%;
+    color: #fff;
+    background-position: center;
+    margin-right: 20px;
+    margin-top: 2%;
+}
+
+.icon3{
+    width: 34%;
+    background-image: url('../public/images/Ellipse6.png');
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 3%;
+    color: #fff;
+    background-position: center;
+    margin-right: 20px;
+    margin-top: 2%;
+}
+
+.icon4{
+    width: 22%;
+    background-image: url('../public/images/Ellipse6.png');
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 3%;
+    color: #fff;
+    background-position: center;
+    margin-right: 20px;
+    margin-top: 2%;
+}
+
+.point{
+    display: flex;
+}
+
+.point ul {
+    list-style: none; 
+}
+  
+.point ul li::before {
+    content: "\2022";  
+    color: #39B54A; 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1.2em; 
+    margin-left: -1em;
+    font-size: 1.2em;
+}
+
+.point li {
+    font-size: 18px;
+}
+
+.decision {
+    width: 65%;
+    margin: auto;
+    display : flex;
+    border-radius: 50px;
+    background-color: #F6F8F9;
+    margin-top: 5%;
+}
+
+.correct{
+    padding: 70px 180px 70px 90px;
+}
+
+.connect{
+    background-color: #EDF1F3;
+    background-image: url('../public/images/bg-2.png');
+    padding: 70px 112px 70px 90px;
+    background-size: 91% 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 0 50px 50px 0;
+}
+
+.connect h3{
+    padding-bottom: 70px;
+}
+
+.connect p{
+    padding-bottom: 20px;
+    padding-right: 21px;
+}

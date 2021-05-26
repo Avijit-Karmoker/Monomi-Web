@@ -1,0 +1,45 @@
+.memberSection{
+    background-color: #EDF1F3;
+    padding-top: 7%;
+    margin-top: 8%;
+}
+
+.membersText{
+    padding-left: 42%;
+    padding-top: 18%;
+}
+
+.membersText h1{
+    padding-bottom: 18%;
+    color: #003452;
+}
+
+.membersText p{
+    padding-bottom: 7%;
+    color: #003452;
+    font-size: 18px;
+}
+
+.image img{
+    width: 100%;
+}
+
+.membersText ul {
+    list-style: none; 
+  }
+
+.membersText ul li::before {
+    content: "\2022";  
+    color: #39B54A; 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1.2em; 
+    margin-left: -1em;
+    font-size: 1.5em;
+}
+
+.membersText li {
+    padding: 10px 0;
+    padding-right: 10%;
+    font-size: 18px;
+}

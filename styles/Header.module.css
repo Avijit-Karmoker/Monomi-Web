@@ -1,0 +1,26 @@
+.header{
+    background-color: #EDF1F3;
+}
+
+.image{
+    text-align: right;
+    padding-right: 8%;
+    padding-bottom: 10%;
+}
+
+.image img{
+    width: 70%;
+}
+
+.headerText{
+    margin-left: 32%;
+}
+
+.headerh1{
+    margin-bottom: 5%;
+    padding-top: 15%;
+}
+
+.headerP{
+    margin-bottom: 17%;
+}
