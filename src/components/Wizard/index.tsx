@@ -11,9 +11,9 @@ import classnames from 'classnames'
 import type Stepper from 'bs-stepper'
 import { ChevronRight } from 'react-feather'
 
-let StepperImport: typeof Stepper
+let StepperPromise: Promise<typeof Stepper>
 if (process.browser) {
-  import('bs-stepper').then((module) => (StepperImport = module.default))
+  StepperPromise = import('bs-stepper').then((module) => module.default)
 }
 
 type Props = {
@@ -44,16 +44,18 @@ const Wizard = forwardRef<Stepper, Props>((props, ref) => {
     [setActiveIndex],
   )
   useEffect(() => {
-    if (ref && 'current' in ref && containerRef.current) {
-      ref.current = new StepperImport(containerRef.current, options)
+    StepperPromise.then((StepperModule) => {
+      if (ref && 'current' in ref && containerRef.current) {
+        ref.current = new StepperModule(containerRef.current, options)
 
-      containerRef.current.addEventListener('shown.bs-stepper', handleShown)
-    }
+        containerRef.current.addEventListener('shown.bs-stepper', handleShown)
+      }
+    })
 
     return () => {
       containerRef.current?.removeEventListener('shown.bs-stepper', handleShown)
     }
-  }, [StepperImport, ref, containerRef, handleShown, steps])
+  }, [StepperPromise, ref, containerRef, handleShown, steps])
 
   // ** Renders Wizard Header
   const renderHeader = () => {
