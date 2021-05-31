@@ -66,9 +66,13 @@ function App({ Component, pageProps }: AppProps) {
 
           <ThemeProvider theme={theme}>
             <PersistGate persistor={persistor}>
-              <Layout>
+              {router.route === '/' ? (
                 <Component {...pageProps} />
-              </Layout>
+              ) : (
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              )}
             </PersistGate>
           </ThemeProvider>
         </CacheProvider>
