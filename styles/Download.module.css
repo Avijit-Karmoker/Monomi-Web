@@ -1,0 +1,33 @@
+.download{
+    background-color: #39B54A;
+}
+
+.image{
+    padding-top: 7%;
+    text-align: right;
+}
+
+.button1{
+    height: 50px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.button2{
+    height: 50px;
+    padding: 0;
+    border: none;
+    background: none;
+    padding-left: 20px;
+}
+
+.text{
+    padding-top: 35%;
+}
+
+.text p{
+    color: #003452;
+    padding-top: 2%;
+    padding-bottom: 7%;
+}

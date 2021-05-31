@@ -1,4 +1,5 @@
 import styles from '../../styles/Layout.module.css';
+import Download from './Download';
 import ForDevelopers from './ForDevelopers';
 import ForMembers from './ForMembers';
 import Header from './Header';
@@ -13,6 +14,7 @@ const Layout = ({ children }) => {
                     <Header></Header>
                     <ForDevelopers></ForDevelopers>
                     <ForMembers></ForMembers>
+                    <Download></Download>
                     {children}
                 </main>
             </div>
