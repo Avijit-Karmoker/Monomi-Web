@@ -65,7 +65,7 @@ export default function Community() {
                             {t('feed:by')}
                           </small>
                           <small>
-                            <Link href={`/community/${post.merchant.id}`}>
+                            <Link href={`/communities/${post.merchant.id}`}>
                               <a className='text-body'>{post.merchant.name}</a>
                             </Link>
                           </small>
