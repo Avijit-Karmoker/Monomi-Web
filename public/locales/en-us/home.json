@@ -1,0 +1,46 @@
+{
+  "creators": {
+    "association": "",
+    "athletes": "",
+    "awareness": "",
+    "awarenessText": "",
+    "contact": "",
+    "contactUs": "",
+    "createCommunity": "",
+    "decision": "",
+    "decisionPoint": "",
+    "freePlatform": "",
+    "head": "",
+    "income": "",
+    "incomeAbout": "",
+    "institutions": "",
+    "noFees": "",
+    "profit": "",
+    "projects": "",
+    "uniqueContent": "",
+    "uniqueContentText": "",
+    "variousContent": ""
+  },
+  "download": {
+    "becomeMember": "",
+    "downloadMonomi": ""
+  },
+  "hero": {
+    "about": "",
+    "callToAction": "",
+    "heading": ""
+  },
+  "member": {
+    "becomeMember": "",
+    "creators": "",
+    "forMember": "",
+    "grateFor": "",
+    "uniqueContent": ""
+  },
+  "nav": {
+    "contact": "",
+    "creators": "",
+    "download": "",
+    "members": ""
+  }
+}
