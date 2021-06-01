@@ -25,6 +25,12 @@
     "becomeMember": "ir tapkite bendruomenės nariu!",
     "downloadMonomi": "Atsisiųskite Monomi"
   },
+  "footer": {
+    "contact": "",
+    "copyrightIssue": "",
+    "link": "",
+    "privatePolicy": ""
+  },
   "hero": {
     "about": "Monomi suteikia galimybę kūrybiškiems žmonėms ir organizacijoms dalintis savo veikla ir suburti bendraminčius, kurie Jus palaiko ir žavisi. Kurkite turinį tokį, kokį norite - nepriklausomą nuo algoritmų ir masinančių antrasčių.",
     "callToAction": "Sukurk savo bendruomenę",

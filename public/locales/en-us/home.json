@@ -25,6 +25,12 @@
     "becomeMember": "and become a member of the community!",
     "downloadMonomi": "Download Monomi"
   },
+  "footer": {
+    "contact": "",
+    "copyrightIssue": "",
+    "link": "",
+    "privatePolicy": ""
+  },
   "hero": {
     "about": "Monomi empowers creative people to create and share their work with a community built around their work, passions, and beliefs instead of creating at the mercy of algorithms and click-baiting.",
     "callToAction": "Create your community",
