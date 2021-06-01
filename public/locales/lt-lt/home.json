@@ -26,10 +26,10 @@
     "downloadMonomi": "Atsisiųskite Monomi"
   },
   "footer": {
-    "contact": "",
-    "copyrightIssue": "",
-    "link": "",
-    "privatePolicy": ""
+    "contact": "Susisiekite su mumis, jei turite atsiliepimų! 👋",
+    "copyrightIssue": "© 2021 UAB Monomi, į.k. 305628706",
+    "link": "labas@monomi.lt",
+    "privatePolicy": "Privatumo politika"
   },
   "hero": {
     "about": "Monomi suteikia galimybę kūrybiškiems žmonėms ir organizacijoms dalintis savo veikla ir suburti bendraminčius, kurie Jus palaiko ir žavisi. Kurkite turinį tokį, kokį norite - nepriklausomą nuo algoritmų ir masinančių antrasčių.",

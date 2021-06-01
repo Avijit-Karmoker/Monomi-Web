@@ -1,28 +1,34 @@
 import Image from 'next/image';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import footerStyle from '../../styles/Footer.module.css';
 
 const Footer = () => {
     const { t } = useTranslation(['home']);
     return (
         <section>
-            <div className="container">
-                <div className="row m-0">
-                    <div className="col-md-6">
-                        <Image
-                            src="/../public/assets/images/logo.png"
-                            alt="monomi"
-                            width="180px"
-                            height="50px" />
-                        <p>{t("home:footer.link")}</p>
-                        <p>{t("home:footer.contact")}</p>
-                    </div>
-                    <div className="col-md-6">
-                        <h5>{t("home:footer.privatePolicy")}</h5>
-                        <p>{t("home:footer.copyrightIssue")}</p>
+            <div className={footerStyle.footer}>
+                <div className="container">
+                    <div className="row m-0">
+                        <div className="col-md-6">
+                            <Image
+                                src="/../public/assets/images/logo.png"
+                                alt="monomi"
+                                width="180px"
+                                height="40px" />
+                            <p className={footerStyle.link}>{t("home:footer.link")}</p>
+                            <p className={footerStyle.contact}>{t("home:footer.contact")}</p>
+                        </div>
+                        <div className="col-md-6">
+                            <div className={footerStyle.footerRight}>
+                                <h5 className={footerStyle.policy}>{t("home:footer.privatePolicy")}</h5>
+                                <p className="m-0">{t("home:footer.copyrightIssue")}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </section>
     );
 };

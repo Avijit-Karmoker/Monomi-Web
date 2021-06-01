@@ -1,0 +1,24 @@
+.footer{
+    background-color: #fff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.link{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    color: #9EA0A4;
+}
+
+.contact{
+    color: #9EA0A4;
+}
+
+.policy{
+    color: #003452;
+    padding-top: 14%;
+}
+
+.footerRight{
+    padding-left: 17%;
+}

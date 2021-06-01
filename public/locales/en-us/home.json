@@ -26,10 +26,10 @@
     "downloadMonomi": "Download Monomi"
   },
   "footer": {
-    "contact": "",
-    "copyrightIssue": "",
-    "link": "",
-    "privatePolicy": ""
+    "contact": "Feel free to contact us! 👋",
+    "copyrightIssue": "© 2021 UAB Monomi, į.k. 305628706",
+    "link": "labas@monomi.lt",
+    "privatePolicy": "Privacy policy"
   },
   "hero": {
     "about": "Monomi empowers creative people to create and share their work with a community built around their work, passions, and beliefs instead of creating at the mercy of algorithms and click-baiting.",
