@@ -19,39 +19,15 @@ import useAsyncReference from '@/hooks/useAsyncReference'
 const namespaces = ['common', 'community']
 
 export default function Community() {
-  const {
-    community,
-    posts,
-    list,
-    user,
-    selectedId,
-    subscription,
-  } = useSelector(({ communities, authentication: { user } }: RootState) => ({
-    ...communities,
-    user,
-  }))
-  const { communities, ui, payments } = useDispatch<Dispatch>()
+  const { community, posts, list, user, selectedId, subscription } =
+    useSelector(({ communities, authentication: { user } }: RootState) => ({
+      ...communities,
+      user,
+    }))
+  const { communities, ui, payments, authentication } = useDispatch<Dispatch>()
   const { query, locale } = useRouter()
-  const { id } = query
+  const { id, magicToken } = query
   const [subscriptionRef] = useAsyncReference(subscription)
-
-  useEffect(() => {
-    if (typeof id === 'string') {
-      communities.setSelectedId(id)
-    }
-  }, [id])
-
-  useEffect(() => {
-    if (selectedId) {
-      communities.fetchCommunity(selectedId)
-
-      communities.fetchUserData()
-    }
-  }, [selectedId])
-
-  useEffect(() => {
-    communities.fetchList()
-  }, [])
 
   const { t } = useTranslation(namespaces)
 
@@ -75,6 +51,40 @@ export default function Community() {
       ui.setAuthModalOpen(true)
     }
   }, [user, ui, startJoinFlow])
+
+  const handleQueryParams = useCallback(async () => {
+    if (typeof id === 'string') {
+      communities.setSelectedId(id)
+    }
+
+    if (typeof magicToken === 'string') {
+      try {
+        const user = await authentication.loginWithMagicToken(magicToken)
+
+        if (user?.status === 'active') {
+          startJoinFlow()
+        } else {
+          ui.setAuthModalOpen(true)
+        }
+      } catch {}
+    }
+  }, [id])
+
+  useEffect(() => {
+    handleQueryParams()
+  }, [handleQueryParams])
+
+  useEffect(() => {
+    if (selectedId) {
+      communities.fetchCommunity(selectedId)
+
+      communities.fetchUserData()
+    }
+  }, [selectedId])
+
+  useEffect(() => {
+    communities.fetchList()
+  }, [])
 
   return (
     <Elements

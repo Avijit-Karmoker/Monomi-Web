@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "io.monomi.clients",
+    "sha256_cert_fingerprints":
+    ["E7:D4:DF:EC:08:E5:FC:0A:EE:C9:A9:75:43:05:E6:B0:42:A0:E0:73:8B:23:F6:55:D1:EB:6B:5C:7E:69:28:CC"]
+  }
+}]

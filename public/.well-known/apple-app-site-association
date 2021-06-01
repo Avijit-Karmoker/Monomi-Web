@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "QZ2C26JARW.io.monomi.clients",
+        "paths": ["/mobile/*"]
+      }
+    ]
+  }
+}

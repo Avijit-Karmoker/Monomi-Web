@@ -1,5 +1,5 @@
-const baseHost = 'localhost:3000'
-const scheme = 'http'
+const baseHost = 'staging.monomi.lt'
+const scheme = 'https'
 const baseUrl = `${scheme}://client.api.${baseHost}/v1`
 const termsAndConditionsUrl = `https://${baseHost}/dokumentai/vartotojo-sutartis`
 

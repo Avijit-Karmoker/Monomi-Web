@@ -4,23 +4,27 @@ import {
   PinPayload,
   AuthMeta,
   AuthRefreshMeta,
+  User,
 } from '@/typings'
 import API from '@/utils/API'
 import ErrorReporting from '@/utils/ErrorReporting'
 import { RootModel } from '.'
 import { modelConfig } from '@monomi/rematch'
 import { signIn, signOut } from 'next-auth/client'
+import jwtDecode from 'jwt-decode'
+
+type JWTPayload = Partial<{
+  data: { id: string; fingerprint: string }
+  exp: number
+  iat: number
+}>
 
 export default createModel<RootModel>()({
   ...modelConfig.authentication,
   effects: (dispatch) => ({
     async authenticate(payload: AuthenticationPayload) {
-      const {
-        setUser,
-        createSession,
-        changeUser,
-        deleteSession,
-      } = dispatch.authentication
+      const { setUser, createSession, changeUser, deleteSession } =
+        dispatch.authentication
 
       try {
         const { data, meta } = await dispatch.user.createUser(payload)
@@ -61,6 +65,23 @@ export default createModel<RootModel>()({
       })
 
       dispatch.authentication.createSession(data)
+    },
+    async loginWithMagicToken(token: string, state): Promise<User | undefined> {
+      const { user } = state.authentication
+
+      const payload = jwtDecode<JWTPayload>(token)
+
+      if (user?.id && user.id === payload.data?.id) {
+        return user
+      }
+
+      try {
+        dispatch.authentication.createSession({ auth: { token } })
+
+        return await dispatch.user.fetchUser()
+      } catch {
+        dispatch.authentication.deleteSession()
+      }
     },
     async fetchToken(_, state) {
       dispatch.authentication.setToken(null)

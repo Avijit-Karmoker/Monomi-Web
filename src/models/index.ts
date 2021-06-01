@@ -1,12 +1,12 @@
 import { Models } from '@rematch/core'
 
-import { default as global } from './global'
-import { default as authentication } from './authentication'
-import { default as merchants } from './merchants'
-import { default as user } from './user'
-import { default as communities } from './communities'
-import { default as payments } from './payments'
-import { default as ui } from './ui'
+import global from './global'
+import authentication from './authentication'
+import merchants from './merchants'
+import user from './user'
+import communities from './communities'
+import payments from './payments'
+import ui from './ui'
 
 export interface RootModel extends Models<RootModel> {
   authentication: typeof authentication

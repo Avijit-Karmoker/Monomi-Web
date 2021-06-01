@@ -286,7 +286,7 @@
 
 "@monomi/rematch@git+ssh://git@gitlab.com/monomi/rematch-models":
   version "0.1.0"
-  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#281913315331166981a23acde0303cae9453c885"
+  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#675cbc78ddd8255014e0a7dc8d99ad01d876bbe1"
   dependencies:
     "@rematch/core" "^2.0.1"
     redux "^4.1.0"
@@ -2253,6 +2253,11 @@ jws@^3.2.2:
   dependencies:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
+
+jwt-decode@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
+  integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
 kind-of@^6.0.2:
   version "6.0.3"
