@@ -1,19 +1,21 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import memberStyles from '../../styles/ForMembers.module.css';
 
 const ForMembers = () => {
+    const {t} = useTranslation(['home']);
     return (
         <section>
             <div className={memberStyles.memberSection}>
                 <div className="row me-0">
                     <div className="col-md-5">
                         <div className={memberStyles.membersText}>
-                            <h1>Nariams</h1>
-                            <p>Naudodamiesi Monomi:</p>
+                            <h1>{t("home:member.forMember")}</h1>
+                            <p>{t("home:member.grateFor")}</p>
                             <ul>
-                                <li>Atraskite kūrėjus</li>
-                                <li>Tapkite kūrėjų bendruomenės nariais ir kartu darykite teigiamą poveikį</li>
-                                <li>Sekite išskirtinį kūrėjų turinį, dalyvaukite bendruomenės diskusijose </li>
+                                <li>{t("home:member.creators")}</li>
+                                <li>{t("home:member.becomeMember")}</li>
+                                <li>{t("home:member.uniqueContent")} </li>
                             </ul>
                         </div>
                     </div>

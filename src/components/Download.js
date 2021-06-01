@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 
 const Download = () => {
-    let { t } = useTranslation();
+    const { t } = useTranslation(['home']);
 
     return (
         <Suspense fallback="Loading...">
@@ -23,8 +23,8 @@ const Download = () => {
                     </div>
                     <div className="col-md-6">
                         <div className={downloadStyle.text}>
-                            <h2 className="text-white"> {t("common:downloadMonomi")} </h2>
-                            <p>{t("common:becomeMember")}</p>
+                            <h2 className="text-white"> {t("home:download.downloadMonomi")} </h2>
+                            <p>{t("home:download.becomeMember")}</p>
                             <Button className={downloadStyle.button1}>
                                 <Image
                                     src="/../public/assets/images/Group9.png"

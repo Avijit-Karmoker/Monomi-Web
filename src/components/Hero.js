@@ -1,16 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import headerStyles from '../../styles/Header.module.css';
 
 const Header = () => {
+    const { t, i18next } = useTranslation(['home']);
     return (
         <section className={headerStyles.header}>
             <div className="row m-0">
                 <div className="col-md-6">
                     <div className={headerStyles.headerText}>
-                        <h1 className={headerStyles.headerh1}>Jūsų kūryba ir vizija yra <br /> vienijanti jėga</h1>
-                        <p className={headerStyles.headerP}>Monomi suteikia galimybę kūrybiškiems žmonėms ir organizacijoms dalintis savo veikla ir suburti bendraminčius, kurie Jus palaiko ir žavisi. Kurkite turinį tokį, kokį norite - nepriklausomą nuo algoritmų ir masinančių antrasčių.
-                        </p>
-                        <button type="button" class="btn btn-success rounded-pill">Sukurk savo bendruomenę</button>
+                        <h1 className={headerStyles.headerh1}>{t("home:hero.heading")}</h1>text
+                        <p className={headerStyles.headerP}>{t("home:hero.about")}</p>
+                        <button type="button" class="btn btn-success rounded-pill">{t("home:hero.callToAction")}</button>
                     </div>
                 </div>
                 <div className="col-md-6 p-0">
