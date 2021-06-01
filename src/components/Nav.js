@@ -6,7 +6,7 @@ const Nav = () => {
     return (
         <div>
             <div className={navStyle.nav}>
-                <nav className="navbar navbar-expand-lg navbar-light nav container">
+                <nav className="navbar navbar-expand-lg nav container">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">
                             <img src={"../assets/images/logo.png"} alt="logo" id="logoImage" />

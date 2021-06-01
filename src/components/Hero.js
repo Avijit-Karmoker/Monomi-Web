@@ -9,7 +9,7 @@ const Header = () => {
             <div className="row m-0">
                 <div className="col-md-6">
                     <div className={headerStyles.headerText}>
-                        <h1 className={headerStyles.headerh1}>{t("home:hero.heading")}</h1>text
+                        <h1 className={headerStyles.headerh1}>{t("home:hero.heading")}</h1>
                         <p className={headerStyles.headerP}>{t("home:hero.about")}</p>
                         <button type="button" class="btn btn-success rounded-pill">{t("home:hero.callToAction")}</button>
                     </div>

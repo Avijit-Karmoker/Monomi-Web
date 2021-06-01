@@ -1,46 +1,46 @@
 {
   "creators": {
-    "association": "",
-    "athletes": "",
-    "awareness": "",
-    "awarenessText": "",
-    "contact": "",
-    "contactUs": "",
-    "createCommunity": "",
-    "decision": "",
-    "decisionPoint": "",
-    "freePlatform": "",
-    "head": "",
-    "income": "",
-    "incomeAbout": "",
-    "institutions": "",
-    "noFees": "",
-    "profit": "",
-    "projects": "",
-    "uniqueContent": "",
-    "uniqueContentText": "",
-    "variousContent": ""
+    "association": "For associations",
+    "athletes": "For athletes",
+    "awareness": "Recognition and awareness",
+    "awarenessText": "An opportunity to increase your online awareness and find more like-minded people",
+    "contact": "Contact",
+    "contactUs": "Contact us",
+    "createCommunity": "and create your community now!",
+    "decision": "Is Monomi right for you?",
+    "decisionPoint": "Very likely. Monomi can be beneficial for the following forms of activity:",
+    "freePlatform": "Free platform",
+    "head": "For Developer",
+    "income": "Steady income, thus financial stability.",
+    "incomeAbout": " An opportunity to grow and develop with/by the support of the community members only.",
+    "institutions": "institutions",
+    "noFees": "No additional fees for creators - all clear and sound.",
+    "profit": "For non-profit and profit organizations",
+    "projects": "For temporary and long-term projects",
+    "uniqueContent": "Unique content.",
+    "uniqueContentText": "Share unique and exciting content with your community, lead relevant discussions.",
+    "variousContent": "For various content creators"
   },
   "download": {
-    "becomeMember": "",
-    "downloadMonomi": ""
+    "becomeMember": "and become a member of the community!",
+    "downloadMonomi": "Download Monomi"
   },
   "hero": {
-    "about": "",
-    "callToAction": "",
-    "heading": ""
+    "about": "Monomi empowers creative people to create and share their work with a community built around their work, passions, and beliefs instead of creating at the mercy of algorithms and click-baiting.",
+    "callToAction": "Create your community",
+    "heading": "Build a community around your creative work"
   },
   "member": {
-    "becomeMember": "",
-    "creators": "",
-    "forMember": "",
-    "grateFor": "",
-    "uniqueContent": ""
+    "becomeMember": "Become a member of the developer community and make a positive impact together",
+    "creators": "Discover the developers",
+    "forMember": "For Members",
+    "grateFor": "Monomi is great for:",
+    "uniqueContent": "Follow developer exclusive content, participate in community discussions"
   },
   "nav": {
-    "contact": "",
-    "creators": "",
-    "download": "",
-    "members": ""
+    "contact": "Contact us",
+    "creators": "For developers",
+    "download": "Download",
+    "members": "For Members"
   }
 }

@@ -4,7 +4,8 @@
 }
 
 .developerSection{
-    margin-top: 10%;
+    padding-top: 10%;
+    padding-bottom: 8%;
 }
 
 .developerDetail{
@@ -92,9 +93,9 @@
     color: #39B54A; 
     font-weight: bold; 
     display: inline-block; 
-    width: 1.2em; 
+    width: 1em; 
     margin-left: -1em;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .point li {
@@ -106,12 +107,13 @@
     margin: auto;
     display : flex;
     border-radius: 50px;
-    background-color: #F6F8F9;
     margin-top: 5%;
 }
 
 .correct{
     padding: 70px 180px 70px 90px;
+    background-color: #f6f8f9;
+    border-radius: 50px 0 0 50px;
 }
 
 .connect{

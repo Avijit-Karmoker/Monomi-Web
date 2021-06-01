@@ -1,5 +1,5 @@
 import React from 'react';
-import developerStyle from '../../styles/Developer.module.css';
+import creatorStyle from '../../styles/Creator.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard, faExpandArrowsAlt, faGift, faStar } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
@@ -7,18 +7,18 @@ import { useTranslation } from 'react-i18next';
 const ForDevelopers = () => {
     const {t} = useTranslation(['home']);
     return (
-        <section>
-            <div className={developerStyle.developerSection}>
+        <section className="bg-white">
+            <div className={creatorStyle.developerSection}>
                 <div className="row m-0">
                     <div className="col-md-4">
-                        <img className={developerStyle.image} src={"../assets/images/Kurejams.png"} alt="" />
+                        <img className={creatorStyle.image} src={"../assets/images/Kurejams.png"} alt="" />
                     </div>
                     <div className="col-md-8">
-                        <h1 className={developerStyle.headText}>{t("home:creators.head")}</h1>
+                        <h1 className={creatorStyle.headText}>{t("home:creators.head")}</h1>
                         <div>
-                            <div className={developerStyle.developerDetail}>
-                                <div className={developerStyle.singleDetail}>
-                                    <div className={developerStyle.icon1}>
+                            <div className={creatorStyle.developerDetail}>
+                                <div className={creatorStyle.singleDetail}>
+                                    <div className={creatorStyle.icon1}>
                                         <FontAwesomeIcon style={{ width: '20px' }} icon={faGift} />
                                     </div>
                                     <div>
@@ -26,8 +26,8 @@ const ForDevelopers = () => {
                                         <p>{t("home:creators.noFees")}</p>
                                     </div>
                                 </div>
-                                <div className={developerStyle.singleDetail}>
-                                    <div className={developerStyle.icon2}>
+                                <div className={creatorStyle.singleDetail}>
+                                    <div className={creatorStyle.icon2}>
                                         <FontAwesomeIcon style={{ width: '20px' }} icon={faCreditCard} />
                                     </div>
                                     <div>
@@ -36,9 +36,9 @@ const ForDevelopers = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className={developerStyle.developerDetail}>
-                                <div className={developerStyle.singleDetail}>
-                                    <div className={developerStyle.icon3}>
+                            <div className={creatorStyle.developerDetail}>
+                                <div className={creatorStyle.singleDetail}>
+                                    <div className={creatorStyle.icon3}>
                                         <FontAwesomeIcon style={{ width: '20px' }} icon={faStar} />
                                     </div>
                                     <div>
@@ -46,8 +46,8 @@ const ForDevelopers = () => {
                                         <p>{t("home:creators.uniqueContentText")}</p>
                                     </div>
                                 </div>
-                                <div className={developerStyle.singleDetail}>
-                                    <div className={developerStyle.icon4}>
+                                <div className={creatorStyle.singleDetail}>
+                                    <div className={creatorStyle.icon4}>
                                         <FontAwesomeIcon style={{ width: '20px' }} icon={faExpandArrowsAlt} />
                                     </div>
                                     <div>
@@ -59,11 +59,11 @@ const ForDevelopers = () => {
                         </div>
                     </div>
                 </div>
-                <div className={developerStyle.decision}>
-                    <div className={developerStyle.correct}>
+                <div className={creatorStyle.decision}>
+                    <div className={creatorStyle.correct}>
                         <h3 className="pb-3">{t("home:creators.decision")}</h3>
                         <p>{t("home:creators.decisionPoint")}:</p>
-                        <div className={developerStyle.point}>
+                        <div className={creatorStyle.point}>
                             <div className="pe-3">
                                 <ul>
                                     <li>{t("home:creators.variousContent")}</li>
@@ -80,7 +80,7 @@ const ForDevelopers = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={developerStyle.connect}>
+                    <div className={creatorStyle.connect}>
                         <h3>{t("home:creators.contactUs")}</h3>
                         <p>{t("home:creators.createCommunity")}</p>
                         <button type="button" class="btn btn-success rounded-pill">{t("home:creators.contact")}</button>
