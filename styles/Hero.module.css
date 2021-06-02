@@ -13,12 +13,14 @@
 }
 
 .headerText{
-    margin-left: 32%;
+    margin-left: 27%;
 }
 
 .headerh1{
     margin-bottom: 5%;
     padding-top: 15%;
+    padding-right: 26%;
+    font-size: 40px;
 }
 
 .headerP{

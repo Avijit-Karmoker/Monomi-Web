@@ -11,12 +11,15 @@ const Footer = () => {
                 <div className="container">
                     <div className="row m-0">
                         <div className="col-md-6">
-                            <Image
-                                src="/../public/assets/images/logo.png"
-                                alt="monomi"
-                                width="180px"
-                                height="40px" />
-                            <p className={footerStyle.link}>{t("home:footer.link")}</p>
+                            <div>
+                                <Image
+                                    src="/../public/assets/images/logo.png"
+                                    alt="monomi"
+                                    width="180px"
+                                    height="40px" />
+                            </div>
+                            <br />
+                            <a href="#" className={footerStyle.link}>{t("home:footer.link")}</a>
                             <p className={footerStyle.contact}>{t("home:footer.contact")}</p>
                         </div>
                         <div className="col-md-6">

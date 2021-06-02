@@ -29,12 +29,12 @@
 }
 
 .icon1{
-    width: 14%;
+    width: 63px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 15px;
     color: #fff;
     background-position: center;
     margin-right: 20px;
@@ -42,12 +42,12 @@
 }
 
 .icon2{
-    width: 24%;
+    width: 110px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 15px;
     color: #fff;
     background-position: center;
     margin-right: 20px;
@@ -55,12 +55,12 @@
 }
 
 .icon3{
-    width: 34%;
+    width: 100px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 4%;
     color: #fff;
     background-position: center;
     margin-right: 20px;
@@ -68,12 +68,12 @@
 }
 
 .icon4{
-    width: 22%;
+    width: 100px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 15px;
     color: #fff;
     background-position: center;
     margin-right: 20px;

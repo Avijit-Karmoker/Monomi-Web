@@ -34,7 +34,7 @@ const Download = () => {
                             </Button>
                             <Button className={downloadStyle.button2}>
                                 <Image
-                                    src="/../public/assets/images/Group9.png"
+                                    src="/../public/assets/images/Group19.png"
                                     alt="PlayStore"
                                     width={180}
                                     height={50} />

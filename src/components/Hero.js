@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import headerStyles from '../../styles/Header.module.css';
+import headerStyles from '../../styles/Hero.module.css';
 
 const Header = () => {
     const { t, i18next } = useTranslation(['home']);
