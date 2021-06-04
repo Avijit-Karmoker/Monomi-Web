@@ -8,7 +8,7 @@ const ForMembers = () => {
         <section>
             <div className={memberStyles.memberSection}>
                 <div className="row me-0">
-                    <div className="col-md-5">
+                    <div className="col-md-5 col-sm-12">
                         <div className={memberStyles.membersText}>
                             <h1>{t("home:member.forMember")}</h1>
                             <p>{t("home:member.grateFor")}</p>
@@ -19,7 +19,7 @@ const ForMembers = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-7 p-0">
+                    <div className="col-md-7 col-sm-12 p-0">
                         <div className={memberStyles.image}>
                             <img src={"../assets/images/Nariams.png"} alt="Nariams" />
                         </div>

@@ -1,32 +1,35 @@
 import navStyle from '../../styles/Nav.module.css';
 import { useTranslation } from 'react-i18next';
+import { Button } from 'reactstrap';
 
 const Nav = () => {
     const { t } = useTranslation(['home']);
     return (
-        <div>
+        <div className={navStyle.navbar}>
             <div className={navStyle.nav}>
-                <nav className="navbar navbar-expand-lg nav container">
-                    <div className="container-fluid">
-                        <a className="navbar-brand" href="#">
-                            <img src={"../assets/images/logo.png"} alt="logo" id="logoImage" />
+                <nav class="navbar navbar-expand-lg navbar-light container" style={{backgroundColor: "#EDF1F3"}}>
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <span className={navStyle.image}>
+                                <img src={"../assets/images/logo.png"} alt="logo" id="logoImage" />
+                            </span>
                         </a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav ms-auto">
-                                <li className="nav-item">
-                                    <a className="nav-link text-dark" aria-current="page" href="#">{t("home:nav.creators")}</a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item" >
+                                    <a class="nav-link" href="#">{t("home:nav.creators")}</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link text-dark" href="#">{t("home:nav.members")}</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">{t("home:nav.members")}</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link text-dark pe-4" href="#">{t("home:nav.contact")}</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">{t("home:nav.contact")}</a>
                                 </li>
-                                <li className="nav-item">
-                                    <button type="button" class="btn btn-success rounded-pill">{t("home:nav.download")}</button>
+                                <li>
+                                    <Button className="rounded-pill">{t("home:nav.download")}</Button>
                                 </li>
                             </ul>
                         </div>

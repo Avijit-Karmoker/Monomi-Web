@@ -9,16 +9,16 @@ import Footer from '@/components/Footer';
 
 export default function Landing() {
   return (
-    <div>
-      <Nav />
-      <main>
-        <Hero></Hero>
-        <Creators></Creators>
-        <ForMembers></ForMembers>
-        <Download></Download>
-        <Footer></Footer>
-      </main>
-    </div>
+      <div>
+        <Nav />
+        <main>
+          <Hero></Hero>
+          <Creators></Creators>
+          <ForMembers></ForMembers>
+          <Download></Download>
+          <Footer></Footer>
+        </main>
+      </div>
   )
 }
 

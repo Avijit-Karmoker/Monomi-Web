@@ -1,3 +1,6 @@
+.creators{
+    background-color: #fff;
+}
 .image{
     width: 170%;
     margin-left: -70%;
@@ -6,6 +9,10 @@
 .developerSection{
     padding-top: 10%;
     padding-bottom: 8%;
+}
+
+.details{
+    width: 60%;
 }
 
 .developerDetail{
@@ -18,6 +25,7 @@
     padding-top: 2%;
     margin-bottom: 7%;
     color: #003452;
+    font-size: 35px;
 }
 
 .singleDetail{
@@ -29,7 +37,7 @@
 }
 
 .icon1{
-    width: 63px;
+    width: 50px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
@@ -42,7 +50,7 @@
 }
 
 .icon2{
-    width: 110px;
+    width: 50px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
@@ -55,12 +63,12 @@
 }
 
 .icon3{
-    width: 100px;
+    width: 50px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
     text-align: center;
-    padding-top: 4%;
+    padding-top: 15px;
     color: #fff;
     background-position: center;
     margin-right: 20px;
@@ -68,7 +76,7 @@
 }
 
 .icon4{
-    width: 100px;
+    width: 50px;
     background-image: url('../public/assets/images/Ellipse6.png');
     height: 50px;
     border-radius: 50px;
@@ -116,6 +124,10 @@
     border-radius: 50px 0 0 50px;
 }
 
+.correct h3{
+    padding-bottom: 40px;
+}
+
 .connect{
     background-color: #EDF1F3;
     background-image: url('../public/assets/images/bg-2.png');
@@ -133,4 +145,114 @@
 .connect p{
     padding-bottom: 20px;
     padding-right: 21px;
+}
+
+.fees h3{
+    padding-bottom: 12%;
+    padding-top: 2%;
+}
+
+.fees{
+    margin-bottom: 50px;
+}
+
+.income h3{
+    padding-bottom: 5%;
+}
+
+.row1{
+    padding-bottom: 20px;
+}
+
+/* small mobile */
+@media screen and (max-width: 320px) {
+    .creators{
+        width: 100%;
+    }
+    .headText{
+        margin: 0;
+        text-align: center;
+        padding: 10% 0 10% 0;
+        font-size: 27px;
+    }
+    .details{
+        display: block;
+        width: 100%;
+        padding-left: 5%;
+        text-align: center;
+        padding: 0 15%;
+    }
+    .developerDetail{
+        display: block;
+        text-align: center;
+        width: 123%;
+        margin: 0;
+    }
+    .developerDetail h3{
+        font-size: 45px;
+    }
+    .decision{
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+    .correct{
+        padding: 0;
+    }
+    .awareness h3{
+        font-size: 20px;
+    }
+    .icon1{
+        margin-left: 85px;
+        margin-bottom: 10px;
+    }
+    .icon2{
+        margin-left: 85px;
+        margin-bottom: 10px;
+    }
+    .icon3{
+        margin-left: 85px;
+        margin-bottom: 10px;
+    }
+    .icon4{
+        margin-left: 85px;
+        margin-bottom: 10px;
+    }
+    .correct{
+        border-radius: 0;
+        padding-bottom: 15px;
+    }
+    .correct h3{
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    .correct p{
+        padding: 0 10%;
+        text-align: center;
+    }
+    .point{
+        display: block;
+        padding: 0 10px;
+    }
+    .point ul{
+        margin-bottom: 0;
+    }
+    .point ul li::before {
+        font-size: 1em;
+    }
+    .point li {
+        font-size: 16px;
+    }
+    .connect{
+        border-radius: 0;
+        padding: 20px;
+        text-align: center;
+    }
+    .connect h3{
+        padding-bottom: 30px;
+    }
+    .connect p{
+        padding-right: 0;
+    }
 }

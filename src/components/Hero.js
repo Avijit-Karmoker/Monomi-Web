@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Button } from 'reactstrap';
 import headerStyles from '../../styles/Hero.module.css';
 
 const Header = () => {
@@ -7,16 +9,20 @@ const Header = () => {
     return (
         <section className={headerStyles.header}>
             <div className="row m-0">
-                <div className="col-md-6">
+                <div className="col-md-6 col-sm-12">
                     <div className={headerStyles.headerText}>
                         <h1 className={headerStyles.headerh1}>{t("home:hero.heading")}</h1>
                         <p className={headerStyles.headerP}>{t("home:hero.about")}</p>
-                        <button type="button" class="btn btn-success rounded-pill">{t("home:hero.callToAction")}</button>
+                        <Button color="success">{t("home:hero.callToAction")}</Button>
                     </div>
                 </div>
-                <div className="col-md-6 p-0">
+                <div className="col-md-6 col-sm-12 p-0">
                     <div className={headerStyles.image}>
-                        <img src={"../assets/images/Hero.png"} alt="img" />
+                        <Image
+                        src="/../public/assets/images/Hero.png"
+                        alt="img"
+                        width="700px"
+                        height="950px" />
                     </div>
                 </div>
             </div>

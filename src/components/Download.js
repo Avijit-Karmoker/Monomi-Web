@@ -12,7 +12,7 @@ const Download = () => {
         <Suspense fallback="Loading...">
             <div className={downloadStyle.download}>
                 <div className="row m-0">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <div className={downloadStyle.image}>
                             <Image
                                 src="/../public/assets/images/iPhone12.png"
@@ -21,7 +21,7 @@ const Download = () => {
                                 height={800} />
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <div className={downloadStyle.text}>
                             <h2 className="text-white"> {t("home:download.downloadMonomi")} </h2>
                             <p>{t("home:download.becomeMember")}</p>
