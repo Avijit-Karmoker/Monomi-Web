@@ -22,3 +22,17 @@
 .footerRight{
     padding-left: 17%;
 }
+
+/* small mobile */
+@media screen and (max-width: 320px) {
+    .image{
+        text-align: center;
+    }
+    .footerRight{
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+    .policy{
+        padding-top: 0;
+    }
+}

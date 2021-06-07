@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row m-0">
                         <div className="col-md-6 col-sm-12">
-                            <div>
+                            <div className={footerStyle.image}>
                                 <Image
                                     src="/../public/assets/images/logo.png"
                                     alt="monomi"
