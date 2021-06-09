@@ -14,3 +14,14 @@
         height: 35px;
     }
 }
+
+@media screen and (max-width: 375px) {
+    .navbar{
+        width: 105%;
+        line-height: 40px;
+    }
+    .image img{
+        width: 125px;
+        height: 38px;
+    }
+}
