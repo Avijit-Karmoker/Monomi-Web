@@ -121,3 +121,17 @@
         margin-top: 24%;
     }
 }
+
+/* medium laptop */
+@media screen and (max-width: 1024px) {
+    .membersText{
+        padding-left: 15px;
+        padding-top: 8%;
+    }
+    .membersText p{
+        padding-bottom: 2%;
+    }
+    .membersText li{
+        padding-right: 0;
+    }
+}

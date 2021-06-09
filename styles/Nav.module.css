@@ -34,3 +34,10 @@
         height: 35px;
     }
 }
+
+/* medium laptop */
+@media screen and (max-width: 1024px) {
+    .nav li {
+        margin-right: 10px;
+    }
+}

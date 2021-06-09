@@ -505,3 +505,41 @@
         margin-left: 10px;
     }
 }
+
+/* laptop medium */
+@media screen and (max-width: 1024px) {
+    .decision {
+        margin-left: 2%;
+        width: 96%;
+    }
+    .correct{
+        padding-right: 70px;
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+    .correct h3{
+        font-size: 35px;
+    }
+    .correct p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .connect{
+        padding-right: 100px;
+        padding-left: 50px;
+    }
+    .connect h3{
+        font-size: 35px;
+    }
+    .connect p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .connect button{
+        font-size: 20px;
+    }
+    .details{
+        width: 89%;
+        margin-left: 52px;
+    }
+}
