@@ -63,3 +63,18 @@
         padding-left: 94px;
     }
 }
+
+/* large mobile */
+@media screen and (max-width: 425px) {
+    .text{
+        padding-top: 20px;
+        text-align: center;
+    }
+    .button2{
+        padding-left: 0;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        display: block;
+        padding-left: 109px;
+    }
+}

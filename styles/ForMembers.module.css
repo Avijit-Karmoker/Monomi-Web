@@ -88,3 +88,25 @@
         margin-bottom: 0;
     }
 }
+
+/* large mobile */
+@media screen and (max-width: 425px) {
+    .membersText{
+        padding-left: 15px;
+        padding-top: 10%;
+    }
+    .membersText li {
+        padding: 0;
+        padding-right: 0;
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+    .membersText h1{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .membersText p{
+        padding-bottom: 10px;
+        margin-bottom: 0;
+    }
+}

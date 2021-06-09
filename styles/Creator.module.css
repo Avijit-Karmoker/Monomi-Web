@@ -344,3 +344,84 @@
         margin-bottom: 40px;
     }
 }
+
+/* large mobile */
+@media screen and (max-width: 425px) {
+    .decision{
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+    .details{
+        display: block;
+        width: 100%;
+        padding-left: 5%;
+        text-align: center;
+        padding: 0 15%;
+        margin-bottom: 20px;
+    }
+    .icon1{
+        margin-left: 124px;
+        margin-bottom: 10px;
+    }
+    .icon2{
+        margin-left: 124px;
+        margin-bottom: 10px;
+    }
+    .icon3{
+        margin-left: 124px;
+        margin-bottom: 10px;
+    }
+    .icon4{
+        margin-left: 124px;
+        margin-bottom: 10px;
+    }
+    .developerSection h1{
+        text-align: center;
+        margin-left: 0;
+        margin-top: 40px;
+    }
+    .correct{
+        border-radius: 0;
+        padding-bottom: 15px;
+        padding: 0;
+    }
+    .correct h3{
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        font-size: 23px;
+    }
+    .correct p{
+        padding: 0 10%;
+        text-align: center;
+    }
+    .point{
+        display: block;
+        padding: 0 10px 30px 15px;
+    }
+    .point ul{
+        margin-bottom: 0;
+    }
+    .point ul li::before {
+        font-size: 1.5em;
+    }
+    .point li {
+        font-size: 16px;
+    }
+    .connect{
+        border-radius: 0;
+        padding: 20px;
+        text-align: center;
+    }
+    .connect h3{
+        padding-bottom: 30px;
+        padding-top: 15px;
+    }
+    .connect p{
+        padding-right: 0;
+    }
+    .connect button{
+        margin-bottom: 40px;
+    }
+}

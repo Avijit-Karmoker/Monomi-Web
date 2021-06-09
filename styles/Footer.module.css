@@ -53,3 +53,18 @@
         padding-top: 0;
     }
 }
+
+/* large mobile */
+@media screen and (max-width: 425px) {
+    .image{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .footerRight{
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+    .policy{
+        padding-top: 0;
+    }
+}
