@@ -110,3 +110,14 @@
         margin-bottom: 0;
     }
 }
+
+/* tablet */
+@media screen and (max-width: 768px) {
+    .membersText{
+        padding-left: 15px;
+        padding-top: 10%;
+    }
+    .image{
+        margin-top: 24%;
+    }
+}
