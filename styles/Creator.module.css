@@ -262,7 +262,7 @@
 }
 
 /* medium mobile*/
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
     .creators{
         width: 105%;
     }
@@ -343,10 +343,10 @@
     .connect button{
         margin-bottom: 40px;
     }
-}
+} */
 
 /* large mobile */
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 425px) {
     .decision{
         width: 100%;
         margin: 0;
@@ -424,10 +424,10 @@
     .connect button{
         margin-bottom: 40px;
     }
-}
+} */
 
 /* tablet */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .decision{
         width: 100%;
         margin: 0;
@@ -504,10 +504,10 @@
     .awareness{
         margin-left: 10px;
     }
-}
+} */
 
 /* laptop medium */
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
     .decision {
         margin-left: 2%;
         width: 96%;
@@ -542,4 +542,4 @@
         width: 89%;
         margin-left: 52px;
     }
-}
+} */

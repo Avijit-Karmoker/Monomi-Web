@@ -46,7 +46,7 @@
 }
 
 /* medium mobile */
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
     .download{
         width: 105%;
         text-align: center;
@@ -62,10 +62,10 @@
         display: block;
         padding-left: 94px;
     }
-}
+} */
 
 /* large mobile */
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 425px) {
     .text{
         padding-top: 20px;
         text-align: center;
@@ -77,10 +77,10 @@
         display: block;
         padding-left: 109px;
     }
-}
+} */
 
 /* tablet */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .text{
         padding-top: 80px;
     }
@@ -88,4 +88,4 @@
         padding-left: 0;
         margin-top: 10px;
     }
-}
+} */

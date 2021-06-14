@@ -38,7 +38,7 @@
 }
 
 /* medium mobile */
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
     .footer{
         width: 105%;
     }
@@ -52,10 +52,10 @@
     .policy{
         padding-top: 0;
     }
-}
+} */
 
 /* large mobile */
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 425px) {
     .image{
         text-align: center;
         margin-bottom: 10px;
@@ -67,4 +67,4 @@
     .policy{
         padding-top: 0;
     }
-}
+} */
