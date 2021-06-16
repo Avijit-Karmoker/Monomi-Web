@@ -27,9 +27,9 @@
     margin-bottom: 17%;
 }
 
-@media (max-width: 320px) and (min-width: 320px) {
+@media (min-width: 320px) and (max-width: 425px) {
     .header{
-        width: 102%;
+        width: 100%;
     }
     .headerh1{
         font-size: 27px;
@@ -46,5 +46,50 @@
     .image{
         padding: 0 5px;
         margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .headerText{
+        margin-left: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .headerh1{
+        padding-right: 0;
+        font-size: 30px;
+    }
+    .headerP{
+        margin-bottom: 10%;
+    }
+    .image{
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .headerText{
+        margin-left: 5%;
+    }
+    .headerh1{
+        padding-right: 0;
+        font-size: 35px;
+    }
+    .headerP{
+        margin-bottom: 13%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .headerText{
+        margin-left: 3%;
+    }
+    .headerh1{
+        padding-right: 0;
+        font-size: 35px;
+    }
+    .headerP{
+        margin-bottom: 13%;
+        margin-top: 15%;
     }
 }
