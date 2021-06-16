@@ -32,60 +32,17 @@
     padding-bottom: 7%;
 }
 
-/* small mobile */
-@media screen and (max-width: 320px) {
-    .text{
-        padding-top: 20px;
+@media (max-width: 320px){
+    .download{
+        width: 102%;
         text-align: center;
+        padding-bottom: 30px;
+    }
+    .text{
+        padding-top: 0;
     }
     .button2{
         padding-left: 0;
-        margin-top: 10px;
-        margin-bottom: 30px;
+        padding-top: 10px;
     }
 }
-
-/* medium mobile */
-/* @media screen and (max-width: 375px) {
-    .download{
-        width: 105%;
-        text-align: center;
-    }
-    .text{
-        padding-top: 20px;
-        text-align: center;
-    }
-    .button2{
-        padding-left: 0;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        display: block;
-        padding-left: 94px;
-    }
-} */
-
-/* large mobile */
-/* @media screen and (max-width: 425px) {
-    .text{
-        padding-top: 20px;
-        text-align: center;
-    }
-    .button2{
-        padding-left: 0;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        display: block;
-        padding-left: 109px;
-    }
-} */
-
-/* tablet */
-/* @media screen and (max-width: 768px) {
-    .text{
-        padding-top: 80px;
-    }
-    .button2{
-        padding-left: 0;
-        margin-top: 10px;
-    }
-} */

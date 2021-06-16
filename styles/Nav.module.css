@@ -7,41 +7,8 @@
     margin-right: 10px;
 }
 
-/* small mobile */
-@media screen and (max-width: 320px) {
+@media (max-width: 320px){
     .navbar{
-        width: 100%;
-        line-height: 40px;
-    }
-    .image img{
-        width: 123px;
-        height: 35px;
+        width: 102%;
     }
 }
-
-/* medium mobile */
-/* @media screen and (max-width: 375px) {
-    .navbar{
-        width: 105%;
-        line-height: 40px;
-    }
-    .image img{
-        width: 125px;
-        height: 38px;
-    }
-} */
-
-/* large mobile */
-/* @media screen and (max-width: 425px) {
-    .image img{
-        width: 160px;
-        height: 35px;
-    }
-} */
-
-/* medium laptop */
-/* @media screen and (max-width: 1024px) {
-    .nav li {
-        margin-right: 10px;
-    }
-} */

@@ -44,94 +44,22 @@
     font-size: 18px;
 }
 
-/* small mobile */
-@media screen and (max-width: 320px) {
+@media (max-width: 320px) {
+    .memberSection {
+        width: 102%;
+    }
     .membersText{
-        padding-left: 15px;
-        padding-top: 18%;
+        padding-left: 10px;
+        padding-top: 10%;
+    }
+    .membersText h1{
+        padding-bottom: 5%;
+        text-align: center;
+    }
+    .membersText p{
+        padding-bottom: 0;
     }
     .membersText li {
         padding: 0;
-        padding-right: 0;
-        font-size: 16px;
-    }
-    .membersText h1{
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .membersText p{
-        padding-bottom: 10px;
-        margin-bottom: 0;
     }
 }
-
-/* medium mobile */
-/* @media screen and (max-width: 375px) {
-    .memberSection {
-        width: 105%;
-    }
-    .membersText{
-        padding-left: 15px;
-        padding-top: 10%;
-    }
-    .membersText li {
-        padding: 0;
-        padding-right: 0;
-        font-size: 16px;
-    }
-    .membersText h1{
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .membersText p{
-        padding-bottom: 10px;
-        margin-bottom: 0;
-    }
-} */
-
-/* large mobile */
-/* @media screen and (max-width: 425px) {
-    .membersText{
-        padding-left: 15px;
-        padding-top: 10%;
-    }
-    .membersText li {
-        padding: 0;
-        padding-right: 0;
-        font-size: 16px;
-        padding-bottom: 20px;
-    }
-    .membersText h1{
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .membersText p{
-        padding-bottom: 10px;
-        margin-bottom: 0;
-    }
-} */
-
-/* tablet */
-/* @media screen and (max-width: 768px) {
-    .membersText{
-        padding-left: 15px;
-        padding-top: 10%;
-    }
-    .image{
-        margin-top: 24%;
-    }
-} */
-
-/* medium laptop */
-/* @media screen and (max-width: 1024px) {
-    .membersText{
-        padding-left: 15px;
-        padding-top: 8%;
-    }
-    .membersText p{
-        padding-bottom: 2%;
-    }
-    .membersText li{
-        padding-right: 0;
-    }
-} */

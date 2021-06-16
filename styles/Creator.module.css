@@ -164,382 +164,60 @@
     padding-bottom: 20px;
 }
 
-/* small mobile */
-@media screen and (max-width: 320px) {
-    .creators{
-        width: 100%;
-    }
-    .headText{
-        margin: 0;
-        text-align: center;
-        padding: 10% 0 10% 0;
-        font-size: 27px;
-    }
-    .details{
-        display: block;
-        width: 100%;
-        padding-left: 5%;
-        text-align: center;
-        padding: 0 15%;
-    }
-    .developerDetail{
-        display: block;
-        text-align: center;
-        width: 123%;
-        margin: 0;
-    }
-    .developerDetail h3{
-        font-size: 45px;
-    }
+@media (max-width: 320px) {
     .decision{
-        width: 100%;
+        flex-direction: column;
         margin: 0;
-        display: block;
     }
-    .correct{
-        padding: 0;
-    }
-    .awareness h3{
-        font-size: 20px;
-    }
-    .icon1{
-        margin-left: 85px;
-        margin-bottom: 10px;
-    }
-    .icon2{
-        margin-left: 85px;
-        margin-bottom: 10px;
-    }
-    .icon3{
-        margin-left: 85px;
-        margin-bottom: 10px;
-    }
-    .icon4{
-        margin-left: 85px;
-        margin-bottom: 10px;
-    }
-    .correct{
-        border-radius: 0;
-        padding-bottom: 15px;
-    }
-    .correct h3{
-        text-align: center;
-        padding-top: 10px;
-        padding-bottom: 15px;
-    }
-    .correct p{
-        padding: 0 10%;
-        text-align: center;
-    }
-    .point{
-        display: block;
-        padding: 0 10px;
-    }
-    .point ul{
-        margin-bottom: 0;
-    }
-    .point ul li::before {
-        font-size: 1em;
+    .point {
+        flex-direction: column;
     }
     .point li {
         font-size: 16px;
     }
-    .connect{
-        border-radius: 0;
-        padding: 20px;
+    .point ul {
+        margin-bottom: 0;
+    }
+    .headText{
+        margin-left: 0;
         text-align: center;
+        margin-top: 30px;
+    }
+    .creators{
+        width: 102%;
+    }
+    .details{
+        width: 73%;
+        margin: auto;
+        text-align: center;
+    }
+    .icon1{
+        margin: auto;
+    }
+    .icon2{
+        margin: auto;
+    }
+    .icon3{
+        margin: auto;
+    }
+    .icon4{
+        margin: auto;
+    }
+    .correct{
+        padding: 20px;
+        width: 153%;
+        border-radius: 25px;
+    }
+    .connect{
+        padding: 20px;
+        width: 153%;
+        text-align: center;
+        border-radius: 25px;
     }
     .connect h3{
         padding-bottom: 30px;
-        padding-top: 15px;
     }
     .connect p{
         padding-right: 0;
-    }
-    .connect button{
-        margin-bottom: 40px;
     }
 }
-
-/* medium mobile*/
-/* @media screen and (max-width: 375px) {
-    .creators{
-        width: 105%;
-    }
-    .decision{
-        width: 100%;
-        margin: 0;
-        display: block;
-    }
-    .developerSection h1{
-        text-align: center;
-        margin-left: 0;
-        margin-top: 40px;
-    }
-    .details{
-        display: block;
-        width: 100%;
-        padding-left: 5%;
-        text-align: center;
-        padding: 0 15%;
-        margin-bottom: 20px;
-    }
-    .icon1{
-        margin-left: 110px;
-        margin-bottom: 10px;
-    }
-    .icon2{
-        margin-left: 110px;
-        margin-bottom: 10px;
-    }
-    .icon3{
-        margin-left: 110px;
-        margin-bottom: 10px;
-    }
-    .icon4{
-        margin-left: 110px;
-        margin-bottom: 10px;
-    }
-    .correct{
-        border-radius: 0;
-        padding-bottom: 15px;
-        padding: 0;
-    }
-    .correct h3{
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 15px;
-        font-size: 23px;
-    }
-    .correct p{
-        padding: 0 10%;
-        text-align: center;
-    }
-    .point{
-        display: block;
-        padding: 0 10px 30px 15px;
-    }
-    .point ul{
-        margin-bottom: 0;
-    }
-    .point ul li::before {
-        font-size: 1.5em;
-    }
-    .point li {
-        font-size: 16px;
-    }
-    .connect{
-        border-radius: 0;
-        padding: 20px;
-        text-align: center;
-    }
-    .connect h3{
-        padding-bottom: 30px;
-        padding-top: 15px;
-    }
-    .connect p{
-        padding-right: 0;
-    }
-    .connect button{
-        margin-bottom: 40px;
-    }
-} */
-
-/* large mobile */
-/* @media screen and (max-width: 425px) {
-    .decision{
-        width: 100%;
-        margin: 0;
-        display: block;
-    }
-    .details{
-        display: block;
-        width: 100%;
-        padding-left: 5%;
-        text-align: center;
-        padding: 0 15%;
-        margin-bottom: 20px;
-    }
-    .icon1{
-        margin-left: 124px;
-        margin-bottom: 10px;
-    }
-    .icon2{
-        margin-left: 124px;
-        margin-bottom: 10px;
-    }
-    .icon3{
-        margin-left: 124px;
-        margin-bottom: 10px;
-    }
-    .icon4{
-        margin-left: 124px;
-        margin-bottom: 10px;
-    }
-    .developerSection h1{
-        text-align: center;
-        margin-left: 0;
-        margin-top: 40px;
-    }
-    .correct{
-        border-radius: 0;
-        padding-bottom: 15px;
-        padding: 0;
-    }
-    .correct h3{
-        text-align: center;
-        padding-top: 20px;
-        padding-bottom: 15px;
-        font-size: 23px;
-    }
-    .correct p{
-        padding: 0 10%;
-        text-align: center;
-    }
-    .point{
-        display: block;
-        padding: 0 10px 30px 15px;
-    }
-    .point ul{
-        margin-bottom: 0;
-    }
-    .point ul li::before {
-        font-size: 1.5em;
-    }
-    .point li {
-        font-size: 16px;
-    }
-    .connect{
-        border-radius: 0;
-        padding: 20px;
-        text-align: center;
-    }
-    .connect h3{
-        padding-bottom: 30px;
-        padding-top: 15px;
-    }
-    .connect p{
-        padding-right: 0;
-    }
-    .connect button{
-        margin-bottom: 40px;
-    }
-} */
-
-/* tablet */
-/* @media screen and (max-width: 768px) {
-    .decision{
-        width: 100%;
-        margin: 0;
-        display: block;
-    }
-    .image{
-        margin-top: 67%;
-    }
-    .headText{
-        margin-left: 10px;
-        margin-top: 0;
-    }
-    .details{
-        margin-right: 0;
-        width: 95%;
-    }
-    .icon1{
-        margin-bottom: 20px;
-    }
-    .icon2{
-        margin-bottom: 20px;
-    }
-    .icon3{
-        margin-bottom: 20px;
-    }
-    .icon4{
-        margin-bottom: 20px;
-    }
-    .correct{
-        border-radius: 0;
-        padding-right: 150px;
-    }
-    .correct h3{
-        padding-top: 20px;
-        padding-bottom: 15px;
-        font-size: 35px;
-    }
-    .correct p{
-        font-size: 20px;
-        line-height: 35px;
-    }
-    .point ul li::before {
-        font-size: 2em;
-    }
-    .point li {
-        font-size: 20px;
-    }
-    .connect{
-        border-radius: 0;
-        text-align: center;
-        padding: 93px 0;
-    }
-    .connect h3{
-        padding-bottom: 30px;
-        padding-top: 15px;
-        font-size: 35px;
-    }
-    .connect p{
-        padding-right: 0;
-        font-size: 20px;
-    }
-    .connect button{
-        font-size: 18px;
-    }
-    .fees{
-        margin-left: 10px;
-    }
-    .income{
-        margin-left: 10px;
-    }
-    .content{
-        margin-left: 10px;
-    }
-    .awareness{
-        margin-left: 10px;
-    }
-} */
-
-/* laptop medium */
-/* @media screen and (max-width: 1024px) {
-    .decision {
-        margin-left: 2%;
-        width: 96%;
-    }
-    .correct{
-        padding-right: 70px;
-        padding-left: 50px;
-        padding-bottom: 50px;
-    }
-    .correct h3{
-        font-size: 35px;
-    }
-    .correct p{
-        font-size: 20px;
-        line-height: 30px;
-    }
-    .connect{
-        padding-right: 100px;
-        padding-left: 50px;
-    }
-    .connect h3{
-        font-size: 35px;
-    }
-    .connect p{
-        font-size: 20px;
-        line-height: 30px;
-    }
-    .connect button{
-        font-size: 20px;
-    }
-    .details{
-        width: 89%;
-        margin-left: 52px;
-    }
-} */

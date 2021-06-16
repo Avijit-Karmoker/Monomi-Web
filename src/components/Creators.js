@@ -13,27 +13,27 @@ const ForDevelopers = () => {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                         <img className={creatorStyle.image} src={"../assets/images/Kurejams.png"} alt="" />
                     </div>
-                    <div className="col-lg-8 col-md-6 col-sm-12 p-0">
+                    <div className="col-lg-8 col-md-6 col-sm-12">
                         <h1 className={creatorStyle.headText}>{t("home:creators.head")}</h1>
                         <div className={creatorStyle.details}>
                             <div class="row">
-                                <div class="col-lg-2 col-sm-12 pe-0">
+                                <div class="col-lg-2 col-sm-12">
                                         <div className={creatorStyle.icon1}>
                                             <FontAwesomeIcon style={{ width: '20px' }} icon={faGift} />
                                         </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-12 ps-0">
+                                <div class="col-lg-4 col-sm-12">
                                     <div className={creatorStyle.fees}>
                                         <h3>{t("home:creators.freePlatform")}</h3>
                                         <p>{t("home:creators.noFees")}</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-sm-12 pe-0">
+                                <div class="col-lg-2 col-sm-12">
                                     <div className={creatorStyle.icon2}>
                                         <FontAwesomeIcon style={{ width: '20px' }} icon={faCreditCard} />
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-12 ps-0">
+                                <div class="col-lg-4 col-sm-12">
                                     <div className={creatorStyle.income}>
                                         <h3>{t("home:creators.income")}</h3>
                                         <p>{t("home:creators.incomeAbout")}</p>
@@ -41,23 +41,23 @@ const ForDevelopers = () => {
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-2 col-sm-12 pe-0">
+                                <div class="col-lg-2 col-sm-12">
                                     <div className={creatorStyle.icon3}>
                                         <FontAwesomeIcon style={{ width: '20px' }} icon={faStar} />
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-12 ps-0">
+                                <div class="col-lg-4 col-sm-12">
                                     <div className={creatorStyle.content}>
                                         <h3>{t("home:creators.uniqueContent")}</h3>
                                         <p>{t("home:creators.uniqueContentText")}</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-sm-12 pe-0">
+                                <div class="col-lg-2 col-sm-12">
                                     <div className={creatorStyle.icon4}>
                                         <FontAwesomeIcon style={{ width: '20px' }} icon={faExpandArrowsAlt} />
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-12 ps-0">
+                                <div class="col-lg-4 col-sm-12">
                                     <div className={creatorStyle.awareness}>
                                         <h3>{t("home:creators.awareness")}</h3>
                                         <p>{t("home:creators.awarenessText")}</p>
