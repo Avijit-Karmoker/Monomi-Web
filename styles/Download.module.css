@@ -32,7 +32,7 @@
     padding-bottom: 7%;
 }
 
-@media (max-width: 320px){
+@media (max-width: 320px) and (min-width: 320px) {
     .download{
         width: 102%;
         text-align: center;

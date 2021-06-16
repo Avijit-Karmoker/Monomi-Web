@@ -44,7 +44,7 @@
     font-size: 18px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 320px) and (min-width: 320px) {
     .memberSection {
         width: 102%;
     }
