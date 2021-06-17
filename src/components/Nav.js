@@ -1,17 +1,21 @@
 import navStyle from '../../styles/Nav.module.css';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'reactstrap';
+import Image from 'next/image';
 
 const Nav = () => {
     const { t } = useTranslation(['home']);
     return (
         <div className={navStyle.navbar}>
             <div className={navStyle.nav}>
-                <nav class="navbar navbar-expand-lg navbar-light container" style={{backgroundColor: "#EDF1F3"}}>
+                <nav class="navbar navbar-expand-lg navbar-light container" style={{ backgroundColor: "#EDF1F3" }}>
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
                             <span className={navStyle.image}>
-                                <img src={"../assets/images/logo.png"} alt="logo" id="logoImage" />
+                                <Image src="/../public/assets/images/logo.png"
+                                    alt="Picture of the author"
+                                    width={200}
+                                    height={45} />
                             </span>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
