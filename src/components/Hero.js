@@ -8,7 +8,7 @@ const Header = () => {
     const { t, i18next } = useTranslation(['home']);
     return (
         <section className={headerStyles.header}>
-            <div className="row m-0">
+            <div className="row align-items-center container m-auto">
                 <div className="col-md-6 col-sm-12">
                     <div className={headerStyles.headerText}>
                         <h1 className={headerStyles.headerh1}>{t("home:hero.heading")}</h1>
@@ -22,7 +22,7 @@ const Header = () => {
                         src="/../public/assets/images/Hero.png"
                         alt="img"
                         width="700px"
-                        height="950px" />
+                        height="700px" />
                     </div>
                 </div>
             </div>
