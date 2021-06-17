@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  background-color: #EDF1F3;
 }
 
 .headerh1 {
@@ -46,9 +47,6 @@
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  /* .headerText {
-    margin-left: 5%;
-  } */
   .headerh1 {
     padding-right: 0;
     font-size: 30px;
@@ -60,8 +58,7 @@
 
 @media (min-width: 1025px) and (max-width: 1440px) {
   .header {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding-top: 30px;
     align-items: center;
   }
   .headerText {

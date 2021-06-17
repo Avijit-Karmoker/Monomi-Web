@@ -3,24 +3,30 @@ import creatorStyle from '../../styles/Creator.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard, faExpandArrowsAlt, faGift, faStar } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
 
 const ForDevelopers = () => {
     const { t } = useTranslation(['home']);
     return (
         <section className={creatorStyle.creators}>
             <div className={creatorStyle.developerSection}>
-                <div className="row m-0">
+                <div className="row m-0 align-items-center">
                     <div className="col-lg-4 col-md-6 col-sm-12">
-                        <img className={creatorStyle.image} src={"../assets/images/Kurejams.png"} alt="" />
+                        <div className={creatorStyle.image}>
+                            <Image src="/../public/assets/images/Kurejams.png"
+                                alt="Picture of the author"
+                                width={700}
+                                height={650} />
+                        </div>
                     </div>
                     <div className="col-lg-8 col-md-6 col-sm-12">
                         <h1 className={creatorStyle.headText}>{t("home:creators.head")}</h1>
                         <div className={creatorStyle.details}>
                             <div class="row">
                                 <div class="col-lg-2 col-sm-12">
-                                        <div className={creatorStyle.icon1}>
-                                            <FontAwesomeIcon style={{ width: '20px' }} icon={faGift} />
-                                        </div>
+                                    <div className={creatorStyle.icon1}>
+                                        <FontAwesomeIcon style={{ width: '20px' }} icon={faGift} />
+                                    </div>
                                 </div>
                                 <div class="col-lg-4 col-sm-12">
                                     <div className={creatorStyle.fees}>

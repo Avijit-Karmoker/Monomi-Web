@@ -1,223 +1,331 @@
-/* .creators{
-    background-color: #fff;
+.decision {
+  flex-direction: column;
+  margin: 0;
 }
-.image{
-    width: 170%;
-    margin-left: -70%;
+.point {
+  flex-direction: column;
+}
+.point li {
+  font-size: 16px;
+}
+.point ul {
+  margin-bottom: 0;
+}
+.headText {
+  margin-left: 0;
+  text-align: center;
+  color: #003452;
+  margin-top: 30px;
+}
+.creators {
+  background-color: #fff;
+  width: 102%;
+}
+.details {
+  width: 73%;
+  margin: auto;
+  text-align: center;
+}
+.icon1 {
+  margin: auto;
+}
+.icon2 {
+  margin: auto;
+}
+.icon3 {
+  margin: auto;
+}
+.icon4 {
+  margin: auto;
+}
+.correct {
+  padding: 20px;
+  width: 100%;
+  border-radius: 25px;
+  background-color: #f6f8f9;
+}
+.connect {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #edf1f3;
+  background-image: url('../public/assets/images/bg-2.png');
+  background-size: 91% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  margin: 20px 0;
+}
+.connect h3 {
+  padding-bottom: 30px;
+}
+.connect p {
+  padding-right: 0;
 }
 
-.developerSection{
+.image {
+  margin-left: -14px;
+}
+
+.icon1 {
+  width: 50px;
+  background-image: url('../public/assets/images/Ellipse6.png');
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 15px;
+  color: #fff;
+  background-position: center;
+  margin-top: 2%;
+}
+
+.icon2 {
+  width: 50px;
+  background-image: url('../public/assets/images/Ellipse6.png');
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 15px;
+  color: #fff;
+  background-position: center;
+  margin-top: 2%;
+}
+
+.icon3 {
+  width: 50px;
+  background-image: url('../public/assets/images/Ellipse6.png');
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 15px;
+  color: #fff;
+  background-position: center;
+  margin-top: 2%;
+}
+
+.icon4 {
+  width: 50px;
+  background-image: url('../public/assets/images/Ellipse6.png');
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 15px;
+  color: #fff;
+  background-position: center;
+  margin-top: 2%;
+}
+
+@media (min-width: 992px) and (max-width: 1440px) {
+  .creators {
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  .decision {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    border-radius: 50px;
+    margin-top: 5%;
+    flex-direction: row;
+  }
+  .correct {
+    padding: 5% 10% 5% 5%;
+    background-color: #f6f8f9;
+    border-radius: 50px 0 0 50px;
+  }
+  .correct h3 {
+    font-size: 1.8em;
+    margin-bottom: 5%;
+  }
+  .connect {
+    padding: 5% 10% 5% 5%;
+    border-radius: 0 50px 50px 0;
+    margin: 0;
+  }
+  .connect h3 {
+    padding-bottom: 70px;
+  }
+  .connect p {
+    padding-bottom: 20px;
+    padding-right: 21px;
+  }
+  .details {
+    margin: 0;
+    width: 95%;
+  }
+  .headText {
+    margin-bottom: 45px;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1679px){
+  .creators {
+    background-color: #fff;
+  }
+  .image {
+    width: 135%;
+    margin-bottom: 50px;
+  }
+
+  .developerSection {
     padding-top: 10%;
     padding-bottom: 8%;
-}
+  }
 
-.details{
-    width: 60%;
-}
+  .details {
+    width: 80%;
+    margin-left: 150px;
+    margin-bottom: 50px;
+  }
 
-.developerDetail{
+  .developerDetail {
     display: flex;
     margin-left: 50px;
-}
+  }
 
-.headText{
+  .headText {
     margin-left: 50px;
-    padding-top: 2%;
     margin-bottom: 7%;
     color: #003452;
     font-size: 35px;
-}
+  }
 
-.singleDetail{
+  .singleDetail {
     width: 32%;
     padding-right: 10px;
     margin-right: 50px;
     margin-bottom: 2%;
     display: flex;
-}
-
-.icon1{
-    width: 50px;
-    background-image: url('../public/assets/images/Ellipse6.png');
-    height: 50px;
-    border-radius: 50px;
-    text-align: center;
-    padding-top: 15px;
-    color: #fff;
-    background-position: center;
-    margin-right: 20px;
-    margin-top: 2%;
-}
-
-.icon2{
-    width: 50px;
-    background-image: url('../public/assets/images/Ellipse6.png');
-    height: 50px;
-    border-radius: 50px;
-    text-align: center;
-    padding-top: 15px;
-    color: #fff;
-    background-position: center;
-    margin-right: 20px;
-    margin-top: 2%;
-}
-
-.icon3{
-    width: 50px;
-    background-image: url('../public/assets/images/Ellipse6.png');
-    height: 50px;
-    border-radius: 50px;
-    text-align: center;
-    padding-top: 15px;
-    color: #fff;
-    background-position: center;
-    margin-right: 20px;
-    margin-top: 2%;
-}
-
-.icon4{
-    width: 50px;
-    background-image: url('../public/assets/images/Ellipse6.png');
-    height: 50px;
-    border-radius: 50px;
-    text-align: center;
-    padding-top: 15px;
-    color: #fff;
-    background-position: center;
-    margin-right: 20px;
-    margin-top: 2%;
-}
-
-.point{
+  }
+  .point {
     display: flex;
-}
+    flex-direction: row;
+  }
 
-.point ul {
-    list-style: none; 
-}
-  
-.point ul li::before {
-    content: "\2022";  
-    color: #39B54A; 
-    font-weight: bold; 
-    display: inline-block; 
-    width: 1em; 
+  .point ul {
+    list-style: none;
+  }
+
+  .point ul li::before {
+    content: '\2022';
+    color: #39b54a;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
     margin-left: -1em;
     font-size: 1.5em;
-}
+  }
 
-.point li {
+  .point li {
     font-size: 18px;
-}
+  }
 
-.decision {
-    width: 65%;
+  .decision {
+    width: 85%;
     margin: auto;
-    display : flex;
+    display: flex;
     border-radius: 50px;
-    margin-top: 5%;
-}
+    flex-direction: row;
+  }
 
-.correct{
-    padding: 70px 180px 70px 90px;
+  .correct {
+    padding: 70px 100px 70px 90px;
     background-color: #f6f8f9;
     border-radius: 50px 0 0 50px;
-}
+  }
 
-.correct h3{
+  .correct h3 {
     padding-bottom: 40px;
-}
+  }
 
-.connect{
-    background-color: #EDF1F3;
+  .connect {
+    background-color: #edf1f3;
     background-image: url('../public/assets/images/bg-2.png');
-    padding: 70px 112px 70px 90px;
+    padding: 80px 112px 80px 90px;
     background-size: 91% 100%;
     background-position: right;
     background-repeat: no-repeat;
     border-radius: 0 50px 50px 0;
-}
+    margin: 0;
+  }
 
-.connect h3{
+  .connect h3 {
     padding-bottom: 70px;
-}
+  }
 
-.connect p{
+  .connect p {
     padding-bottom: 20px;
     padding-right: 21px;
-}
+  }
 
-.fees h3{
+  .fees h3 {
     padding-bottom: 12%;
     padding-top: 2%;
-}
+  }
 
-.fees{
+  .fees {
     margin-bottom: 50px;
-}
+  }
 
-.income h3{
+  .income h3 {
     padding-bottom: 5%;
-}
+  }
 
-.row1{
+  .row1 {
     padding-bottom: 20px;
+  }
 }
 
-@media (max-width: 320px) and (min-width: 320px) {
-    .decision{
-        flex-direction: column;
-        margin: 0;
+@media (min-width: 1680px) {
+    .creators{
+        padding-bottom: 100px;
+        padding-top: 50px;
     }
-    .point {
-        flex-direction: column;
-    }
-    .point li {
-        font-size: 16px;
-    }
-    .point ul {
-        margin-bottom: 0;
+    .details {
+        margin-left: 2%;
+        width: 65%;
     }
     .headText{
-        margin-left: 0;
-        text-align: center;
-        margin-top: 30px;
+        text-align: left;
+        margin-left: 4%;
+        margin-bottom: 5%;
     }
-    .creators{
-        width: 102%;
+    .fees h3{
+        padding-bottom: 20px;
     }
-    .details{
-        width: 73%;
+    .content h3{
+        padding-bottom: 20px;
+    }
+    .income h3{
+        padding-bottom: 20px;
+    }
+    .awareness h3{
+        padding-bottom: 20px;
+    }
+    .decision {
+        width: 70%;
         margin: auto;
-        text-align: center;
-    }
-    .icon1{
-        margin: auto;
-    }
-    .icon2{
-        margin: auto;
-    }
-    .icon3{
-        margin: auto;
-    }
-    .icon4{
-        margin: auto;
-    }
-    .correct{
-        padding: 20px;
-        width: 153%;
-        border-radius: 25px;
-    }
-    .connect{
-        padding: 20px;
-        width: 153%;
-        text-align: center;
-        border-radius: 25px;
-    }
-    .connect h3{
-        padding-bottom: 30px;
-    }
-    .connect p{
-        padding-right: 0;
-    }
-} */
+        display: flex;
+        border-radius: 50px;
+        margin-top: 5%;
+        flex-direction: row;
+      }
+      .correct {
+        padding: 5% 10% 5% 5%;
+        background-color: #f6f8f9;
+        border-radius: 50px 0 0 50px;
+      }
+      .correct h3 {
+        font-size: 1.8em;
+        margin-bottom: 5%;
+      }
+      .connect {
+        padding: 5% 10% 5% 5%;
+        border-radius: 0 50px 50px 0;
+        margin: 0;
+      }
+      .connect h3 {
+        padding-bottom: 70px;
+        padding-top: 35px;
+      }
+}
