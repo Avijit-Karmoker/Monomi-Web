@@ -24,13 +24,13 @@ const Nav = () => {
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ms-auto">
                                 <li class="nav-item" >
-                                    <a class="nav-link" href="#">{t("home:nav.creators")}</a>
+                                    <a class="nav-link" href="#creators">{t("home:nav.creators")}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">{t("home:nav.members")}</a>
+                                    <a class="nav-link" href="#members">{t("home:nav.members")}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">{t("home:nav.contact")}</a>
+                                    <a class="nav-link" href="#contact">{t("home:nav.contact")}</a>
                                 </li>
                                 <li>
                                     <Button className="rounded-pill">{t("home:nav.download")}</Button>

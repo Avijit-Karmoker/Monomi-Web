@@ -1,65 +1,118 @@
-.memberSection{
-    background-color: #EDF1F3;
-    padding-top: 7%;
-    padding-bottom: 10%;
+.memberSection {
+  width: 100%;
 }
 
-.membersText{
-    padding-left: 42%;
-    padding-top: 18%;
+.membersText {
+  padding-left: 10px;
+  padding-top: 10%;
 }
 
-.membersText h1{
-    padding-bottom: 18%;
-    color: #003452;
+.membersText h1 {
+  padding-bottom: 5%;
+  text-align: center;
 }
 
-.membersText p{
-    padding-bottom: 7%;
-    color: #003452;
-    font-size: 18px;
-}
-
-.image img{
-    width: 100%;
-}
-
-.membersText ul {
-    list-style: none; 
-  }
-
-.membersText ul li::before {
-    content: "\2022";  
-    color: #39B54A; 
-    font-weight: bold; 
-    display: inline-block; 
-    width: 1.2em; 
-    margin-left: -1em;
-    font-size: 1.5em;
+.membersText p {
+  padding-bottom: 0;
 }
 
 .membersText li {
-    padding: 10px 0;
-    padding-right: 10%;
-    font-size: 18px;
+  padding: 0;
 }
 
-@media (max-width: 320px) and (min-width: 320px) {
-    .memberSection {
-        width: 102%;
+.image {
+    text-align: right;
+}
+
+.membersText ul li::before {
+    content: '\2022';
+    color: #39b54a;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1em;
+    font-size: 1.5em;
+    list-style: none;
+  }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .memberSection{
+        align-items: center;
     }
     .membersText{
-        padding-left: 10px;
-        padding-top: 10%;
+        padding-top: 0;
+    }
+    .membersText li{
+        list-style: none;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1679px) {
+    .memberSection{
+        padding-top: 5%;
+    }
+    .membersText{
+        padding-top: 0;
+        margin-left: 20%;
     }
     .membersText h1{
-        padding-bottom: 5%;
-        text-align: center;
+        font-size: 2.5em;
+        padding-bottom: 10%;
     }
     .membersText p{
-        padding-bottom: 0;
+        font-size: 1.5em;
     }
-    .membersText li {
-        padding: 0;
+    .membersText li{
+        font-size: 1.2em;
+        list-style: none;
     }
+}
+
+@media (min-width: 1680px) {
+  .memberSection {
+    background-color: #edf1f3;
+    padding-top: 7%;
+    padding-bottom: 5%;
+  }
+
+  .membersText {
+    padding-left: 42%;
+    padding-top: 18%;
+  }
+
+  .membersText h1 {
+    padding-bottom: 18%;
+    color: #003452;
+    font-size: 2.5em;
+  }
+
+  .membersText p {
+    padding-bottom: 7%;
+    color: #003452;
+    font-size: 1.8em;
+  }
+
+  .image img {
+    width: 100%;
+  }
+
+  .membersText ul {
+    list-style: none;
+  }
+
+  .membersText ul li::before {
+    content: '\2022';
+    color: #39b54a;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1em;
+    font-size: 1.5em;
+  }
+
+  .membersText li {
+    padding: 10px 0;
+    padding-right: 10%;
+    font-size: 1.2em;
+  }
 }

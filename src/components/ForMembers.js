@@ -1,13 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import memberStyles from '../../styles/ForMembers.module.css';
+import Image from 'next/image';
 
 const ForMembers = () => {
     const {t} = useTranslation(['home']);
     return (
-        <section>
+        <section id="members">
             <div className={memberStyles.memberSection}>
-                <div className="row me-0">
+                <div className="row me-0 align-items-center">
                     <div className="col-md-5 col-sm-12">
                         <div className={memberStyles.membersText}>
                             <h1>{t("home:member.forMember")}</h1>
@@ -21,7 +22,7 @@ const ForMembers = () => {
                     </div>
                     <div className="col-md-7 col-sm-12 pe-0">
                         <div className={memberStyles.image}>
-                            <img src={"../assets/images/Nariams.png"} alt="Nariams" />
+                            <Image src="/../public/assets/images/Nariams.png" width="900px" height="700px" />
                         </div>
                     </div>
                 </div>

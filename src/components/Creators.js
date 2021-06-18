@@ -8,7 +8,7 @@ import Image from 'next/image';
 const ForDevelopers = () => {
     const { t } = useTranslation(['home']);
     return (
-        <section className={creatorStyle.creators}>
+        <section id="creators" className={creatorStyle.creators}>
             <div className={creatorStyle.developerSection}>
                 <div className="row m-0 align-items-center">
                     <div className="col-lg-4 col-md-6 col-sm-12">
