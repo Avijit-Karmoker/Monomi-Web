@@ -11,7 +11,7 @@ const Download = () => {
     return (
         <Suspense fallback="Loading...">
             <div className={downloadStyle.download}>
-                <div className="row m-0">
+                <div className="row m-0 align-items-center">
                     <div className="col-md-6 col-sm-12">
                         <div className={downloadStyle.image}>
                             <Image

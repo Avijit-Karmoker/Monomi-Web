@@ -1,48 +1,67 @@
-/* .download{
-    background-color: #39B54A;
+.download {
+  width: 102%;
+  text-align: center;
+  padding-bottom: 30px;
+  background-color: #39b54a;
+}
+.text {
+  padding-top: 0;
+}
+.button2 {
+  padding-top: 10px;
 }
 
-.image{
+.image {
+    padding-top: 10%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text h2{
+        padding-bottom: 5%;
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1679px) {
+    .text h2{
+        padding-bottom: 5%;
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1680px) {
+  .download {
+    background-color: #39b54a;
+  }
+
+  .image {
     padding-top: 7%;
     text-align: right;
-}
+  }
 
-.button1{
+  .button1 {
     height: 50px;
     padding: 0;
     border: none;
     background: none;
-}
+  }
 
-.button2{
+  .button2 {
     height: 50px;
     padding: 0;
     border: none;
     background: none;
     padding-left: 20px;
-}
+  }
 
-.text{
-    padding-top: 35%;
-}
+  .text h2{
+      padding-bottom: 5%;
+      font-size: 2.5em;
+  }
 
-.text p{
+  .text p {
     color: #003452;
     padding-top: 2%;
-    padding-bottom: 7%;
+    padding-bottom: 3%;
+  }
 }
-
-@media (max-width: 320px) and (min-width: 320px) {
-    .download{
-        width: 102%;
-        text-align: center;
-        padding-bottom: 30px;
-    }
-    .text{
-        padding-top: 0;
-    }
-    .button2{
-        padding-left: 0;
-        padding-top: 10px;
-    }
-} */
