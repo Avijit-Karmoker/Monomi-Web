@@ -14,12 +14,12 @@ const Nav = () => {
                             <span className={navStyle.image}>
                                 <Image src="/../public/assets/images/logo.png"
                                     alt="Picture of the author"
-                                    width={200}
-                                    height={45} />
+                                    width={150}
+                                    height={35} />
                             </span>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon" style={{width: "1em", height: "1em"}}></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ms-auto">
