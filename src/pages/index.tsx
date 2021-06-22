@@ -1,24 +1,24 @@
 import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Nav from '@/components/Nav'
-import Hero from '@/components/Hero';
-import Creators from '@/components/Creators';
+import Hero from '@/components/Hero'
+import Creators from '@/components/Creators'
 import ForMembers from '@/components/ForMembers'
 import Download from '@/components/Download'
-import Footer from '@/components/Footer';
+import Footer from '@/components/Footer'
 
 export default function Landing() {
   return (
-      <div>
-        <Nav />
-        <main>
-          <Hero></Hero>
-          <Creators></Creators>
-          <ForMembers></ForMembers>
-          <Download></Download>
-          <Footer></Footer>
-        </main>
-      </div>
+    <div>
+      <Nav />
+      <main>
+        <Hero></Hero>
+        <Creators></Creators>
+        <ForMembers></ForMembers>
+        <Download></Download>
+        <Footer></Footer>
+      </main>
+    </div>
   )
 }
 

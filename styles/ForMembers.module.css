@@ -22,51 +22,52 @@
 }
 
 .image {
-    text-align: right;
+  text-align: right;
 }
 
 .membersText ul li::before {
-    content: '\2022';
-    color: #39b54a;
-    font-weight: bold;
-    display: inline-block;
-    width: 1.2em;
-    margin-left: -1em;
-    font-size: 1.5em;
-    list-style: none;
-  }
+  content: '\2022';
+  color: #39b54a;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.2em;
+  margin-left: -1em;
+  font-size: 1.5em;
+  list-style: none;
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .memberSection{
-        align-items: center;
-    }
-    .membersText{
-        padding-top: 0;
-    }
-    .membersText li{
-        list-style: none;
-    }
+  .memberSection {
+    align-items: center;
+    padding: 5% 0;
+  }
+  .membersText {
+    padding-top: 0;
+  }
+  .membersText li {
+    list-style: none;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1679px) {
-    .memberSection{
-        padding-top: 5%;
-    }
-    .membersText{
-        padding-top: 0;
-        margin-left: 20%;
-    }
-    .membersText h1{
-        font-size: 2.5em;
-        padding-bottom: 10%;
-    }
-    .membersText p{
-        font-size: 1.5em;
-    }
-    .membersText li{
-        font-size: 1.2em;
-        list-style: none;
-    }
+  .memberSection {
+    padding-top: 5%;
+  }
+  .membersText {
+    padding-top: 0;
+    margin-left: 20%;
+  }
+  .membersText h1 {
+    font-size: 2.5em;
+    padding-bottom: 10%;
+  }
+  .membersText p {
+    font-size: 1.5em;
+  }
+  .membersText li {
+    font-size: 1.2em;
+    list-style: none;
+  }
 }
 
 @media (min-width: 1680px) {

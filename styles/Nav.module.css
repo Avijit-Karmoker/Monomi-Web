@@ -1,17 +1,17 @@
 .navbar {
-  width: 102%;
+  width: 100%;
 }
-.nav{
-    background-color: #EDF1F3;
+.nav {
+  background-color: #edf1f3;
 }
 
 @media (min-width: 1680) {
-    .nav{
-        background-color: #EDF1F3;
-        padding-bottom: 2%;
-    }
-    
-    .nav li {
-        margin-right: 10px;
-    }
+  .nav {
+    background-color: #edf1f3;
+    padding-bottom: 2%;
+  }
+
+  .nav li {
+    margin-right: 10px;
+  }
 }
