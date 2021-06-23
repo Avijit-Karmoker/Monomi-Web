@@ -17,14 +17,12 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .text h2 {
-    padding-bottom: 5%;
     font-size: 2em;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1679px) {
   .text h2 {
-    padding-bottom: 5%;
     font-size: 2em;
   }
 }
@@ -55,7 +53,6 @@
   }
 
   .text h2 {
-    padding-bottom: 5%;
     font-size: 2.5em;
   }
 
