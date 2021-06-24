@@ -1,18 +1,29 @@
 .download {
   width: 100%;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   background-color: #39b54a;
 }
 .text {
   padding-top: 0;
+  margin-bottom: 0;
 }
+
+.text p{
+  margin-bottom: 0;
+}
+
+.button1{
+  padding-bottom: 0;
+}
+
 .button2 {
-  padding-top: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .image {
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

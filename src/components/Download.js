@@ -17,7 +17,7 @@ const Download = () => {
                 src='/../public/assets/images/iPhone12.png'
                 alt='Picture of the author'
                 width={800}
-                height={800}
+                height={700}
               />
             </div>
           </div>

@@ -6,7 +6,7 @@ import footerStyle from '../../styles/Footer.module.css'
 const Footer = () => {
   const { t } = useTranslation(['home'])
   return (
-    <section>
+    <section id="footer">
       <div className={footerStyle.footer}>
         <div className='container'>
           <div className='row m-0'>
@@ -15,8 +15,8 @@ const Footer = () => {
                 <Image
                   src='/../public/assets/images/logo.png'
                   alt='monomi'
-                  width='180px'
-                  height='40px'
+                  width={180}
+                  height={40}
                 />
               </div>
               <br />

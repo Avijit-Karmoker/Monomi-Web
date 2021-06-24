@@ -4,16 +4,19 @@
 
 .membersText {
   padding-left: 10px;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .membersText h1 {
   padding-bottom: 5%;
   text-align: center;
+  font-size: 1.7em;
+  margin-bottom: 0;
 }
 
 .membersText p {
   padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .membersText li {

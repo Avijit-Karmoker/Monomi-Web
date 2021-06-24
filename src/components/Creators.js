@@ -110,9 +110,11 @@ const ForDevelopers = () => {
           <div className={creatorStyle.connect}>
             <h3>{t('home:creators.contactUs')}</h3>
             <p>{t('home:creators.createCommunity')}</p>
-            <button type='button' class='btn btn-success rounded-pill'>
-              {t('home:creators.contact')}
-            </button>
+            <a href='#footer' className='text-white'>
+              <button type='button' class='btn btn-success rounded-pill'>
+                {t('home:creators.contact')}
+              </button>
+            </a>
           </div>
         </div>
       </div>

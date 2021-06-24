@@ -4,9 +4,9 @@
 }
 
 .headerh1 {
-  font-size: 25px;
+  font-size: 20px;
   padding-right: 0;
-  margin: 25px 0;
+  margin: 15px 0;
 }
 
 .headerText {
@@ -17,6 +17,7 @@
 
 .headerP {
   margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .image {

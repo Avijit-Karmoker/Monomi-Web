@@ -21,8 +21,8 @@ const Header = () => {
             <Image
               src='/../public/assets/images/Hero.png'
               alt='img'
-              width='700px'
-              height='700px'
+              width={700}
+              height={700}
             />
           </div>
         </div>

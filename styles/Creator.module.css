@@ -2,52 +2,64 @@
   flex-direction: column;
   margin: 0;
 }
+
 .point {
   flex-direction: column;
 }
+
 .point li {
   font-size: 16px;
 }
+
 .point ul {
   margin-bottom: 0;
 }
+
 .headText {
   margin-left: 0;
   text-align: center;
   color: #003452;
-  margin-top: 30px;
+  margin-top: 15px;
+  font-size: 1.8em;
 }
+
 .creators {
   background-color: #fff;
   width: 100%;
 }
+
 .details {
   width: 73%;
   margin: auto;
-  text-align: center;
 }
-.icon1 {
-  margin: auto;
+
+.details p{
+  font-size: 13px;
 }
-.icon2 {
-  margin: auto;
-}
-.icon3 {
-  margin: auto;
-}
-.icon4 {
-  margin: auto;
+
+.details h3{
+  font-size: 1.3em;
 }
 
 .decision {
   padding-bottom: 5%;
 }
+
+.decision p{
+  font-size: 13px;
+}
+
+.decision li{
+  font-size: 13px;
+}
+
 .correct {
   padding: 20px;
   width: 100%;
   border-radius: 25px;
   background-color: #f6f8f9;
 }
+
 .connect {
   padding: 20px;
   width: 100%;
@@ -60,9 +72,11 @@
   background-repeat: no-repeat;
   margin: 20px 0;
 }
+
 .connect h3 {
-  padding-bottom: 30px;
+  padding-bottom: 0;
 }
+
 .connect p {
   padding-right: 0;
 }
@@ -191,11 +205,11 @@
     margin: 0;
   }
   .connect h3 {
-    padding-bottom: 70px;
+    padding-top: 9%;
   }
   .connect p {
-    padding-bottom: 20px;
-    padding-right: 21px;
+    padding-bottom: 0;
+    padding-right: 0;
   }
   .details {
     margin: 0;
@@ -203,6 +217,18 @@
   }
   .headText {
     margin-bottom: 45px;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1560px) {
+  .connect h3 {
+    padding-top: 25%;
+  }
+}
+
+@media (min-width: 1561px) and (max-width: 1679px) {
+  .connect h3 {
+    padding-top: 18%;
   }
 }
 
@@ -280,6 +306,7 @@
     padding: 70px 100px 70px 90px;
     background-color: #f6f8f9;
     border-radius: 50px 0 0 50px;
+    width: 200%;
   }
 
   .correct h3 {
@@ -297,13 +324,8 @@
     margin: 0;
   }
 
-  .connect h3 {
-    padding-bottom: 70px;
-  }
-
   .connect p {
-    padding-bottom: 20px;
-    padding-right: 21px;
+    margin-bottom: 0;
   }
 
   .fees h3 {
@@ -373,7 +395,6 @@
     margin: 0;
   }
   .connect h3 {
-    padding-bottom: 70px;
-    padding-top: 35px;
+    padding-top: 60px;
   }
 }

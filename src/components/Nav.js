@@ -49,12 +49,12 @@ const Nav = () => {
                     {t('home:nav.members')}
                   </a>
                 </li>
-                <li class='nav-item me-2'>
+                <li class='nav-item'>
                   <a class='nav-link' href='#contact'>
                     {t('home:nav.contact')}
                   </a>
                 </li>
-                <li>
+                <li class="pe-0">
                   <Button className='rounded-pill'>
                     {t('home:nav.download')}
                   </Button>
