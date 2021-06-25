@@ -68,7 +68,6 @@
   .headerText {
     margin-left: 3%;
     text-align: left;
-    margin-top: 50px;
   }
   .headerh1 {
     padding-right: 0;
@@ -77,6 +76,10 @@
   .headerP {
     margin-bottom: 13%;
     margin-top: 15%;
+    font-size: 1.2em;
+  }
+  .image {
+    padding-left: 10%;
   }
 }
 
@@ -88,6 +91,8 @@
   .image {
     text-align: right;
     padding-bottom: 3%;
+    width: 80%;
+    margin-left: auto;
   }
 
   .image img {

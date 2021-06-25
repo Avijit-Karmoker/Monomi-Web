@@ -30,7 +30,7 @@ const ForDevelopers = () => {
             <h1 className={creatorStyle.headText}>{t('home:creators.head')}</h1>
             <div className={creatorStyle.details}>
               <div class='row'>
-                <div class='col-lg-2 col-sm-12'>
+                <div class='col-lg-1 col-sm-12'>
                   <div className={creatorStyle.icon1}>
                     <FontAwesomeIcon style={{ width: '20px' }} icon={faGift} />
                   </div>
@@ -41,7 +41,7 @@ const ForDevelopers = () => {
                     <p>{t('home:creators.noFees')}</p>
                   </div>
                 </div>
-                <div class='col-lg-2 col-sm-12'>
+                <div class='col-lg-1 col-sm-12'>
                   <div className={creatorStyle.icon2}>
                     <FontAwesomeIcon
                       style={{ width: '20px' }}
@@ -57,7 +57,7 @@ const ForDevelopers = () => {
                 </div>
               </div>
               <div class='row'>
-                <div class='col-lg-2 col-sm-12'>
+                <div class='col-lg-1 col-sm-12'>
                   <div className={creatorStyle.icon3}>
                     <FontAwesomeIcon style={{ width: '20px' }} icon={faStar} />
                   </div>
@@ -68,7 +68,7 @@ const ForDevelopers = () => {
                     <p>{t('home:creators.uniqueContentText')}</p>
                   </div>
                 </div>
-                <div class='col-lg-2 col-sm-12'>
+                <div class='col-lg-1 col-sm-12'>
                   <div className={creatorStyle.icon4}>
                     <FontAwesomeIcon
                       style={{ width: '20px' }}
