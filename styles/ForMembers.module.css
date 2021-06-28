@@ -17,14 +17,14 @@
 .membersText p {
   padding-bottom: 0;
   margin-bottom: 0;
-  font-size: 13px;
+  font-size: 1.2em;
   font-weight: 600;
 }
 
 .membersText li {
   padding: 0;
   list-style: none;
-  font-size: 13px;
+  font-size: 1.1em;
 }
 
 .image {

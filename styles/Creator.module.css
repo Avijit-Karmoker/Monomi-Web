@@ -33,23 +33,26 @@
 }
 
 .details p{
-  font-size: 13px;
+  font-size: 1.2em;
 }
 
 .details h3{
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .decision {
   padding-bottom: 1px;
 }
+.decision h3{
+  font-size: 1.5em;
+}
 
 .decision p{
-  font-size: 13px;
+  font-size: 1.2em;
 }
 
 .decision li{
-  font-size: 13px;
+  font-size: 1.2em;
 }
 
 .correct {
@@ -93,7 +96,7 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
 .icon2 {
@@ -105,7 +108,7 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
 .icon3 {
@@ -117,7 +120,7 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
 .icon4 {
@@ -129,7 +132,7 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
 @media (min-width: 425px) and (max-width: 768px) {
@@ -233,7 +236,7 @@
   }
   .details {
     margin: 0;
-    width: 95%;
+    width: 120%;
   }
   .details p {
     font-size: 1.2em;
@@ -248,6 +251,18 @@
   .decision li {
     font-size: 1.1em;
   }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
+  }
 }
 
 @media (min-width: 1441px) and (max-width: 1560px) {
@@ -260,6 +275,21 @@
   .decision li {
     font-size: 1.1em;
   }
+  .details p {
+    font-size: 1.2em;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
+  }
 }
 
 @media (min-width: 1561px) and (max-width: 1679px) {
@@ -271,6 +301,18 @@
   }
   .decision li {
     font-size: 1.1em;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
   }
 }
 
@@ -300,8 +342,8 @@
   }
 
   .headText {
-    margin-left: 50px;
-    margin-bottom: 7%;
+    margin-left: 150px;
+    margin-bottom: 5%;
     color: #003452;
     font-size: 35px;
   }
@@ -386,6 +428,18 @@
   .row1 {
     padding-bottom: 20px;
   }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
+  }
 }
 
 @media (min-width: 1680px) {
@@ -450,5 +504,17 @@
   }
   .decision li {
     font-size: 1.1em;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
   }
 }
