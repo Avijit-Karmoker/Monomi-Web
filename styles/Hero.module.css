@@ -40,6 +40,7 @@
   }
   .headerP {
     margin-bottom: 5%;
+    font-size: 1.1em;
   }
   .image {
     padding: 30px 30px 0 30px;
@@ -57,6 +58,7 @@
   }
   .headerP {
     margin-bottom: 13%;
+    font-size: 1.1em;
   }
 }
 
@@ -112,5 +114,6 @@
 
   .headerP {
     margin-bottom: 10%;
+    font-size: 1.2em;
   }
 }

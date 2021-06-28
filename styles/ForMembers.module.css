@@ -17,11 +17,14 @@
 .membersText p {
   padding-bottom: 0;
   margin-bottom: 0;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .membersText li {
   padding: 0;
   list-style: none;
+  font-size: 13px;
 }
 
 .image {
@@ -39,6 +42,15 @@
   list-style: none;
 }
 
+@media (min-width: 500px) and (max-width: 768px) {
+  .membersText p {
+    font-size: 1.2em;
+  }
+  .membersText li {
+    font-size: 1.1em;
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .memberSection {
     align-items: center;
@@ -51,8 +63,13 @@
   .membersText h1{
     text-align: left;
   }
+  .membersText p {
+    font-weight: 600;
+    font-size: 1.2em;
+  }
   .membersText li {
     list-style: none;
+    font-size: 1.1em;
   }
 }
 
