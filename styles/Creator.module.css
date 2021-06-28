@@ -235,9 +235,18 @@
     margin: 0;
     width: 95%;
   }
+  .details p {
+    font-size: 1.2em;
+  }
   .headText {
     margin-bottom: 45px;
     margin-left: 0;
+  }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li {
+    font-size: 1.1em;
   }
 }
 
@@ -245,11 +254,23 @@
   .connect h3 {
     padding-top: 25%;
   }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li {
+    font-size: 1.1em;
+  }
 }
 
 @media (min-width: 1561px) and (max-width: 1679px) {
   .connect h3 {
     padding-top: 18%;
+  }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li {
+    font-size: 1.1em;
   }
 }
 
@@ -312,7 +333,7 @@
   }
 
   .point li {
-    font-size: 18px;
+    font-size: 1.1em;
   }
 
   .decision {
@@ -417,5 +438,17 @@
   }
   .connect h3 {
     padding-top: 60px;
+  }
+  .details p {
+    font-size: 1.2em;
+  }
+  .details h3 {
+    font-size: 1.7em;
+  }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li {
+    font-size: 1.1em;
   }
 }
