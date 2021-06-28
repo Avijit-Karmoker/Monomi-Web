@@ -18,7 +18,7 @@ const parser = new Parser({
   defaultLng: defaultLanguage.id,
 })
 
-sync(path.join(__dirname, '../src/**/*.{ts,tsx}')).forEach((file) =>
+sync(path.join(__dirname, '../src/**/*.{ts,tsx,js,jsx}')).forEach((file) =>
   parser.parseFuncFromString(
     readFileSync(file, 'utf-8'),
     { list: ['t'] },

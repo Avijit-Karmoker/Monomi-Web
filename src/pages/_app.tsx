@@ -62,13 +62,22 @@ function App({ Component, pageProps }: AppProps) {
             />
             <meta name='theme-color' content={theme.colors.primary} />
             <link rel='stylesheet' href={fonts.url} />
+            <link
+              rel='stylesheet'
+              href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css'
+            />
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js'></script>
           </Head>
 
           <ThemeProvider theme={theme}>
             <PersistGate persistor={persistor}>
-              <Layout>
+              {router.route === '/' ? (
                 <Component {...pageProps} />
-              </Layout>
+              ) : (
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              )}
             </PersistGate>
           </ThemeProvider>
         </CacheProvider>

@@ -1,0 +1,52 @@
+{
+  "creators": {
+    "association": "For associations",
+    "athletes": "For athletes",
+    "awareness": "Recognition and awareness",
+    "awarenessText": "An opportunity to increase your online awareness and find more like-minded people",
+    "contact": "Contact",
+    "contactUs": "Contact us",
+    "createCommunity": "and create your community now!",
+    "decision": "Is Monomi right for you?",
+    "decisionPoint": "Very likely. Monomi can be beneficial for the following forms of activity:",
+    "freePlatform": "Free platform",
+    "head": "For Creators",
+    "income": "Steady income, thus financial stability.",
+    "incomeAbout": " An opportunity to grow and develop with/by the support of the community members only.",
+    "institutions": "Institutions",
+    "noFees": "No additional fees for creators - all clear and sound.",
+    "profit": "For non-profit and profit organizations",
+    "projects": "For temporary and long-term projects",
+    "uniqueContent": "Unique content.",
+    "uniqueContentText": "Share unique and exciting content with your community, lead relevant discussions.",
+    "variousContent": "For various content creators"
+  },
+  "download": {
+    "becomeMember": "and become a member of the community!",
+    "downloadMonomi": "Download Monomi"
+  },
+  "footer": {
+    "contact": "Feel free to contact us! 👋",
+    "copyrightIssue": "© 2021 UAB Monomi, į.k. 305628706",
+    "link": "labas@monomi.lt",
+    "privatePolicy": "Privacy policy"
+  },
+  "hero": {
+    "about": "Monomi empowers creative people to create and share their work with a community built around their work, passions, and beliefs instead of creating at the mercy of algorithms and click-baiting.",
+    "callToAction": "Create your community",
+    "heading": "Build a community around your creative work"
+  },
+  "member": {
+    "becomeMember": "Become a member of the developer community and make a positive impact together",
+    "creators": "Discover the developers",
+    "forMember": "For Members",
+    "grateFor": "Monomi is great for:",
+    "uniqueContent": "Follow developer exclusive content, participate in community discussions"
+  },
+  "nav": {
+    "contact": "Contact us",
+    "creators": "Creators",
+    "download": "Download",
+    "members": "For Members"
+  }
+}

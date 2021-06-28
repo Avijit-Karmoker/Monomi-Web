@@ -1,0 +1,75 @@
+.download {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  background-color: #39b54a;
+}
+.text {
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+.text p{
+  margin-bottom: 0;
+}
+
+.button1{
+  padding-bottom: 0;
+}
+
+.button2 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.image {
+  padding-top: 5%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .text h2 {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1679px) {
+  .text h2 {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1680px) {
+  .download {
+    background-color: #39b54a;
+  }
+
+  .image {
+    padding-top: 7%;
+    text-align: right;
+  }
+
+  .button1 {
+    height: 50px;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .button2 {
+    height: 50px;
+    padding: 0;
+    border: none;
+    background: none;
+    padding-left: 20px;
+  }
+
+  .text h2 {
+    font-size: 2.5em;
+  }
+
+  .text p {
+    color: #003452;
+    padding-top: 2%;
+    padding-bottom: 3%;
+  }
+}

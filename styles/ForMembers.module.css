@@ -1,0 +1,124 @@
+.memberSection {
+  width: 100%;
+}
+
+.membersText {
+  padding-left: 10px;
+  padding-top: 5%;
+}
+
+.membersText h1 {
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 1.7em;
+  margin-bottom: 0;
+}
+
+.membersText p {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.membersText li {
+  padding: 0;
+  list-style: none;
+}
+
+.image {
+  text-align: right;
+}
+
+.membersText ul li::before {
+  content: '\2022';
+  color: #39b54a;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.2em;
+  margin-left: -1em;
+  font-size: 1.5em;
+  list-style: none;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .memberSection {
+    align-items: center;
+    padding: 5% 0;
+  }
+  .membersText {
+    padding-top: 0;
+  }
+  .membersText li {
+    list-style: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1679px) {
+  .memberSection {
+    padding-top: 5%;
+  }
+  .membersText {
+    padding-top: 0;
+    margin-left: 20%;
+  }
+  .membersText h1 {
+    font-size: 2.5em;
+    padding-bottom: 10%;
+  }
+  .membersText p {
+    font-size: 1.5em;
+  }
+  .membersText li {
+    font-size: 1.2em;
+    list-style: none;
+  }
+}
+
+@media (min-width: 1680px) {
+  .memberSection {
+    background-color: #edf1f3;
+    padding-top: 7%;
+    padding-bottom: 5%;
+  }
+
+  .membersText {
+    padding-left: 42%;
+    padding-top: 18%;
+  }
+
+  .membersText h1 {
+    padding-bottom: 18%;
+    color: #003452;
+    font-size: 2.5em;
+    text-align: left;
+  }
+
+  .membersText p {
+    padding-bottom: 7%;
+    color: #003452;
+    font-size: 1.8em;
+  }
+
+  .image img {
+    width: 100%;
+  }
+
+  .membersText ul {
+    list-style: none;
+  }
+
+  .membersText ul li::before {
+    content: '\2022';
+    color: #39b54a;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1em;
+    font-size: 1.5em;
+  }
+
+  .membersText li {
+    padding: 10px 0;
+    padding-right: 10%;
+    font-size: 1.2em;
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "creators": {
+    "association": "Asociacijoms",
+    "athletes": "Sportininkams",
+    "awareness": "Plėtra ir žinomumas",
+    "awarenessText": "Galimybė padidinti savo žinomumą ir surasti daugiau bendraminčių",
+    "contact": "Susisiekti",
+    "contactUs": "Susisiekite su mumis",
+    "createCommunity": "ir sukurkite savo bendruomenę dabar!",
+    "decision": "Ar Monomi tinka man?",
+    "decisionPoint": "Greičiausiai taip. Monomi teikia naudą šioms ir kitoms veiklos formoms:",
+    "freePlatform": "Nemokama platforma",
+    "head": "Kūrėjams",
+    "income": "Finansinis stabilumas - pastovios pajamos",
+    "incomeAbout": "Galimybė augti ir tobulėti vien bendruomenės narių palaikymu",
+    "institutions": "įstaigoms",
+    "noFees": "Jokių mokesčių kūrėjams - aišku ir paprasta",
+    "profit": "Organizacijoms ir viešosioms įstaigoms",
+    "projects": "Projektams",
+    "uniqueContent": "Unikalus turinys",
+    "uniqueContentText": "Monomi platformoje galite dalintis išskirtiniu turiniu su savo bendruomenės nariais, vesti aktualias diskusijas",
+    "variousContent": "Turinio kūrėjams"
+  },
+  "download": {
+    "becomeMember": "ir tapkite bendruomenės nariu!",
+    "downloadMonomi": "Atsisiųskite Monomi"
+  },
+  "footer": {
+    "contact": "Susisiekite su mumis, jei turite atsiliepimų! 👋",
+    "copyrightIssue": "© 2021 UAB Monomi, į.k. 305628706",
+    "link": "labas@monomi.lt",
+    "privatePolicy": "Privatumo politika"
+  },
+  "hero": {
+    "about": "Monomi suteikia galimybę kūrybiškiems žmonėms ir organizacijoms dalintis savo veikla ir suburti bendraminčius, kurie Jus palaiko ir žavisi. Kurkite turinį tokį, kokį norite - nepriklausomą nuo algoritmų ir masinančių antrasčių.",
+    "callToAction": "Sukurk savo bendruomenę",
+    "heading": "Jūsų kūryba ir vizija yra vienijanti jėga"
+  },
+  "member": {
+    "becomeMember": "Tapkite kūrėjų bendruomenės nariais ir kartu darykite teigiamą poveikį",
+    "creators": "Atraskite kūrėjus",
+    "forMember": "Nariams",
+    "grateFor": "Naudodamiesi Monomi:",
+    "uniqueContent": "Sekite išskirtinį kūrėjų turinį, dalyvaukite bendruomenės diskusijose "
+  },
+  "nav": {
+    "contact": "Kontaktai",
+    "creators": "Kūrėjams",
+    "download": "Parsisiųsti",
+    "members": "Nariams"
+  }
+}
