@@ -9,7 +9,6 @@
 
 .membersText h1 {
   padding-bottom: 5%;
-  text-align: center;
   font-size: 1.7em;
   margin-bottom: 0;
 }
@@ -88,7 +87,7 @@
     text-align: left;
   }
   .membersText p {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   .membersText li {
     font-size: 1.2em;
