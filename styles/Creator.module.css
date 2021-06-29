@@ -16,7 +16,6 @@
 }
 
 .headText {
-  margin-left: 14%;
   color: #003452;
   margin-top: 15px;
   font-size: 1.8em;
@@ -28,7 +27,6 @@
 }
 
 .details {
-  width: 73%;
   margin: auto;
 }
 
@@ -137,16 +135,16 @@
 
 @media (min-width: 425px) and (max-width: 768px) {
   .correct{
-    width: 90%;
+    width: 97%;
     margin: auto;
-    padding: 10%;
+    padding: 5%;
   }
   .correct h3{
     padding-bottom: 30px;
     font-size: 2em;
   }
   .connect{
-    width: 90%;
+    width: 97%;
     margin: auto;
     padding: 10%;
     margin-top: 20px;
@@ -395,6 +393,7 @@
 
   .correct h3 {
     padding-bottom: 40px;
+    font-size: 1.7em;
   }
 
   .connect {
@@ -410,6 +409,10 @@
 
   .connect p {
     margin-bottom: 0;
+  }
+
+  .connect h3 {
+    font-size: 1.7em;
   }
 
   .fees h3 {
@@ -492,6 +495,7 @@
   }
   .connect h3 {
     padding-top: 75px;
+    font-size: 1.7em;
   }
   .details p {
     font-size: 1.2em;

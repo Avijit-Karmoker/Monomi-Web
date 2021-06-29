@@ -11,7 +11,7 @@ const Download = () => {
     <Suspense fallback='Loading...'>
       <div className={downloadStyle.download} id='download'>
         <div className='row m-0 align-items-center'>
-          <div className='col-md-6 col-sm-12'>
+          <div className='col-md-6 col-sm-12 p-0'>
             <div className={downloadStyle.image}>
               <Image
                 src='/../public/assets/images/iPhone12.png'

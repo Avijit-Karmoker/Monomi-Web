@@ -21,7 +21,7 @@ const ForDevelopers = () => {
               <Image
                 src='/../public/assets/images/Kurejams.png'
                 alt='Picture of the author'
-                width={700}
+                width={750}
                 height={650}
               />
             </div>

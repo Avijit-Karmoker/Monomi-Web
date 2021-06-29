@@ -79,7 +79,8 @@
   }
   .membersText {
     padding-top: 0;
-    margin-left: 20%;
+    margin-left: 18%;
+    padding-left: 0;
   }
   .membersText h1 {
     font-size: 2.5em;
