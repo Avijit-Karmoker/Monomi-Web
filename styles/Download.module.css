@@ -22,10 +22,6 @@
   padding-bottom: 0;
 }
 
-.image {
-  padding-top: 5%;
-}
-
 @media (min-width: 768px) and (max-width: 1024px) {
   .text h2 {
     font-size: 2em;
@@ -36,6 +32,9 @@
   .text h2 {
     font-size: 2em;
   }
+  .image {
+    width: 85%;
+  }
 }
 
 @media (min-width: 1680px) {
@@ -44,8 +43,10 @@
   }
 
   .image {
-    padding-top: 7%;
+    padding-top: 3%;
     text-align: right;
+    width: 75%;
+    margin-left: auto;
   }
 
   .button1 {
@@ -71,5 +72,6 @@
     color: #003452;
     padding-top: 2%;
     padding-bottom: 3%;
+    font-size: 1.3em;
   }
 }

@@ -5,6 +5,11 @@
 .nav li{
   padding: 0 10px;
 }
+
+.nav ul{
+  line-height: 30px;
+}
+
 .nav {
   background-color: #edf1f3;
 }

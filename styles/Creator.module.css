@@ -16,8 +16,6 @@
 }
 
 .headText {
-  margin-left: 0;
-  text-align: center;
   color: #003452;
   margin-top: 15px;
   font-size: 1.8em;
@@ -29,28 +27,30 @@
 }
 
 .details {
-  width: 73%;
   margin: auto;
 }
 
 .details p{
-  font-size: 13px;
+  font-size: 1.2em;
 }
 
 .details h3{
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .decision {
-  padding-bottom: 5%;
+  padding-bottom: 1px;
+}
+.decision h3{
+  font-size: 1.5em;
 }
 
 .decision p{
-  font-size: 13px;
+  font-size: 1.2em;
 }
 
 .decision li{
-  font-size: 13px;
+  font-size: 1.2em;
 }
 
 .correct {
@@ -94,7 +94,7 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
 .icon2 {
@@ -106,7 +106,7 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
 .icon3 {
@@ -118,7 +118,7 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
 .icon4 {
@@ -130,27 +130,39 @@
   padding-top: 15px;
   color: #fff;
   background-position: center;
-  margin-top: 2%;
+  margin: 20px 0;
 }
 
-@media (min-width: 425px) and (max-width: 767px) {
+@media (min-width: 425px) and (max-width: 768px) {
   .correct{
-    width: 90%;
+    width: 97%;
     margin: auto;
-    padding: 10%;
+    padding: 5%;
   }
   .correct h3{
     padding-bottom: 30px;
     font-size: 2em;
   }
   .connect{
-    width: 90%;
+    width: 97%;
     margin: auto;
     padding: 10%;
     margin-top: 20px;
   }
   .connect h3{
-    font-size: 2em;
+    font-size: 1.7em;
+  }
+  .decision{
+    padding-bottom: 15px;
+  }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li{
+    font-size: 1.1em;
+  }
+  .details p {
+    font-size: 1.1em;
   }
 }
 
@@ -162,6 +174,12 @@
     justify-content: center;
     margin-top: 20px;
   }
+  .decision li{
+    font-size: 1.1em;
+  }
+  .decision p{
+    font-size: 1.2em;
+  }
   .correct{
     width: 58%;
     border-radius: 25px 0 0 25px;
@@ -172,21 +190,24 @@
     border-radius: 0 25px 25px 0;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 9%;
+    padding-top: 11%;
+  }
+  .details p {
+    font-size: 1.1em;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1440px) {
   .creators {
-    padding-bottom: 5%;
-    padding-top: 5%;
+    padding-bottom: 3%;
+    padding-top: 3%;
   }
   .decision {
     width: 90%;
     margin: auto;
     display: flex;
     border-radius: 50px;
-    margin-top: 5%;
+    margin-top: 2%;
     flex-direction: row;
   }
   .correct {
@@ -213,10 +234,32 @@
   }
   .details {
     margin: 0;
-    width: 95%;
+    width: 120%;
+  }
+  .details p {
+    font-size: 1.2em;
   }
   .headText {
     margin-bottom: 45px;
+    margin-left: 0;
+  }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li {
+    font-size: 1.1em;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
   }
 }
 
@@ -224,11 +267,50 @@
   .connect h3 {
     padding-top: 25%;
   }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li {
+    font-size: 1.1em;
+  }
+  .details p {
+    font-size: 1.2em;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
+  }
 }
 
 @media (min-width: 1561px) and (max-width: 1679px) {
   .connect h3 {
     padding-top: 18%;
+  }
+  .decision p{
+    font-size: 1.2em;
+  }
+  .decision li {
+    font-size: 1.1em;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
   }
 }
 
@@ -258,8 +340,8 @@
   }
 
   .headText {
-    margin-left: 50px;
-    margin-bottom: 7%;
+    margin-left: 150px;
+    margin-bottom: 5%;
     color: #003452;
     font-size: 35px;
   }
@@ -291,7 +373,7 @@
   }
 
   .point li {
-    font-size: 18px;
+    font-size: 1.1em;
   }
 
   .decision {
@@ -311,6 +393,7 @@
 
   .correct h3 {
     padding-bottom: 40px;
+    font-size: 1.7em;
   }
 
   .connect {
@@ -326,6 +409,10 @@
 
   .connect p {
     margin-bottom: 0;
+  }
+
+  .connect h3 {
+    font-size: 1.7em;
   }
 
   .fees h3 {
@@ -344,20 +431,32 @@
   .row1 {
     padding-bottom: 20px;
   }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
+  }
 }
 
 @media (min-width: 1680px) {
   .creators {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     padding-top: 50px;
   }
   .details {
     margin-left: 2%;
-    width: 58%;
+    width: 68%;
   }
   .headText {
     text-align: left;
-    margin-left: 4%;
+    margin-left: 25px;
     margin-bottom: 5%;
   }
   .fees h3 {
@@ -377,7 +476,7 @@
     margin: auto;
     display: flex;
     border-radius: 50px;
-    margin-top: 5%;
+    margin-top: 2%;
     flex-direction: row;
   }
   .correct {
@@ -395,6 +494,31 @@
     margin: 0;
   }
   .connect h3 {
-    padding-top: 60px;
+    padding-top: 75px;
+    font-size: 1.7em;
+  }
+  .details p {
+    font-size: 1.2em;
+  }
+  .details h3 {
+    font-size: 1.7em;
+  }
+  .decision p{
+    font-size: 1.3em;
+  }
+  .decision li {
+    font-size: 1.2em;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
   }
 }

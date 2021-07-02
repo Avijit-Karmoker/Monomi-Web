@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <section className={headerStyles.header}>
       <div className='row align-items-center container m-auto'>
-        <div className='col-md-6 col-sm-12'>
+        <div className='col-md-6 col-sm-12 p-0'>
           <div className={headerStyles.headerText}>
             <h1 className={headerStyles.headerh1}>{t('home:hero.heading')}</h1>
             <p className={headerStyles.headerP}>{t('home:hero.about')}</p>

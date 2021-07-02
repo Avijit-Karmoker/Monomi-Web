@@ -9,7 +9,6 @@
 
 .membersText h1 {
   padding-bottom: 5%;
-  text-align: center;
   font-size: 1.7em;
   margin-bottom: 0;
 }
@@ -17,11 +16,14 @@
 .membersText p {
   padding-bottom: 0;
   margin-bottom: 0;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .membersText li {
   padding: 0;
   list-style: none;
+  font-size: 1.1em;
 }
 
 .image {
@@ -39,6 +41,15 @@
   list-style: none;
 }
 
+@media (min-width: 500px) and (max-width: 768px) {
+  .membersText p {
+    font-size: 1.2em;
+  }
+  .membersText li {
+    font-size: 1.1em;
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .memberSection {
     align-items: center;
@@ -46,26 +57,38 @@
   }
   .membersText {
     padding-top: 0;
+    padding-left: 20px;
+  }
+  .membersText h1{
+    text-align: left;
+  }
+  .membersText p {
+    font-weight: 600;
+    font-size: 1.2em;
   }
   .membersText li {
     list-style: none;
+    font-size: 1.1em;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1679px) {
   .memberSection {
-    padding-top: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
   .membersText {
     padding-top: 0;
-    margin-left: 20%;
+    margin-left: 18%;
+    padding-left: 0;
   }
   .membersText h1 {
     font-size: 2.5em;
     padding-bottom: 10%;
+    text-align: left;
   }
   .membersText p {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   .membersText li {
     font-size: 1.2em;
@@ -76,13 +99,12 @@
 @media (min-width: 1680px) {
   .memberSection {
     background-color: #edf1f3;
-    padding-top: 7%;
-    padding-bottom: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
   }
 
   .membersText {
     padding-left: 42%;
-    padding-top: 18%;
   }
 
   .membersText h1 {
