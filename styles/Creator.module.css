@@ -8,7 +8,7 @@
 }
 
 .point li {
-  font-size: 16px;
+  
 }
 
 .point ul {
@@ -18,7 +18,6 @@
 .headText {
   color: #003452;
   margin-top: 15px;
-  font-size: 1.8em;
 }
 
 .creators {
@@ -31,26 +30,26 @@
 }
 
 .details p{
-  font-size: 1.2em;
+  
 }
 
 .details h3{
-  font-size: 1.5em;
+  
 }
 
 .decision {
   padding-bottom: 1px;
 }
 .decision h3{
-  font-size: 1.5em;
+  
 }
 
 .decision p{
-  font-size: 1.2em;
+  
 }
 
 .decision li{
-  font-size: 1.2em;
+  
 }
 
 .correct {
@@ -141,7 +140,6 @@
   }
   .correct h3{
     padding-bottom: 30px;
-    font-size: 2em;
   }
   .connect{
     width: 97%;
@@ -150,19 +148,19 @@
     margin-top: 20px;
   }
   .connect h3{
-    font-size: 1.7em;
+    
   }
   .decision{
     padding-bottom: 15px;
   }
   .decision p{
-    font-size: 1.2em;
+    
   }
   .decision li{
-    font-size: 1.1em;
+    
   }
   .details p {
-    font-size: 1.1em;
+    
   }
 }
 
@@ -175,10 +173,10 @@
     margin-top: 20px;
   }
   .decision li{
-    font-size: 1.1em;
+    
   }
   .decision p{
-    font-size: 1.2em;
+    
   }
   .correct{
     width: 58%;
@@ -193,7 +191,7 @@
     padding-top: 11%;
   }
   .details p {
-    font-size: 1.1em;
+    
   }
 }
 
@@ -217,7 +215,6 @@
     border-radius: 50px 0 0 50px;
   }
   .correct h3 {
-    font-size: 1.8em;
     margin-bottom: 5%;
   }
   .connect {
@@ -237,17 +234,17 @@
     width: 120%;
   }
   .details p {
-    font-size: 1.2em;
+    
   }
   .headText {
     margin-bottom: 45px;
     margin-left: 0;
   }
   .decision p{
-    font-size: 1.2em;
+    
   }
   .decision li {
-    font-size: 1.1em;
+    
   }
   .icon1{
     margin: 0;
@@ -268,13 +265,13 @@
     padding-top: 25%;
   }
   .decision p{
-    font-size: 1.2em;
+    
   }
   .decision li {
-    font-size: 1.1em;
+    
   }
   .details p {
-    font-size: 1.2em;
+    
   }
   .icon1{
     margin: 0;
@@ -295,10 +292,10 @@
     padding-top: 18%;
   }
   .decision p{
-    font-size: 1.2em;
+    
   }
   .decision li {
-    font-size: 1.1em;
+    
   }
   .icon1{
     margin: 0;
@@ -373,7 +370,7 @@
   }
 
   .point li {
-    font-size: 1.1em;
+    
   }
 
   .decision {
@@ -393,7 +390,6 @@
 
   .correct h3 {
     padding-bottom: 40px;
-    font-size: 1.7em;
   }
 
   .connect {
@@ -412,7 +408,7 @@
   }
 
   .connect h3 {
-    font-size: 1.7em;
+    
   }
 
   .fees h3 {
@@ -485,7 +481,6 @@
     border-radius: 50px 0 0 50px;
   }
   .correct h3 {
-    font-size: 1.8em;
     margin-bottom: 5%;
   }
   .connect {
@@ -495,19 +490,18 @@
   }
   .connect h3 {
     padding-top: 75px;
-    font-size: 1.7em;
   }
   .details p {
-    font-size: 1.2em;
+    
   }
   .details h3 {
-    font-size: 1.7em;
+    
   }
   .decision p{
-    font-size: 1.3em;
+    
   }
   .decision li {
-    font-size: 1.2em;
+    
   }
   .icon1{
     margin: 0;
