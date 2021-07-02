@@ -54,10 +54,12 @@ const Nav = () => {
                     {t('home:nav.contact')}
                   </a>
                 </li>
-                <li class="pe-0">
-                  <Button className='rounded-pill'>
-                    {t('home:nav.download')}
-                  </Button>
+                <li>
+                  <a href='#download'>
+                    <Button className='rounded-pill'>
+                      {t('home:nav.download')}
+                    </Button>
+                  </a>
                 </li>
               </ul>
             </div>
