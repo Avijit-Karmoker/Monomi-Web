@@ -11,6 +11,8 @@
 
 .text p{
   margin-bottom: 0;
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .button1{

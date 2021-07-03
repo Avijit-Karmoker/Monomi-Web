@@ -20,6 +20,15 @@
 }
 .policy {
   color: #003452;
+  margin-bottom: 5px;
+}
+
+.footer p{
+  font-size: 1.2em;
+}
+
+.footer a {
+  font-size: 1.2em;
 }
 
 @media (min-width: 992px) and (max-width: 1679px) {

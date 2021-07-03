@@ -30,30 +30,33 @@
 }
 
 .details p{
-  
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .details h3{
-  
+  font-size: 1.6em;
 }
 
 .decision {
   padding-bottom: 1px;
 }
 .decision h3{
-  
+  font-size: 1.6em;
 }
 
 .decision p{
-  
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .decision li{
-  
+  font-size: 1.1em;
+  list-style: none;
 }
 
 .correct {
-  padding: 20px;
+  padding: 5%;
   width: 100%;
   border-radius: 25px;
   background-color: #f6f8f9;
@@ -69,11 +72,12 @@
   background-size: 91% 100%;
   background-position: right;
   background-repeat: no-repeat;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .connect h3 {
   padding-bottom: 0;
+  font-size: 1.6em;
 }
 
 .connect p {
@@ -130,6 +134,20 @@
   color: #fff;
   background-position: center;
   margin: 20px 0;
+}
+
+.point {
+  line-height: 1.5em;
+}
+
+.point ul li::before {
+  content: '\2022';
+  color: #39b54a;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-size: 1.5em;
 }
 
 @media (min-width: 425px) and (max-width: 768px) {
