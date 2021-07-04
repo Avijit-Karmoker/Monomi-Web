@@ -30,7 +30,7 @@ const Footer = () => {
                 <p className={footerStyle.policy}>
                   {t('home:footer.privatePolicy')}
                 </p>
-                <p className='m-0'>{t('home:footer.copyrightIssue')}</p>
+                <p className='m-0' style={{color: '#9EA0A4'}}>{t('home:footer.copyrightIssue')}</p>
               </div>
             </div>
           </div>
