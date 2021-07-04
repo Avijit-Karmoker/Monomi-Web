@@ -16,17 +16,17 @@ const ForDevelopers = () => {
     <section id='creators' className={creatorStyle.creators}>
       <div className={creatorStyle.developerSection}>
         <div className='row m-0 align-items-center'>
-          <div className='col-lg-4 col-md-6 col-sm-12'>
+          <div className='col-lg-5 col-md-6 col-sm-12'>
             <div className={creatorStyle.image}>
               <Image
                 src='/../public/assets/images/Kurejams.png'
                 alt='Picture of the author'
                 width={750}
-                height={650}
+                height={730}
               />
             </div>
           </div>
-          <div className='col-lg-8 col-md-6 col-sm-12'>
+          <div className='col-lg-7 col-md-6 col-sm-12'>
             <h1 className={creatorStyle.headText}>{t('home:creators.head')}</h1>
             <div className={creatorStyle.details}>
               <div class='row'>
