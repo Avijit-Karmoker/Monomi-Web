@@ -11,6 +11,8 @@
 
 .text p{
   margin-bottom: 0;
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .button1{
@@ -23,14 +25,12 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .text h2 {
-    font-size: 2em;
-  }
+  
 }
 
 @media (min-width: 1025px) and (max-width: 1679px) {
-  .text h2 {
-    font-size: 2em;
+  .image {
+    width: 85%;
   }
   .image {
     width: 85%;
@@ -64,14 +64,9 @@
     padding-left: 20px;
   }
 
-  .text h2 {
-    font-size: 2.5em;
-  }
-
   .text p {
     color: #003452;
     padding-top: 2%;
     padding-bottom: 3%;
-    font-size: 1.3em;
   }
 }

@@ -7,10 +7,6 @@
   flex-direction: column;
 }
 
-.point li {
-  font-size: 16px;
-}
-
 .point ul {
   margin-bottom: 0;
 }
@@ -18,7 +14,6 @@
 .headText {
   color: #003452;
   margin-top: 15px;
-  font-size: 1.8em;
 }
 
 .creators {
@@ -32,29 +27,34 @@
 
 .details p{
   font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .details h3{
-  font-size: 1.5em;
+  font-size: 1.6em;
+  color: #003452;
 }
 
 .decision {
   padding-bottom: 1px;
 }
 .decision h3{
-  font-size: 1.5em;
+  font-size: 1.6em;
+  color: #003452;
 }
 
 .decision p{
   font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .decision li{
-  font-size: 1.2em;
+  font-size: 1.1em;
+  list-style: none;
 }
 
 .correct {
-  padding: 20px;
+  padding: 5%;
   width: 100%;
   border-radius: 25px;
   background-color: #f6f8f9;
@@ -70,11 +70,12 @@
   background-size: 91% 100%;
   background-position: right;
   background-repeat: no-repeat;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .connect h3 {
   padding-bottom: 0;
+  font-size: 1.6em;
 }
 
 .connect p {
@@ -133,6 +134,20 @@
   margin: 20px 0;
 }
 
+.point {
+  line-height: 1.5em;
+}
+
+.point ul li::before {
+  content: '\2022';
+  color: #39b54a;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-size: 1.5em;
+}
+
 @media (min-width: 425px) and (max-width: 768px) {
   .correct{
     width: 97%;
@@ -141,28 +156,12 @@
   }
   .correct h3{
     padding-bottom: 30px;
-    font-size: 2em;
   }
   .connect{
     width: 97%;
     margin: auto;
     padding: 10%;
     margin-top: 20px;
-  }
-  .connect h3{
-    font-size: 1.7em;
-  }
-  .decision{
-    padding-bottom: 15px;
-  }
-  .decision p{
-    font-size: 1.2em;
-  }
-  .decision li{
-    font-size: 1.1em;
-  }
-  .details p {
-    font-size: 1.1em;
   }
 }
 
@@ -173,12 +172,6 @@
     padding-bottom: 5%;
     justify-content: center;
     margin-top: 20px;
-  }
-  .decision li{
-    font-size: 1.1em;
-  }
-  .decision p{
-    font-size: 1.2em;
   }
   .correct{
     width: 58%;
@@ -191,9 +184,6 @@
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 11%;
-  }
-  .details p {
-    font-size: 1.1em;
   }
 }
 
@@ -217,7 +207,6 @@
     border-radius: 50px 0 0 50px;
   }
   .correct h3 {
-    font-size: 1.8em;
     margin-bottom: 5%;
   }
   .connect {
@@ -234,20 +223,11 @@
   }
   .details {
     margin: 0;
-    width: 120%;
-  }
-  .details p {
-    font-size: 1.2em;
+    width: 112%;
   }
   .headText {
     margin-bottom: 45px;
     margin-left: 0;
-  }
-  .decision p{
-    font-size: 1.2em;
-  }
-  .decision li {
-    font-size: 1.1em;
   }
   .icon1{
     margin: 0;
@@ -265,7 +245,19 @@
 
 @media (min-width: 1441px) and (max-width: 1560px) {
   .connect h3 {
-    padding-top: 25%;
+    padding-top: 17%;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
   }
   .decision p{
     font-size: 1.2em;
@@ -292,7 +284,19 @@
 
 @media (min-width: 1561px) and (max-width: 1679px) {
   .connect h3 {
-    padding-top: 18%;
+    padding-top: 12%;
+  }
+  .icon1{
+    margin: 0;
+  }
+  .icon2{
+    margin: 0;
+  }
+  .icon3{
+    margin: 0;
+  }
+  .icon4{
+    margin: 0;
   }
   .decision p{
     font-size: 1.2em;
@@ -324,12 +328,12 @@
   }
 
   .developerSection {
-    padding-top: 10%;
-    padding-bottom: 8%;
+    padding-top: 3%;
+    padding-bottom: 3%;
   }
 
   .details {
-    width: 80%;
+    width: 91%;
     margin-left: 150px;
     margin-bottom: 50px;
   }
@@ -372,12 +376,8 @@
     font-size: 1.5em;
   }
 
-  .point li {
-    font-size: 1.1em;
-  }
-
   .decision {
-    width: 85%;
+    width: 91%;
     margin: auto;
     display: flex;
     border-radius: 50px;
@@ -452,7 +452,7 @@
   }
   .details {
     margin-left: 2%;
-    width: 68%;
+    width: 87%;
   }
   .headText {
     text-align: left;
@@ -483,31 +483,19 @@
     padding: 5% 10% 5% 5%;
     background-color: #f6f8f9;
     border-radius: 50px 0 0 50px;
+    width: 210%;
   }
   .correct h3 {
-    font-size: 1.8em;
     margin-bottom: 5%;
   }
   .connect {
-    padding: 5% 10% 5% 5%;
+    padding: 5% 10% 5% 8%;
     border-radius: 0 50px 50px 0;
     margin: 0;
+    text-align: left;
   }
   .connect h3 {
-    padding-top: 75px;
-    font-size: 1.7em;
-  }
-  .details p {
-    font-size: 1.2em;
-  }
-  .details h3 {
-    font-size: 1.7em;
-  }
-  .decision p{
-    font-size: 1.3em;
-  }
-  .decision li {
-    font-size: 1.2em;
+    padding-top: 65px;
   }
   .icon1{
     margin: 0;

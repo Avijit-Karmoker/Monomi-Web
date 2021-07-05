@@ -12,7 +12,7 @@ const Nav = () => {
           class='navbar navbar-expand-lg navbar-light container'
           style={{ backgroundColor: '#EDF1F3' }}
         >
-          <div class='container-fluid'>
+          <div class='container-fluid ps-0'>
             <a class='navbar-brand' href='#'>
               <span className={navStyle.image}>
                 <Image
@@ -54,7 +54,7 @@ const Nav = () => {
                     {t('home:nav.contact')}
                   </a>
                 </li>
-                <li>
+                <li className={navStyle.btn}>
                   <a href='#download'>
                     <Button className='rounded-pill'>
                       {t('home:nav.download')}

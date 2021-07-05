@@ -23,10 +23,10 @@ const Download = () => {
           </div>
           <div className='col-md-6 col-sm-12'>
             <div className={downloadStyle.text}>
-              <h2 className='text-white'>
+              <h1 className='text-white'>
                 {' '}
                 {t('home:download.downloadMonomi')}{' '}
-              </h2>
+              </h1>
               <p>{t('home:download.becomeMember')}</p>
               <Button className={downloadStyle.button1}>
                 <Image

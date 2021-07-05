@@ -27,10 +27,10 @@ const Footer = () => {
             </div>
             <div className='col-md-12 col-sm-12 col-lg-6'>
               <div className={footerStyle.footerRight}>
-                <h5 className={footerStyle.policy}>
+                <p className={footerStyle.policy}>
                   {t('home:footer.privatePolicy')}
-                </h5>
-                <p className='m-0'>{t('home:footer.copyrightIssue')}</p>
+                </p>
+                <p className='m-0' style={{color: '#9EA0A4'}}>{t('home:footer.copyrightIssue')}</p>
               </div>
             </div>
           </div>
