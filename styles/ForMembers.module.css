@@ -3,7 +3,7 @@
 }
 
 .membersText {
-  padding-left: 10px;
+  padding-left: 15px;
   padding-top: 5%;
 }
 
@@ -29,6 +29,7 @@
 
 .image {
   text-align: right;
+  padding-left: 15px;
 }
 
 .membersText ul li::before {
@@ -107,7 +108,7 @@
   }
 
   .membersText h1 {
-    padding-bottom: 18%;
+    padding-bottom: 10%;
     color: #003452;
     text-align: left;
   }
