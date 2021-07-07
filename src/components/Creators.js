@@ -62,7 +62,7 @@ const ForDevelopers = () => {
                     <FontAwesomeIcon style={{ width: '20px' }} icon={faStar} />
                   </div>
                 </div>
-                <div class='col-lg-4 col-sm-12'>
+                <div class='col-lg-4 col-md-6 col-sm-12'>
                   <div className={creatorStyle.content}>
                     <h3>{t('home:creators.uniqueContent')}</h3>
                     <p>{t('home:creators.uniqueContentText')}</p>
@@ -76,7 +76,7 @@ const ForDevelopers = () => {
                     />
                   </div>
                 </div>
-                <div class='col-lg-4 col-sm-12'>
+                <div class='col-lg-4 col-md-6 col-sm-12'>
                   <div className={creatorStyle.awareness}>
                     <h3>{t('home:creators.awareness')}</h3>
                     <p>{t('home:creators.awarenessText')}</p>

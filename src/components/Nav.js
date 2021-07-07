@@ -2,9 +2,15 @@ import navStyle from '../../styles/Nav.module.css'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'reactstrap'
 import Image from 'next/image'
+import multiLang from './Layout/components/navbar/IntlDropdown.tsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = () => {
   const { t } = useTranslation(['home'])
+
+  console.log(multiLang)
+
   return (
     <div className={navStyle.navbar}>
       <div className={navStyle.nav}>
@@ -38,6 +44,23 @@ const Nav = () => {
               ></span>
             </button>
             <div class='collapse navbar-collapse' id='navbarNav'>
+              <div className={navStyle.langMenu}>
+                <div className={navStyle.selectedLang}>
+                  English <FontAwesomeIcon icon={faCaretDown} />
+                </div>
+                <ul>
+                  <li>
+                    <a className={navStyle.en} href='/'>
+                      English
+                    </a>
+                  </li>
+                  <li>
+                    <a className={navStyle.lt} href='/'>
+                      Lietuvių
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <ul class='navbar-nav ms-auto text-center align-items-center'>
                 <li class='nav-item'>
                   <a class='nav-link' href='#creators'>
