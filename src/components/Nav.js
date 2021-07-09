@@ -61,7 +61,7 @@ const Nav = () => {
                   </li>
                 </ul>
               </div>
-              <ul class='navbar-nav ms-auto text-center align-items-center'>
+              <ul class='navbar-nav text-center align-items-center'>
                 <li class='nav-item'>
                   <a class='nav-link' href='#creators'>
                     {t('home:nav.creators')}

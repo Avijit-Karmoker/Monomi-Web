@@ -325,30 +325,25 @@
     width: 117%;
     margin-bottom: 50px;
   }
-
   .developerSection {
     padding-top: 3%;
     padding-bottom: 3%;
   }
-
   .details {
     width: 91%;
     margin-left: 150px;
     margin-bottom: 50px;
   }
-
   .developerDetail {
     display: flex;
     margin-left: 50px;
   }
-
   .headText {
     margin-left: 150px;
     margin-bottom: 5%;
     color: #003452;
     font-size: 35px;
   }
-
   .singleDetail {
     width: 32%;
     padding-right: 10px;
@@ -360,11 +355,9 @@
     display: flex;
     flex-direction: row;
   }
-
   .point ul {
     list-style: none;
   }
-
   .point ul li::before {
     content: '\2022';
     color: #39b54a;
@@ -374,7 +367,6 @@
     margin-left: -1em;
     font-size: 1.5em;
   }
-
   .decision {
     width: 91%;
     margin: auto;
@@ -382,19 +374,16 @@
     border-radius: 50px;
     flex-direction: row;
   }
-
   .correct {
     padding: 70px 100px 70px 90px;
     background-color: #f6f8f9;
     border-radius: 50px 0 0 50px;
     width: 200%;
   }
-
   .correct h3 {
     padding-bottom: 40px;
     font-size: 1.7em;
   }
-
   .connect {
     background-color: #edf1f3;
     background-image: url('../public/assets/images/bg-2.png');
@@ -405,24 +394,19 @@
     border-radius: 0 50px 50px 0;
     margin: 0;
   }
-
   .connect h3 {
     font-size: 1.7em;
   }
-
   .fees h3 {
     padding-bottom: 12%;
     padding-top: 2%;
   }
-
   .fees {
     margin-bottom: 50px;
   }
-
   .income h3 {
     padding-bottom: 5%;
   }
-
   .row1 {
     padding-bottom: 20px;
   }

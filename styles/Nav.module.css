@@ -24,6 +24,7 @@
 
 .langMenu {
   position: relative;
+  margin-left: auto;
 }
 
 .selectedLang {
@@ -53,6 +54,7 @@
   display: none;
   position: absolute;
   left: 0;
+  justify-content: center;
 }
 
 .langMenu ul li {
@@ -80,6 +82,10 @@
 .langMenu ul li a:hover {
   background-color: #f2f2f2;
   font-weight: 400;
+}
+
+.li{
+  overflow: hidden;
 }
 
 .en:before {
