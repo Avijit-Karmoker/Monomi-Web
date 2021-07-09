@@ -41,7 +41,7 @@ const Nav = () => {
             </button>
             <div class='collapse navbar-collapse' id='navbarNav'>
               <ul class='navbar-nav text-center align-items-center ms-auto'>
-                <li class='nav-item'>
+                <li class='nav-item p-0'>
                   <IntlDropdown></IntlDropdown>
                 </li>
                 <li class='nav-item'>
