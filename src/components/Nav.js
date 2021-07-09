@@ -2,15 +2,10 @@ import navStyle from '../../styles/Nav.module.css'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'reactstrap'
 import Image from 'next/image'
-import multiLang from './Layout/components/navbar/IntlDropdown.tsx'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import IntlDropdown from '@/components/Layout/components/navbar/IntlDropdown'
 
 const Nav = () => {
   const { t } = useTranslation(['home'])
-
-  console.log(multiLang)
 
   return (
     <div className={navStyle.navbar}>
