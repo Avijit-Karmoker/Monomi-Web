@@ -5,6 +5,7 @@ import Image from 'next/image'
 import multiLang from './Layout/components/navbar/IntlDropdown.tsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import IntlDropdown from '@/components/Layout/components/navbar/IntlDropdown'
 
 const Nav = () => {
   const { t } = useTranslation(['home'])
@@ -44,24 +45,10 @@ const Nav = () => {
               ></span>
             </button>
             <div class='collapse navbar-collapse' id='navbarNav'>
-              <div className={navStyle.langMenu}>
-                <div className={navStyle.selectedLang}>
-                  English <FontAwesomeIcon icon={faCaretDown} />
-                </div>
-                <ul>
-                  <li>
-                    <a className={navStyle.en} href='/'>
-                      English
-                    </a>
-                  </li>
-                  <li>
-                    <a className={navStyle.lt} href='/'>
-                      Lietuvių
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <ul class='navbar-nav text-center align-items-center'>
+              <ul class='navbar-nav text-center align-items-center ms-auto'>
+                <li class='nav-item'>
+                  <IntlDropdown></IntlDropdown>
+                </li>
                 <li class='nav-item'>
                   <a class='nav-link' href='#creators'>
                     {t('home:nav.creators')}
