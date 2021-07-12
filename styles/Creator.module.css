@@ -330,8 +330,8 @@
     padding-bottom: 3%;
   }
   .details {
-    width: 91%;
-    margin-left: 150px;
+    width: 85%;
+    margin-left: 120px;
     margin-bottom: 50px;
   }
   .developerDetail {
@@ -368,7 +368,7 @@
     font-size: 1.5em;
   }
   .decision {
-    width: 91%;
+    width: 80%;
     margin: auto;
     display: flex;
     border-radius: 50px;

@@ -3,11 +3,10 @@
   width: 100%;
   padding-top: 0;
   padding-bottom: 15px;
+  text-align: center;
 }
 .image {
-  padding: 20px;
-  padding-left: 0px;
-  padding-bottom: 0;
+  padding-top: 20px;
 }
 .footerRight {
   padding-left: 0;
@@ -24,20 +23,32 @@
 }
 
 .footer p{
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .footer a {
-  font-size: 1.2em;
+  font-size: 1em;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer{
+    text-align: left;
+  }
+  .footerRight {
+    padding-top: 79px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1679px) {
+  .footer{
+    text-align: left;
+  }
   .image {
     text-align: left;
     padding-left: 0;
   }
   .footerRight {
-    padding-top: 70px;
+    padding-top: 79px;
   }
 }
 
@@ -45,6 +56,7 @@
   .footer {
     padding-top: 2%;
     padding-bottom: 2%;
+    text-align: left;
   }
 
   .link {
@@ -59,7 +71,7 @@
 
   .footerRight {
     padding-left: 17%;
-    padding-top: 23px;
+    padding-top: 16px;
   }
   .image {
     text-align: left;
