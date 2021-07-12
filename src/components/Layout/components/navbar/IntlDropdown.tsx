@@ -49,7 +49,7 @@ const IntlDropdown: FC = () => {
           countryCode={language.code}
           svg
         />
-        <span className='selected-language'>{language.title}</span>
+        {/* <span className='selected-language'>{language.title}</span> */}
       </DropdownToggle>
       <DropdownMenu className='mt-0' right>
         {languages.map(({ id, code, title }) => (

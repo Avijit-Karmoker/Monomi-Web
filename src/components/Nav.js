@@ -41,9 +41,6 @@ const Nav = () => {
             </button>
             <div class='collapse navbar-collapse' id='navbarNav'>
               <ul class='navbar-nav text-center align-items-center ms-auto'>
-                <li class='nav-item p-0'>
-                  <IntlDropdown></IntlDropdown>
-                </li>
                 <li class='nav-item'>
                   <a class='nav-link' href='#creators'>
                     {t('home:nav.creators')}
@@ -58,6 +55,9 @@ const Nav = () => {
                   <a class='nav-link' href='#contact'>
                     {t('home:nav.contact')}
                   </a>
+                </li>
+                <li class='nav-item p-0'>
+                  <IntlDropdown></IntlDropdown>
                 </li>
                 <li className={navStyle.btn}>
                   <a href='#download'>
