@@ -2,9 +2,11 @@ import navStyle from '../../styles/Nav.module.css'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'reactstrap'
 import Image from 'next/image'
+import IntlDropdown from '@/components/Layout/components/navbar/IntlDropdown'
 
 const Nav = () => {
   const { t } = useTranslation(['home'])
+
   return (
     <div className={navStyle.navbar}>
       <div className={navStyle.nav}>
@@ -12,7 +14,7 @@ const Nav = () => {
           class='navbar navbar-expand-lg navbar-light container'
           style={{ backgroundColor: '#EDF1F3' }}
         >
-          <div class='container-fluid'>
+          <div class='container-fluid ps-0'>
             <a class='navbar-brand' href='#'>
               <span className={navStyle.image}>
                 <Image
@@ -38,7 +40,7 @@ const Nav = () => {
               ></span>
             </button>
             <div class='collapse navbar-collapse' id='navbarNav'>
-              <ul class='navbar-nav ms-auto text-center align-items-center'>
+              <ul class='navbar-nav text-center align-items-center ms-auto'>
                 <li class='nav-item'>
                   <a class='nav-link' href='#creators'>
                     {t('home:nav.creators')}
@@ -54,7 +56,10 @@ const Nav = () => {
                     {t('home:nav.contact')}
                   </a>
                 </li>
-                <li>
+                <li class='nav-item p-0'>
+                  <IntlDropdown></IntlDropdown>
+                </li>
+                <li className={navStyle.btn}>
                   <a href='#download'>
                     <Button className='rounded-pill'>
                       {t('home:nav.download')}

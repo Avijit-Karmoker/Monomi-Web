@@ -2,16 +2,30 @@
   width: 100%;
 }
 
-.nav li{
-  padding: 0 10px;
+.nav li {
+  padding: 0 20px;
 }
 
-.nav ul{
-  line-height: 30px;
+.nav a {
+  color: #003452 !important;
+}
+
+.nav a:hover {
+  font-weight: 500;
+}
+
+.nav ul {
+  line-height: 50px;
 }
 
 .nav {
   background-color: #edf1f3;
+}
+
+@media (min-width: 992px) {
+  .btn {
+    padding-right: 0 !important;
+  }
 }
 
 @media (min-width: 1680) {
@@ -19,7 +33,6 @@
     background-color: #edf1f3;
     padding-bottom: 2%;
   }
-
   .nav li {
     margin-right: 10px;
   }

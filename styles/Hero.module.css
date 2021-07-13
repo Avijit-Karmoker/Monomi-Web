@@ -4,9 +4,9 @@
 }
 
 .headerh1 {
-  font-size: 1.7em;
   padding-right: 0;
   margin: 15px 0;
+  color: #003452;
 }
 
 .headerText {
@@ -17,6 +17,7 @@
 .headerP {
   margin-bottom: 10px;
   font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 .image {
@@ -34,7 +35,6 @@
   }
   .headerh1 {
     padding-right: 0;
-    font-size: 30px;
   }
   .headerP {
     margin-bottom: 5%;
@@ -72,12 +72,14 @@
   }
   .headerh1 {
     padding-right: 0;
-    font-size: 35px;
   }
   .headerP {
     margin-bottom: 13%;
     margin-top: 15%;
     font-size: 1.2em;
+  }
+  .image {
+    padding-left: 10%;
   }
   .image {
     padding-left: 10%;
@@ -107,7 +109,6 @@
   .headerh1 {
     margin-bottom: 5%;
     padding-right: 26%;
-    font-size: 40px;
     margin-top: 0;
   }
 
