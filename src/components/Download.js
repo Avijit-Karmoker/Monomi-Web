@@ -35,7 +35,7 @@ const Download = () => {
                       src='/../public/assets/images/Group9.png'
                       alt='PlayStore'
                       width={180}
-                      height={50}
+                      height={55}
                     />
                   </a>
                 </Button>
@@ -48,7 +48,7 @@ const Download = () => {
                       src='/../public/assets/images/Group19.png'
                       alt='PlayStore'
                       width={180}
-                      height={50}
+                      height={55}
                     />
                   </a>
                 </Button>
