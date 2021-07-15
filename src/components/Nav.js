@@ -52,7 +52,7 @@ const Nav = () => {
                   </a>
                 </li>
                 <li class='nav-item'>
-                  <a class='nav-link' href='#contact'>
+                  <a class='nav-link' href='#footer'>
                     {t('home:nav.contact')}
                   </a>
                 </li>
