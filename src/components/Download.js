@@ -9,7 +9,7 @@ const Download = () => {
 
   return (
     <Suspense fallback='Loading...'>
-        <div className={downloadStyle.download} id='download'>
+      <div className={downloadStyle.download} id='download'>
         <div className='container'>
           <div className='row m-0 align-items-center'>
             <div className='col-md-6 col-sm-12 p-0'>
@@ -30,20 +30,27 @@ const Download = () => {
                 </h1>
                 <p>{t('home:download.becomeMember')}</p>
                 <Button className={downloadStyle.button1}>
-                  <Image
-                    src='/../public/assets/images/Group9.png'
-                    alt='PlayStore'
-                    width={180}
-                    height={50}
-                  />
+                  <a href='https://play.google.com/store/apps/details?id=io.monomi.clients' target="_blank">
+                    <Image
+                      src='/../public/assets/images/Group9.png'
+                      alt='PlayStore'
+                      width={180}
+                      height={55}
+                    />
+                  </a>
                 </Button>
                 <Button className={downloadStyle.button2}>
-                  <Image
-                    src='/../public/assets/images/Group19.png'
-                    alt='PlayStore'
-                    width={180}
-                    height={50}
-                  />
+                  <a
+                    href='https://apps.apple.com/us/app/monomi/id1518982363'
+                    target='_blank'
+                  >
+                    <Image
+                      src='/../public/assets/images/Group19.png'
+                      alt='PlayStore'
+                      width={180}
+                      height={55}
+                    />
+                  </a>
                 </Button>
               </div>
             </div>

@@ -15,9 +15,6 @@
   line-height: 1.5em;
 }
 
-.button1{
-  padding-bottom: 0;
-}
 
 .button2 {
   padding-top: 0;
@@ -25,7 +22,9 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
+  .button2{
+    padding-top: 11px;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1679px) {
@@ -34,6 +33,9 @@
   }
   .image {
     width: 85%;
+  }
+  .button2{
+    padding-top: 11px;
   }
 }
 
@@ -58,7 +60,7 @@
     padding: 0;
     border: none;
     background: none;
-    padding-left: 20px;
+    margin-left: 20px;
   }
 
   .text p {
