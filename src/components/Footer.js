@@ -13,7 +13,7 @@ const Footer = () => {
             <div className='col-md-6 col-sm-12 p-0'>
               <div className={footerStyle.image}>
                 <Image
-                  src='/../public/assets/images/logo.png'
+                  src='/assets/images/logo.png'
                   alt='monomi'
                   width={180}
                   height={40}

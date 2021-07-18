@@ -19,7 +19,7 @@ const ForDevelopers = () => {
           <div className='col-lg-5 col-md-6 col-sm-12'>
             <div className={creatorStyle.image}>
               <Image
-                src='/../public/assets/images/Kurejams.png'
+                src='/assets/images/Kurejams.png'
                 alt='Picture of the author'
                 width={750}
                 height={700}

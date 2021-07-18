@@ -19,7 +19,7 @@ const Header = () => {
         <div className='col-md-6 col-sm-12 p-0'>
           <div className={headerStyles.image}>
             <Image
-              src='/../public/assets/images/Hero.png'
+              src='/assets/images/Hero.png'
               alt='img'
               width={700}
               height={700}
