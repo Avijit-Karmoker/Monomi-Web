@@ -18,7 +18,7 @@ const Nav = () => {
             <a class='navbar-brand' href='#'>
               <span className={navStyle.image}>
                 <Image
-                  src='/../public/assets/images/logo.png'
+                  src='/assets/images/logo.png'
                   alt='Picture of the author'
                   width={150}
                   height={35}

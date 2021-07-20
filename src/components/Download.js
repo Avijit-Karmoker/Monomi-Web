@@ -15,7 +15,7 @@ const Download = () => {
             <div className='col-md-6 col-sm-12 p-0'>
               <div className={downloadStyle.image}>
                 <Image
-                  src='/../public/assets/images/iPhone12.png'
+                  src='/assets/images/iPhone12.png'
                   alt='Picture of the author'
                   width={800}
                   height={700}
@@ -32,7 +32,7 @@ const Download = () => {
                 <Button className={downloadStyle.button1}>
                   <a href='https://play.google.com/store/apps/details?id=io.monomi.clients' target="_blank">
                     <Image
-                      src='/../public/assets/images/Group9.png'
+                      src='/assets/images/Group9.png'
                       alt='PlayStore'
                       width={180}
                       height={55}
@@ -45,7 +45,7 @@ const Download = () => {
                     target='_blank'
                   >
                     <Image
-                      src='/../public/assets/images/Group19.png'
+                      src='/assets/images/Group19.png'
                       alt='PlayStore'
                       width={180}
                       height={55}

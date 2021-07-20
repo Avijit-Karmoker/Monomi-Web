@@ -23,7 +23,7 @@ const ForMembers = () => {
           <div className='col-md-7 col-sm-12 pe-0'>
             <div className={memberStyles.image}>
               <Image
-                src='/../public/assets/images/Nariams.png'
+                src='/assets/images/Nariams.png'
                 width={900}
                 height={650}
               />
