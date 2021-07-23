@@ -56,6 +56,11 @@ const Nav = () => {
                     {t('home:nav.contact')}
                   </a>
                 </li>
+                <li class='nav-item'>
+                  <a class='nav-link' href='/communities/new'>
+                    {t('home:nav.communities')}
+                  </a>
+                </li>
                 <li class='nav-item p-0'>
                   <IntlDropdown></IntlDropdown>
                 </li>
