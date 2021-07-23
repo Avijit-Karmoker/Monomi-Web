@@ -1,15 +1,16 @@
 import os from 'os'
 import { readFileSync, writeFileSync } from 'fs'
 import { Parser } from 'i18next-scanner'
-import { sync } from 'glob'
+import glob from 'glob'
 import path from 'path'
-import { merge } from 'lodash'
+import merge from 'lodash/merge.js'
 import sortKeys from 'sort-keys'
+import { fileURLToPath } from 'url'
 import {
   languages,
   defaultLanguage,
   translationNamespaces,
-} from '../src/config'
+} from '../src/config.js'
 
 const parser = new Parser({
   ns: translationNamespaces,
@@ -18,7 +19,9 @@ const parser = new Parser({
   defaultLng: defaultLanguage.id,
 })
 
-sync(path.join(__dirname, '../src/**/*.{ts,tsx,js,jsx}')).forEach((file) =>
+const dirname = path.dirname(fileURLToPath(import.meta.url))
+
+glob.sync(path.join(dirname, '../src/**/*.{ts,tsx,js,jsx}')).forEach((file) =>
   parser.parseFuncFromString(
     readFileSync(file, 'utf-8'),
     { list: ['t'] },
@@ -47,7 +50,7 @@ const writeTranslation = (filePath, translation) => {
 Object.entries(parser.get()).forEach(([language, namespaces]) => {
   Object.entries(namespaces).forEach(([namespace, translations]) => {
     const filePath = path.join(
-      __dirname,
+      dirname,
       `../public/locales/${language}/${namespace}.json`,
     )
 

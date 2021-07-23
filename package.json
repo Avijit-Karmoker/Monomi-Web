@@ -6,7 +6,7 @@
     "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start -p 4000",
-    "translations:parse": "node -r esm scripts/parseTranslations.js"
+    "translations:parse": "node scripts/parseTranslations.mjs"
   },
   "dependencies": {
     "@emotion/cache": "^11.1.3",
