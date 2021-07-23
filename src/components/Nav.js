@@ -1,8 +1,9 @@
 import navStyle from '../../styles/Nav.module.css'
 import { useTranslation } from 'react-i18next'
-import { Button } from 'reactstrap'
+import { Button, DropdownItem } from 'reactstrap'
 import Image from 'next/image'
 import IntlDropdown from '@/components/Layout/components/navbar/IntlDropdown'
+import Link from 'next/link'
 
 const Nav = () => {
   const { t } = useTranslation(['home'])
@@ -56,7 +57,7 @@ const Nav = () => {
                     {t('home:nav.contact')}
                   </a>
                 </li>
-                <li class='nav-item'>
+                <li class='nav-item' tag={Link}>
                   <a class='nav-link' href='/communities/new'>
                     {t('home:nav.communities')}
                   </a>

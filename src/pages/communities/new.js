@@ -1,9 +1,11 @@
-import React from 'react';
+import React from 'react'
+import Index from '../../../src/components/AuthModal/index'
+import Account from '../../components/AuthModal/components/Account'
 
 const New = () => {
     return (
         <div>
-            <h1>Dashboard</h1>
+            <Account></Account>
         </div>
     );
 };
