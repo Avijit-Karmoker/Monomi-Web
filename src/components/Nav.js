@@ -1,6 +1,6 @@
 import navStyle from '../../styles/Nav.module.css'
 import { useTranslation } from 'react-i18next'
-import { Button, DropdownItem } from 'reactstrap'
+import { Button } from 'reactstrap'
 import Image from 'next/image'
 import IntlDropdown from '@/components/Layout/components/navbar/IntlDropdown'
 import Link from 'next/link'

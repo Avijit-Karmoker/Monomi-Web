@@ -1,14 +1,12 @@
-import React from 'react'
-import Index from '../../../src/components/AuthModal/index'
-import Account from '../../components/AuthModal/components/Account'
-import Feed from '../feed';
+import React from 'react';
+import Registration from '../../components/AuthModal/components/Registration'
 
 const New = () => {
-    return (
-        <div>
-            <Account></Account>
-        </div>
-    );
+  return (
+    <div>
+      <Registration></Registration>
+    </div>
+  );
 };
 
 export default New;
