@@ -44,11 +44,10 @@
     "uniqueContent": "Sekite išskirtinį kūrėjų turinį, dalyvaukite bendruomenės diskusijose "
   },
   "nav": {
-    "communities": "",
+    "communities": "Bendruomenės",
     "contact": "Kontaktai",
     "creators": "Kūrėjams",
     "download": "Parsisiųsti",
-    "members": "Nariams",
-    "communities": "Bendruomenės"
+    "members": "Nariams"
   }
 }

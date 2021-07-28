@@ -44,11 +44,10 @@
     "uniqueContent": "Follow developer exclusive content, participate in community discussions"
   },
   "nav": {
-    "communities": "",
+    "communities": "Communities",
     "contact": "Contact us",
     "creators": "Creators",
     "download": "Download",
-    "members": "For Members",
-    "communities": "Communities"
+    "members": "For Members"
   }
 }
