@@ -26,6 +26,8 @@ type Inputs = {
   entityVat: any
   email: string
   id: string
+  city: string
+  zip: string
 }
 
 export default function CommunityForm() {
@@ -36,8 +38,10 @@ export default function CommunityForm() {
     }),
   )
   const {
+    register,
+    handleSubmit,
     control,
-    formState: {},
+    formState: { errors },
   } = useForm<OnboardingUserPayload>({
     defaultValues: {
       ...user,
@@ -50,11 +54,6 @@ export default function CommunityForm() {
     },
   })
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>()
   const { t } = useTranslation('common')
 
   const ValidateEmail = (event: any) => {
@@ -129,13 +128,13 @@ export default function CommunityForm() {
         />
         {errors.email && <span>{t('required')}</span>}
         <br />
-        <FormGroup className='form-label-group' style={{marginTop: '1.7em'}}>
+        <FormGroup className='form-label-group' style={{marginTop: '1.7em', color: '#A4A1B0 !important'}}>
           <Controller
             control={control}
             id='address.country'
             name='address.country'
             rules={{ required: true }}
-            render={({ onChange, value }) => (
+            render={({ value }) => (
               <Select
                 defaultValue={
                   value
@@ -144,12 +143,11 @@ export default function CommunityForm() {
                       ).map(([label, value]) => ({ label, value }))
                     : null
                 }
-                
+                onChange={(option) => (option?.value)}
                 options={CountryRegionData.map(([label, value]) => ({
                   label,
                   value,
                 }))}
-                const onChange={(option) => onChange(option?.value)}
                 className={classnames('react-select', {
                   'is-invalid': !!(errors.address as FieldErrors<EntityAddress>)
                     ?.country,
@@ -160,11 +158,29 @@ export default function CommunityForm() {
             )}
           />
           <Input type='hidden' name='address.country' />
-          <Label for='address.country' style={{color: '#A4A1B0 !important'}}>{t('country')}</Label>
+          <Label for='address.country' style={{color: '#5E5873 !important'}}>{t('country')}</Label>
           <FormFeedback>
             {(errors.address as FieldErrors<EntityAddress>)?.country?.message}
           </FormFeedback>
         </FormGroup>
+        <label htmlFor='city'>{t('city')}</label> <br />
+        <input
+          {...register('city', { required: true })}
+          id='city'
+          placeholder={t('city')}
+          className='form-control'
+        />
+        {errors.city && <span>{t('required')}</span>}
+        <br />
+        <label htmlFor='zip'>{t('zip')}</label> <br />
+        <input
+          {...register('zip', { required: true })}
+          id='city'
+          placeholder={t('zip')}
+          className='form-control'
+        />
+        {errors.zip && <span>{t('required')}</span>}
+        <br />
         <input type='submit' />
       </form>
     </div>
