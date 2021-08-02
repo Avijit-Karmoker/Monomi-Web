@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react';
 import CommunityForm from '../../components/CommunityForm'
 
+
 const New = () => {
   return (
     <div>

@@ -1,9 +1,13 @@
 {
   "account": "Account",
+  "addressLine1": "Address Line 1",
+  "addressLine2": "Address Line 2",
   "amount": "Amount",
   "birthDate": "Date of birth",
+  "businessCategory": "Business Category",
   "cancel": "Cancel",
   "cannotBeUndone": "This action cannot be undone.",
+  "city": "City",
   "code": "Code",
   "confirm": "Confirm",
   "continueAgreeToTermsAndConditions": "By continuing you agree to terms and conditions",
@@ -53,5 +57,6 @@
   "signedIn": "Signed in",
   "termsAndConditions": "Terms and conditions",
   "total": "Total",
-  "yes": "Yes"
+  "yes": "Yes",
+  "zip": "Zip"
 }

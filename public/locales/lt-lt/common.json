@@ -1,9 +1,13 @@
 {
   "account": "Paskyra",
+  "addressLine1": "Adreso eilutė 1",
+  "addressLine2": "Adreso eilutė 2",
   "amount": "Suma",
   "birthDate": "Gimimo data",
+  "businessCategory": "Verslo kategorija",
   "cancel": "Atšaukti",
   "cannotBeUndone": "Šis veiksmas negali būti atšauktas.",
+  "city": "Miestas",
   "code": "Kodas",
   "confirm": "Patvirtinti",
   "continueAgreeToTermsAndConditions": "Tęsdami sutinkate su taisyklėmis ir sąlygomis",
@@ -53,5 +57,6 @@
   "signedIn": "Prisijungėte",
   "termsAndConditions": "Taisyklės ir sąlygos",
   "total": "Suma",
-  "yes": "Taip"
+  "yes": "Taip",
+  "zip": "Pašto kodas"
 }
