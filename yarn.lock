@@ -432,6 +432,11 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.2.tgz#adea7b6953cbb34651766b0548468e743c6a2353"
   integrity sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==
 
+"@rematch/core@^2.0.0-next.10":
+  version "2.0.0-next.10"
+  resolved "https://registry.yarnpkg.com/@rematch/core/-/core-2.0.0-next.10.tgz#24fa2fbc3a906bd63cc7ee3600d03d95c1ec6723"
+  integrity sha512-jDD524T/CxCYGzKci6KtNn9SGHfZaUnwPtJsC0KIGlY9Js7IfqDnMJ+0O047oiM3RhsuFne8f4Zjhv1LWKRwPg==
+
 "@rematch/core@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@rematch/core/-/core-2.0.1.tgz#c69bba9637f41c403c8725834673b12a58a28f31"

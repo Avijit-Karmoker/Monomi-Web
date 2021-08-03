@@ -14,8 +14,11 @@ import { defaultLanguage } from '@/config'
 import Select from 'react-select'
 import classnames from 'classnames'
 import { CountryRegionData } from 'react-country-region-selector'
-import { EditorState } from 'draft-js'
-import { Editor } from 'react-draft-wysiwyg'
+import dynamic from 'next/dynamic'
+
+const EditorsContainer = dynamic(() => import('./TextEditor'), {
+  ssr: false,
+})
 
 type Inputs = {
   className: string
@@ -31,68 +34,6 @@ type Inputs = {
   zip: string
   addressLine1: any
   businessCategory: string
-}
-
-class EditorContainer extends Component {
-  constructor(props:any) {
-    super(props);
-    this.state = {
-      editorState: EditorState.createEmpty(),
-    }
-  }
-
-  onEditorStateChange: Function = (editorState:any) => {
-    // console.log(editorState)
-    this.setState({
-      editorState,
-    });
-  };
-
-  uploadImageCallBack: Function = (file:any) => {
-    return new Promise(
-      (resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://api.imgur.com/3/image');
-        xhr.setRequestHeader('Authorization', 'Client-ID ##clientid##');
-        const data = new FormData();
-        data.append('image', file);
-        xhr.send(data);
-        xhr.addEventListener('load', () => {
-          const response = JSON.parse(xhr.responseText);
-          console.log(response)
-          resolve(response);
-        });
-        xhr.addEventListener('error', () => {
-          const error = JSON.parse(xhr.responseText);
-          console.log(error)
-          reject(error);
-        });
-      }
-    );
-  }
-
-  render() {
-    const { editorState } = this.state;
-    return (
-      <div className='editor'>
-        <Editor
-          editorState={editorState}
-          onEditorStateChange={this.onEditorStateChange}
-          toolbar={{
-            inline: { inDropdown: true },
-            list: { inDropdown: true },
-            textAlign: { inDropdown: true },
-            link: { inDropdown: true },
-            history: { inDropdown: true },
-            image: {
-              uploadCallback: this.uploadImageCallBack,
-              alt: { present: true, mandatory: true },
-            },
-          }}
-        />
-      </div>
-    )
-  }
 }
 
 export default function CommunityForm() {
@@ -276,10 +217,8 @@ export default function CommunityForm() {
           className='form-control'
         />
         {errors.businessCategory && <span>{t('required')}</span>}
-        <div>
-          <h2>React Wysiwyg Rich Editor Using Draft.js</h2>
-          <EditorContainer />
-        </div>
+        <br />
+        <EditorsContainer />
         <input type='submit' />
       </form>
     </div>
