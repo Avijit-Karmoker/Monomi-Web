@@ -1,13 +1,20 @@
 import { RootState } from '@/store'
 import { EntityAddress, OnboardingUserPayload } from '@/typings'
-import React, { Component } from 'react'
+import React from 'react'
 import {
   useForm,
   SubmitHandler,
   Controller,
   FieldErrors,
 } from 'react-hook-form'
-import { FormFeedback, FormGroup, Input, Label } from 'reactstrap'
+import {
+  Col,
+  FormFeedback,
+  FormGroup,
+  FormText,
+  Input,
+  Label,
+} from 'reactstrap'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { defaultLanguage } from '@/config'
@@ -219,6 +226,32 @@ export default function CommunityForm() {
         {errors.businessCategory && <span>{t('required')}</span>}
         <br />
         <EditorsContainer />
+        <FormGroup row>
+          <Label for='logo' sm={12} md={12} lg={12}>
+            {t('logo')}
+          </Label>
+          <Col sm={12} md={12} lg={12}>
+            <Input
+              type='file'
+              name='file'
+              id='logo'
+              required={true}
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
+          <Label for='cover' sm={12} md={12} lg={12}>
+            {t('cover')}
+          </Label>
+          <Col sm={12} md={12} lg={12}>
+            <Input
+              type='file'
+              name='file'
+              id='cover'
+              required={true}
+            />
+          </Col>
+        </FormGroup>
         <input type='submit' />
       </form>
     </div>

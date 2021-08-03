@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { EditorState } from 'draft-js'
 import { Editor } from 'react-draft-wysiwyg'
 import 'node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
+import { useTranslation } from 'react-i18next'
 
 class EditorContainer extends Component {
   constructor(props) {
@@ -38,10 +39,16 @@ class EditorContainer extends Component {
   }
 }
 
-const TextEditor = () => (
-  <div>
-    <EditorContainer />
-  </div>
-)
+const TextEditor = () => {
+
+  const { t } = useTranslation('common')
+
+  return (
+    <div>
+      <label htmlFor=''>{t('description')}</label>
+      <EditorContainer />
+    </div>
+  )
+}
 
 export default TextEditor
