@@ -432,11 +432,6 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.2.tgz#adea7b6953cbb34651766b0548468e743c6a2353"
   integrity sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==
 
-"@rematch/core@^2.0.0-next.10":
-  version "2.0.0-next.10"
-  resolved "https://registry.yarnpkg.com/@rematch/core/-/core-2.0.0-next.10.tgz#24fa2fbc3a906bd63cc7ee3600d03d95c1ec6723"
-  integrity sha512-jDD524T/CxCYGzKci6KtNn9SGHfZaUnwPtJsC0KIGlY9Js7IfqDnMJ+0O047oiM3RhsuFne8f4Zjhv1LWKRwPg==
-
 "@rematch/core@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@rematch/core/-/core-2.0.1.tgz#c69bba9637f41c403c8725834673b12a58a28f31"
@@ -1841,11 +1836,6 @@ es6-object-assign@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
   integrity sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
-
-es6-shim@^0.35.6:
-  version "0.35.6"
-  resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.6.tgz#d10578301a83af2de58b9eadb7c2c9945f7388a0"
-  integrity sha512-EmTr31wppcaIAgblChZiuN/l9Y7DPyw8Xtbg7fIVngn6zMW+IEBJDJngeKC3x6wr0V/vcA2wqeFnaw1bFJbDdA==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -3692,10 +3682,10 @@ react-flatpickr@^3.10.7:
     flatpickr "^4.6.2"
     prop-types "^15.5.10"
 
-react-hook-form@^7.12.1:
-  version "7.12.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.12.1.tgz#dc6adbbd78a3c8817129672a6367d45479e9ca3e"
-  integrity sha512-JBu5TZK3IXzDKw9SuNFwyQFdIx5uGZSmN9QTDsNsDSYdccU/O+43jBUh0zKG4jDc4hiNYYgDw34lLt7qLSeusA==
+react-hook-form@^6.15.4:
+  version "6.15.8"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.15.8.tgz#725c139d308c431c4611e4b9d85a49f01cfc0e7a"
+  integrity sha512-prq82ofMbnRyj5wqDe8hsTRcdR25jQ+B8KtCS7BLCzjFHAwNuCjRwzPuP4eYLsEBjEIeYd6try+pdLdw0kPkpg==
 
 react-i18next@^11.8.13, react-i18next@^11.9.0:
   version "11.9.0"

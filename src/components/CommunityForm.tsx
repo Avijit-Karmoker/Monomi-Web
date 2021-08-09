@@ -11,7 +11,6 @@ import {
   Col,
   FormFeedback,
   FormGroup,
-  FormText,
   Input,
   Label,
 } from 'reactstrap'
@@ -22,6 +21,7 @@ import Select from 'react-select'
 import classnames from 'classnames'
 import { CountryRegionData } from 'react-country-region-selector'
 import dynamic from 'next/dynamic'
+import RippleButton from './RippleButton'
 
 const EditorsContainer = dynamic(() => import('./TextEditor'), {
   ssr: false,
@@ -67,7 +67,7 @@ export default function CommunityForm() {
     },
   })
 
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('community')
 
   const ValidateEmail = (event: any) => {
     if (event.target.name === 'email') {
@@ -88,58 +88,58 @@ export default function CommunityForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor='name'>{t('name')}</label> <br />
-        <input
+      <FormGroup onSubmit={handleSubmit(onSubmit)}>
+        <Label htmlFor='name'>{t('community:name')}</Label> <br />
+        <Input
           {...register('name', { required: true })}
           id='name'
-          placeholder={t('name')}
+          placeholder={t('community:name')}
           className='form-control'
         />
-        {errors.name && <span>{t('required')}</span>}
+        <FormFeedback>{errors.name?.message}</FormFeedback>
         <br />
-        <label htmlFor='select'>{t('selectProfit')}</label> <br />
+        <Label htmlFor='select'>{t('community:selectProfit')}</Label> <br />
         <select {...register('profit')} id='select' className='form-control'>
-          <option>{t('forProfit')}</option>
-          <option>{t('nonProfit')}</option>
+          <option>{t('community:forProfit')}</option>
+          <option>{t('community:nonProfit')}</option>
         </select>
-        {errors.profit && <span>{t('required')}</span>} <br />
-        <label htmlFor='entityName'>{t('entityName')}</label> <br />
-        <input
+        <FormFeedback>{errors.profit?.message}</FormFeedback> <br />
+        <Label htmlFor='entityName'>{t('community:entityName')}</Label> <br />
+        <Input
           {...register('entityName', { required: true })}
           id='entityName'
-          placeholder={t('entityName')}
+          placeholder={t('community:entityName')}
           className='form-control'
         />
-        {errors.entityName && <span>{t('required')}</span>}
+        <FormFeedback>{errors.entityName?.message}</FormFeedback>
         <br />
-        <label htmlFor='entityCode'>{t('entityCode')}</label> <br />
-        <input
+        <Label htmlFor='entityCode'>{t('community:entityCode')}</Label> <br />
+        <Input
           {...register('entityCode', { required: true })}
           id='entityCode'
-          placeholder={t('entityCode')}
+          placeholder={t('community:entityCode')}
           className='form-control'
         />
-        {errors.entityCode && <span>{t('required')}</span>}
+        <FormFeedback>{errors.entityCode?.message}</FormFeedback>
         <br />
-        <label htmlFor='entityVat'>{t('entityVat')}</label> <br />
-        <input
+        <Label htmlFor='entityVat'>{t('community:entityVat')}</Label> <br />
+        <Input
           {...register('entityVat', { required: true })}
           id='entityVat'
-          placeholder={t('entityVat')}
+          placeholder={t('community:entityVat')}
           className='form-control'
         />
-        {errors.entityVat && <span>{t('required')}</span>}
+        <FormFeedback>{errors.entityVat?.message}</FormFeedback>
         <br />
-        <label htmlFor='email'>{t('email')}</label> <br />
-        <input
+        <Label htmlFor='email'>{t('community:email')}</Label> <br />
+        <Input
           {...register('email', { required: true })}
           id='email'
-          placeholder={t('email')}
+          placeholder={t('community:email')}
           onBlur={ValidateEmail}
           className='form-control'
         />
-        {errors.email && <span>{t('required')}</span>}
+        <FormFeedback>{errors.email?.message}</FormFeedback>
         <br />
         <FormGroup
           className='form-label-group'
@@ -169,61 +169,61 @@ export default function CommunityForm() {
                     ?.country,
                 })}
                 classNamePrefix='select'
-                placeholder={t('select')}
+                placeholder={t('community:select')}
               />
             )}
           />
           <Input type='hidden' name='address.country' />
           <Label for='address.country' style={{ color: '#5E5873 !important' }}>
-            {t('country')}
+            {t('community:country')}
           </Label>
           <FormFeedback>
             {(errors.address as FieldErrors<EntityAddress>)?.country?.message}
           </FormFeedback>
         </FormGroup>
-        <label htmlFor='city'>{t('city')}</label> <br />
-        <input
+        <Label htmlFor='city'>{t('community:city')}</Label> <br />
+        <Input
           {...register('city', { required: true })}
           id='city'
-          placeholder={t('city')}
+          placeholder={t('community:city')}
           className='form-control'
         />
-        {errors.city && <span>{t('required')}</span>}
+        <FormFeedback>{errors.city?.message}</FormFeedback>
         <br />
-        <label htmlFor='zip'>{t('zip')}</label> <br />
-        <input
+        <Label htmlFor='zip'>{t('community:zip')}</Label> <br />
+        <Input
           {...register('zip', { required: true })}
           id='zip'
-          placeholder={t('zip')}
+          placeholder={t('community:zip')}
           className='form-control'
         />
-        {errors.zip && <span>{t('required')}</span>}
+        <FormFeedback>{errors.zip?.message}</FormFeedback>
         <br />
-        <label htmlFor='addressLine1'>{t('addressLine1')}</label> <br />
-        <input
+        <Label htmlFor='addressLine1'>{t('community:addressLine1')}</Label> <br />
+        <Input
           {...register('addressLine1', { required: true })}
           id='addressLine1'
-          placeholder={t('addressLine1')}
+          placeholder={t('community:addressLine1')}
           className='form-control'
         />
-        {errors.addressLine1 && <span>{t('required')}</span>}
+        <FormFeedback>{errors.addressLine1?.message}</FormFeedback>
         <br />
-        <label htmlFor='addressLine2'>{t('addressLine2')}</label> <br />
-        <input
+        <Label htmlFor='addressLine2'>{t('community:addressLine2')}</Label> <br />
+        <Input
           {...register('addressLine2')}
           id='addressLine2'
-          placeholder={t('addressLine2')}
+          placeholder={t('community:addressLine2')}
           className='form-control'
         />
         <br />
-        <label htmlFor='businessCategory'>{t('businessCategory')}</label> <br />
-        <input
+        <Label htmlFor='businessCategory'>{t('community:businessCategory')}</Label> <br />
+        <Input
           {...register('businessCategory', { required: true })}
           id='businessCategory'
-          placeholder={t('businessCategory')}
+          placeholder={t('community:businessCategory')}
           className='form-control'
         />
-        {errors.businessCategory && <span>{t('required')}</span>}
+        <FormFeedback>{errors.businessCategory?.message}</FormFeedback>
         <br />
         <EditorsContainer />
         <FormGroup row>
@@ -252,8 +252,9 @@ export default function CommunityForm() {
             />
           </Col>
         </FormGroup>
-        <input type='submit' />
-      </form>
+        <Input type='submit' />
+        {/* <RippleButton></RippleButton> */}
+      </FormGroup>
     </div>
   )
 }

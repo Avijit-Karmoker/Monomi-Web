@@ -28,7 +28,7 @@ const pinValidationRegExp =
 
 const genders = ['m', 'f', 'o']
 
-const profits = ['nonProfit', 'profit']
+const communityTypes = ['nonProfit', 'profit']
 
 const fonts = {
   url: 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600',
@@ -46,5 +46,5 @@ module.exports = {
   genders,
   fonts,
   translationNamespaces,
-  profits
+  communityTypes
 }

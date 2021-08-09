@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react';
 import CommunityForm from '../../components/CommunityForm'
+import { getSession } from 'next-auth/client'
 
 
 const New = () => {
@@ -15,9 +16,21 @@ const New = () => {
 export default New
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context)
+
+  // if (!session?.accessToken) {
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false,
+  //     },
+  //   }
+  // }
+
   return {
     props: {
-      ...(await serverSideTranslations(context.locale!, ['common'])),
+      session,
+      ...(await serverSideTranslations(context.locale!, (['common']))),
     },
   }
 }

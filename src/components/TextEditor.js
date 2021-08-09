@@ -4,7 +4,7 @@ import { Editor } from 'react-draft-wysiwyg'
 import 'node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import { useTranslation } from 'react-i18next'
 
-class EditorContainer extends Component {
+class EditorContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -26,26 +26,25 @@ class EditorContainer extends Component {
         <Editor
           editorState={editorState}
           onEditorStateChange={this.onEditorStateChange}
-          toolbar={{
-            inline: { inDropdown: true },
-            list: { inDropdown: true },
-            textAlign: { inDropdown: true },
-            link: { inDropdown: true },
-            history: { inDropdown: true },
-          }}
         />
       </div>
     )
   }
+  toolbar = {
+    inline: { inDropdown: true },
+    list: { inDropdown: true },
+    textAlign: { inDropdown: true },
+    link: { inDropdown: true },
+    history: { inDropdown: true },
+  }
 }
 
-const TextEditor = () => {
-
-  const { t } = useTranslation('common')
+function TextEditor() {
+  const { t } = useTranslation('community')
 
   return (
     <div>
-      <label htmlFor=''>{t('description')}</label>
+      <label htmlFor=''>{t('community:description')}</label>
       <EditorContainer />
     </div>
   )

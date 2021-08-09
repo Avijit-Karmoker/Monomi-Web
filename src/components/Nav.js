@@ -6,7 +6,7 @@ import IntlDropdown from '@/components/Layout/components/navbar/IntlDropdown'
 import Link from 'next/link'
 
 const Nav = () => {
-  const { t } = useTranslation(['home'])
+  const { t } = useTranslation(['home', 'community'])
 
   return (
     <div className={navStyle.navbar}>
@@ -57,10 +57,10 @@ const Nav = () => {
                     {t('home:nav.contact')}
                   </a>
                 </li>
-                <li class='nav-item' tag={Link}>
-                  <a class='nav-link' href='/communities/new'>
-                    {t('home:nav.communities')}
-                  </a>
+                <li class='nav-item'>
+                  <Link href='/communities/new'>
+                    <a class='nav-link'>{t('community:nav.communities')}</a>
+                  </Link>
                 </li>
                 <li class='nav-item p-0'>
                   <IntlDropdown></IntlDropdown>

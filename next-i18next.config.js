@@ -7,6 +7,5 @@ module.exports = {
     locales: languages.map(({ id }) => id),
     lowerCaseLng: true,
     localeDetection: false,
-    ssr: false,
   },
 }
