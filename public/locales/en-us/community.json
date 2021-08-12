@@ -13,6 +13,7 @@
   "confirmPurchase": "Confirm purchase",
   "contact": "Contact",
   "country": "Country",
+  "cover": "Cover",
   "creditCardDetails": "Credit card details",
   "description": "Description",
   "email": "Email",
@@ -26,6 +27,7 @@
   "joined": "Joined",
   "latestPhotos": "Latest photos",
   "location": "Location",
+  "logo": "Logo",
   "member": "Member",
   "membership": "membership",
   "name": "Name",
@@ -42,7 +44,7 @@
   "priceDetails": "Price details",
   "select": "Select",
   "selectProfit": "Select Profit",
-  "submit": "Submit",
+  "submit": "Become a member",
   "suggested": "Suggested communities",
   "zip": "Zip"
 }

@@ -1,5 +1,5 @@
 import { RootState } from '@/store'
-import { EntityAddress, OnboardingUserPayload } from '@/typings'
+import { CreateCommunityPayload, EntityAddress } from '@/typings'
 import React from 'react'
 import {
   useForm,
@@ -8,6 +8,7 @@ import {
   FieldErrors,
 } from 'react-hook-form'
 import {
+  Button,
   Col,
   FormFeedback,
   FormGroup,
@@ -22,6 +23,7 @@ import classnames from 'classnames'
 import { CountryRegionData } from 'react-country-region-selector'
 import dynamic from 'next/dynamic'
 import RippleButton from './RippleButton'
+
 
 const EditorsContainer = dynamic(() => import('./TextEditor'), {
   ssr: false,
@@ -55,7 +57,7 @@ export default function CommunityForm() {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<OnboardingUserPayload>({
+  } = useForm<CreateCommunityPayload>({
     defaultValues: {
       ...user,
       address: {
@@ -228,7 +230,7 @@ export default function CommunityForm() {
         <EditorsContainer />
         <FormGroup row>
           <Label for='logo' sm={12} md={12} lg={12}>
-            {t('logo')}
+            {t('community:logo')}
           </Label>
           <Col sm={12} md={12} lg={12}>
             <Input
@@ -241,7 +243,7 @@ export default function CommunityForm() {
         </FormGroup>
         <FormGroup row>
           <Label for='cover' sm={12} md={12} lg={12}>
-            {t('cover')}
+            {t('community:cover')}
           </Label>
           <Col sm={12} md={12} lg={12}>
             <Input
@@ -252,8 +254,7 @@ export default function CommunityForm() {
             />
           </Col>
         </FormGroup>
-        <Input type='submit' />
-        {/* <RippleButton></RippleButton> */}
+        <RippleButton></RippleButton>
       </FormGroup>
     </div>
   )

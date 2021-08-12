@@ -357,7 +357,7 @@
 
 "@monomi/rematch@git+ssh://git@gitlab.com/monomi/rematch-models":
   version "0.1.0"
-  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#675cbc78ddd8255014e0a7dc8d99ad01d876bbe1"
+  resolved "git+ssh://git@gitlab.com/monomi/rematch-models#3168fc9c497bad38853d3fe1367df34257262e85"
   dependencies:
     "@rematch/core" "^2.0.1"
     redux "^4.1.0"

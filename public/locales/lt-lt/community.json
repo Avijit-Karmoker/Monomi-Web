@@ -13,6 +13,7 @@
   "confirmPurchase": "Patvirtinkite pirkimą",
   "contact": "Kontaktai",
   "country": "Šalis",
+  "cover": "",
   "creditCardDetails": "Mokėjimo kortelės duomenys",
   "description": "Apibūdinimas",
   "email": "Paštu",
@@ -26,6 +27,7 @@
   "joined": "Nuo",
   "latestPhotos": "Naujausios nuotraukos",
   "location": "Vieta",
+  "logo": "Logotipas",
   "member": "Narys",
   "membership": "narystė",
   "name": "Pavadinimas",
@@ -42,7 +44,7 @@
   "priceDetails": "Kainos",
   "select": "Pasirinkite",
   "selectProfit": "Pasirinkite Pelnas",
-  "submit": "Pateikti",
+  "submit": "Tapti Nariu",
   "suggested": "Siūlomos bendruomenės",
   "zip": "Pašto kodas"
 }
