@@ -26,16 +26,16 @@ class EditorContainer extends React.Component {
         <Editor
           editorState={editorState}
           onEditorStateChange={this.onEditorStateChange}
+          toolbar={{
+            inline: { inDropdown: true },
+            list: { inDropdown: true },
+            textAlign: { inDropdown: true },
+            link: { inDropdown: true },
+            history: { inDropdown: true },
+          }}
         />
       </div>
     )
-  }
-  toolbar = {
-    inline: { inDropdown: true },
-    list: { inDropdown: true },
-    textAlign: { inDropdown: true },
-    link: { inDropdown: true },
-    history: { inDropdown: true },
   }
 }
 

@@ -3,6 +3,7 @@
   "addingPaymentMethodFailed": "Adding payment method failed",
   "addressLine1": "Address Line 1",
   "addressLine2": "Address Line 2",
+  "alart": "You have entered an invalid email address!",
   "alreadyMember": "You're already a member of this community",
   "billing": "Billing",
   "businessCategory": "Business Category",

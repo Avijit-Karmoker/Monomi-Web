@@ -7,14 +7,7 @@ import {
   Controller,
   FieldErrors,
 } from 'react-hook-form'
-import {
-  Button,
-  Col,
-  FormFeedback,
-  FormGroup,
-  Input,
-  Label,
-} from 'reactstrap'
+import { Button, Col, FormFeedback, FormGroup, Input, Label } from 'reactstrap'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { defaultLanguage } from '@/config'
@@ -23,27 +16,12 @@ import classnames from 'classnames'
 import { CountryRegionData } from 'react-country-region-selector'
 import dynamic from 'next/dynamic'
 import RippleButton from './RippleButton'
-
+import communityTypes from '../config'
+import { options } from 'next-auth/client'
 
 const EditorsContainer = dynamic(() => import('./TextEditor'), {
   ssr: false,
 })
-
-type Inputs = {
-  className: string
-  children: string
-  name: string
-  profit: string
-  entityName: string
-  entityCode: string
-  entityVat: any
-  email: string
-  id: string
-  city: string
-  zip: string
-  addressLine1: any
-  businessCategory: string
-}
 
 export default function CommunityForm() {
   const { user, locale } = useSelector(
@@ -71,20 +49,19 @@ export default function CommunityForm() {
 
   const { t } = useTranslation('community')
 
-  const ValidateEmail = (event: any) => {
+  const CheckEmail = (event: any) => {
     if (event.target.name === 'email') {
       const isValidEmail =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
           event.target.value,
         )
-      console.log(isValidEmail)
     } else {
-      alert('You have entered an invalid email address!')
+      alert ("{t('community:envalidEmail')}")
       return false
     }
   }
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<CreateCommunityPayload> = (data) => {
     console.log(data)
   }
 
@@ -101,10 +78,10 @@ export default function CommunityForm() {
         <FormFeedback>{errors.name?.message}</FormFeedback>
         <br />
         <Label htmlFor='select'>{t('community:selectProfit')}</Label> <br />
-        <select {...register('profit')} id='select' className='form-control'>
-          <option>{t('community:forProfit')}</option>
-          <option>{t('community:nonProfit')}</option>
-        </select>
+        <Select
+          id='select'
+          onChange={(option) => option?.value}
+        />
         <FormFeedback>{errors.profit?.message}</FormFeedback> <br />
         <Label htmlFor='entityName'>{t('community:entityName')}</Label> <br />
         <Input
@@ -138,7 +115,7 @@ export default function CommunityForm() {
           {...register('email', { required: true })}
           id='email'
           placeholder={t('community:email')}
-          onBlur={ValidateEmail}
+          onBlur={CheckEmail}
           className='form-control'
         />
         <FormFeedback>{errors.email?.message}</FormFeedback>
@@ -201,7 +178,8 @@ export default function CommunityForm() {
         />
         <FormFeedback>{errors.zip?.message}</FormFeedback>
         <br />
-        <Label htmlFor='addressLine1'>{t('community:addressLine1')}</Label> <br />
+        <Label htmlFor='addressLine1'>{t('community:addressLine1')}</Label>{' '}
+        <br />
         <Input
           {...register('addressLine1', { required: true })}
           id='addressLine1'
@@ -210,7 +188,8 @@ export default function CommunityForm() {
         />
         <FormFeedback>{errors.addressLine1?.message}</FormFeedback>
         <br />
-        <Label htmlFor='addressLine2'>{t('community:addressLine2')}</Label> <br />
+        <Label htmlFor='addressLine2'>{t('community:addressLine2')}</Label>{' '}
+        <br />
         <Input
           {...register('addressLine2')}
           id='addressLine2'
@@ -218,7 +197,10 @@ export default function CommunityForm() {
           className='form-control'
         />
         <br />
-        <Label htmlFor='businessCategory'>{t('community:businessCategory')}</Label> <br />
+        <Label htmlFor='businessCategory'>
+          {t('community:businessCategory')}
+        </Label>{' '}
+        <br />
         <Input
           {...register('businessCategory', { required: true })}
           id='businessCategory'
@@ -233,12 +215,7 @@ export default function CommunityForm() {
             {t('community:logo')}
           </Label>
           <Col sm={12} md={12} lg={12}>
-            <Input
-              type='file'
-              name='file'
-              id='logo'
-              required={true}
-            />
+            <Input type='file' name='file' id='logo' required={true} />
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -246,15 +223,10 @@ export default function CommunityForm() {
             {t('community:cover')}
           </Label>
           <Col sm={12} md={12} lg={12}>
-            <Input
-              type='file'
-              name='file'
-              id='cover'
-              required={true}
-            />
+            <Input type='file' name='file' id='cover' required={true} />
           </Col>
         </FormGroup>
-        <RippleButton></RippleButton>
+        <RippleButton>{t('community:submit')}</RippleButton>
       </FormGroup>
     </div>
   )

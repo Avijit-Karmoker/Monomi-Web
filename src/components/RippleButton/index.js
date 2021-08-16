@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react'
 import { Button } from 'reactstrap'
 import classnames from 'classnames'
-import { useTranslation } from 'react-i18next'
 
 const RippleButton = ({ className, children, onClick, ...rest }) => {
   // ** States
@@ -35,7 +34,6 @@ const RippleButton = ({ className, children, onClick, ...rest }) => {
     }
   }, [isRippling])
 
-  const { t } = useTranslation ('community')
 
   return (
     <Button
@@ -51,7 +49,7 @@ const RippleButton = ({ className, children, onClick, ...rest }) => {
       }}
       color='primary'
       {...rest}
-    > {t('community:submit')}
+    > 
       {children}
       {isRippling ? (
         <span

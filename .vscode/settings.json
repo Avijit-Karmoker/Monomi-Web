@@ -1,0 +1,17 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 20,
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false
+  },
+  "diffEditor.wordWrap": "on",
+  "editor.wordWrapColumn": 100,
+  "editor.fontLigatures": true,
+  "terminal.integrated.automationShell.linux": "Git Bash",
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 20,
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  }
+}
