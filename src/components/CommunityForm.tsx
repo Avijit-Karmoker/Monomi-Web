@@ -10,13 +10,12 @@ import {
 import { Button, Col, FormFeedback, FormGroup, Input, Label } from 'reactstrap'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { defaultLanguage } from '@/config'
+import { defaultLanguage, communityTypes } from '@/config'
 import Select from 'react-select'
 import classnames from 'classnames'
 import { CountryRegionData } from 'react-country-region-selector'
 import dynamic from 'next/dynamic'
 import RippleButton from './RippleButton'
-import communityTypes from '../config'
 import { options } from 'next-auth/client'
 
 const EditorsContainer = dynamic(() => import('./TextEditor'), {
@@ -56,7 +55,7 @@ export default function CommunityForm() {
           event.target.value,
         )
     } else {
-      alert ("{t('community:envalidEmail')}")
+      alert("{t('community:envalidEmail')}")
       return false
     }
   }
@@ -75,14 +74,34 @@ export default function CommunityForm() {
           placeholder={t('community:name')}
           className='form-control'
         />
-        <FormFeedback>{errors.name?.message}</FormFeedback>
+        <FormFeedback>{errors.name?.message}</FormFeedback> <br />
         <br />
-        <Label htmlFor='select'>{t('community:selectProfit')}</Label> <br />
-        <Select
-          id='select'
-          onChange={(option) => option?.value}
-        />
-        <FormFeedback>{errors.profit?.message}</FormFeedback> <br />
+        <FormGroup className='form-label-group'>
+          <Controller
+            id='communityTypes'
+            name='communityTypes'
+            rules={{ required: true }}
+            control={control}
+            render={({ onChange, value }) => (
+              <Select
+                defaultValue={value ? { label: value, value } : null}
+                onChange={(option) => onChange(option?.value)}
+                options={communityTypes.map((value) => ({
+                  label: t(`communityTypes.${value}`),
+                  value,
+                }))}
+                className={classnames('react-select', {
+                  'is-invalid': !!errors.communityTypes,
+                })}
+                classNamePrefix='select'
+                placeholder={t('select')}
+              />
+            )}
+          />
+          <Input type='hidden' name='communityTypes' />
+            <Label for='communityTypes'>{t('community:selectProfit')}</Label>
+            <FormFeedback>{errors.communityTypes?.message}</FormFeedback>
+        </FormGroup>
         <Label htmlFor='entityName'>{t('community:entityName')}</Label> <br />
         <Input
           {...register('entityName', { required: true })}

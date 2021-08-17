@@ -3,7 +3,6 @@
   "addingPaymentMethodFailed": "Nepavyko pridėti mokėjimo priemonės",
   "addressLine1": "Adreso Eilutė 1",
   "addressLine2": "Adreso Eilutė 2",
-  "alart": "Įvedėte neteisingą el. Pašto adresą!",
   "alreadyMember": "Jau esate šios bendruomenės narys",
   "billing": "Atsiskaitymas",
   "businessCategory": "Verslo kategorija",
@@ -11,6 +10,10 @@
   "checkout": "Užsakymas",
   "city": "Miestas",
   "community": "Bendruomenės",
+  "communityTypes": {
+    "nonProfit": "Ne-pelno",
+    "profit": "Pelno"
+  },
   "confirmPurchase": "Patvirtinkite pirkimą",
   "contact": "Kontaktai",
   "country": "Šalis",
@@ -22,8 +25,8 @@
   "entityCode": "Subjekto kodas",
   "entityName": "Subjekto pavadinimas",
   "entityVat": "Subjektas Vat",
+  "envalidEmail": "Įvedėte neteisingą el. Pašto adresą!",
   "feeAndTax": "Rinkliavos ir mokesčiai",
-  "forProfit": "Dėl pelno",
   "join": "Tapti nariu",
   "joined": "Nuo",
   "latestPhotos": "Naujausios nuotraukos",
@@ -35,7 +38,6 @@
   "nav": {
     "communities": "Communities"
   },
-  "nonProfit": "Ne Pelno",
   "nowAMember": "Tapote bendruomenės nariu",
   "oncePerMonth": "Kartą per mėnesį",
   "pay": "Mokėti",

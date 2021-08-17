@@ -20,4 +20,5 @@ export {
   pinValidationRegExp,
   genders,
   fonts,
+  communityTypes
 }
