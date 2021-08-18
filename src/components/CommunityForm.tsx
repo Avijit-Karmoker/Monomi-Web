@@ -47,18 +47,6 @@ export default function CommunityForm() {
 
   const { t } = useTranslation('community')
 
-  const CheckEmail = (event: any) => {
-    if (event.target.name === 'email') {
-      const isValidEmail =
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-          event.target.value,
-        )
-    } else {
-      alert("{t('community:envalidEmail')}")
-      return false
-    }
-  }
-
   const onSubmit: SubmitHandler<CreateCommunityPayload> = (data) => {
     console.log(data)
   }
@@ -98,8 +86,8 @@ export default function CommunityForm() {
             )}
           />
           <Input type='hidden' name='communityTypes' />
-            <Label for='communityTypes'>{t('community:selectProfit')}</Label>
-            <FormFeedback>{errors.communityTypes?.message}</FormFeedback>
+          <Label for='communityTypes'>{t('community:selectProfit')}</Label>
+          <FormFeedback>{errors.communityTypes?.message}</FormFeedback>
         </FormGroup>
         <Label htmlFor='entityName'>{t('community:entityName')}</Label> <br />
         <Input
@@ -128,16 +116,22 @@ export default function CommunityForm() {
         />
         <FormFeedback>{errors.entityVat?.message}</FormFeedback>
         <br />
-        <Label htmlFor='email'>{t('community:email')}</Label> <br />
-        <Input
-          {...register('email', { required: true })}
-          id='email'
-          placeholder={t('community:email')}
-          onBlur={CheckEmail}
-          className='form-control'
-        />
-        <FormFeedback>{errors.email?.message}</FormFeedback>
-        <br />
+        <FormGroup className='form-label-group'>
+          <Input
+            autoComplete='username'
+            defaultValue={user?.email || ''}
+            type='text'
+            name='email'
+            placeholder={t('email')}
+            invalid={!!errors.email}
+            innerRef={register({
+              required: true,
+              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            })}
+          />
+          <Label for='email'>{t('community:email')}</Label>
+          <FormFeedback>{errors.email?.message}</FormFeedback>
+        </FormGroup>
         <FormGroup
           className='form-label-group'
           style={{ marginTop: '1.7em', color: '#A4A1B0 !important' }}

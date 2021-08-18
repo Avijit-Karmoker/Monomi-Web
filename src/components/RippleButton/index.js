@@ -34,7 +34,6 @@ const RippleButton = ({ className, children, onClick, ...rest }) => {
     }
   }, [isRippling])
 
-
   return (
     <Button
       className={classnames('waves-effect', {
@@ -49,7 +48,7 @@ const RippleButton = ({ className, children, onClick, ...rest }) => {
       }}
       color='primary'
       {...rest}
-    > 
+    >
       {children}
       {isRippling ? (
         <span

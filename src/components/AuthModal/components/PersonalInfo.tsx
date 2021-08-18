@@ -1,4 +1,4 @@
-import RippleButton from '@/components/Spinner/RippleButton'
+import RippleButton from '@/components/RippleButton'
 import { RootState, Dispatch } from '@/store'
 import { EntityAddress, OnboardingUserPayload } from '@/typings'
 import { setAPIErrors } from '@/utils'

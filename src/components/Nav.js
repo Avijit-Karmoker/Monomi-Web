@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { Button } from 'reactstrap'
 import Image from 'next/image'
 import IntlDropdown from '@/components/Layout/components/navbar/IntlDropdown'
-import Link from 'next/link'
 
 const Nav = () => {
-  const { t } = useTranslation(['home', 'community'])
+  const { t } = useTranslation(['home'])
 
   return (
     <div className={navStyle.navbar}>
