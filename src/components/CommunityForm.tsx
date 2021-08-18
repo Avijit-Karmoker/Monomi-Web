@@ -7,7 +7,7 @@ import {
   Controller,
   FieldErrors,
 } from 'react-hook-form'
-import { Button, Col, FormFeedback, FormGroup, Input, Label } from 'reactstrap'
+import { Col, FormFeedback, FormGroup, Input, Label } from 'reactstrap'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { defaultLanguage, communityTypes } from '@/config'
@@ -16,7 +16,6 @@ import classnames from 'classnames'
 import { CountryRegionData } from 'react-country-region-selector'
 import dynamic from 'next/dynamic'
 import RippleButton from './RippleButton'
-import { options } from 'next-auth/client'
 
 const EditorsContainer = dynamic(() => import('./TextEditor'), {
   ssr: false,
