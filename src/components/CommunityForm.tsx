@@ -1,4 +1,3 @@
-import { RootState } from '@/store'
 import { CreateCommunityPayload, EntityAddress } from '@/typings'
 import React from 'react'
 import {
@@ -9,8 +8,7 @@ import {
 } from 'react-hook-form'
 import { Col, FormFeedback, FormGroup, Input, Label } from 'reactstrap'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
-import { defaultLanguage, communityTypes } from '@/config'
+import { communityTypes } from '@/config'
 import Select from 'react-select'
 import classnames from 'classnames'
 import { CountryRegionData } from 'react-country-region-selector'
@@ -22,27 +20,13 @@ const EditorsContainer = dynamic(() => import('./TextEditor'), {
 })
 
 export default function CommunityForm() {
-  const { user, locale } = useSelector(
-    ({ authentication: { user }, global: { locale } }: RootState) => ({
-      user,
-      locale,
-    }),
-  )
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
   } = useForm<CreateCommunityPayload>({
-    defaultValues: {
-      ...user,
-      address: {
-        country:
-          locale == defaultLanguage.id
-            ? defaultLanguage.code
-            : user?.address?.country,
-      },
-    },
+    defaultValues: {},
   })
 
   const { t } = useTranslation('community')
@@ -65,8 +49,8 @@ export default function CommunityForm() {
         <br />
         <FormGroup className='form-label-group'>
           <Controller
-            id='communityTypes'
-            name='communityTypes'
+            id='type'
+            name='type'
             rules={{ required: true }}
             control={control}
             render={({ onChange, value }) => (
@@ -78,7 +62,7 @@ export default function CommunityForm() {
                   value,
                 }))}
                 className={classnames('react-select', {
-                  'is-invalid': !!errors.communityTypes,
+                  'is-invalid': !!errors.type,
                 })}
                 classNamePrefix='select'
                 placeholder={t('select')}
@@ -87,7 +71,7 @@ export default function CommunityForm() {
           />
           <Input type='hidden' name='communityTypes' />
           <Label for='communityTypes'>{t('community:selectProfit')}</Label>
-          <FormFeedback>{errors.communityTypes?.message}</FormFeedback>
+          <FormFeedback>{errors.type?.message}</FormFeedback>
         </FormGroup>
         <Label htmlFor='entityName'>{t('community:entityName')}</Label> <br />
         <Input
@@ -116,10 +100,10 @@ export default function CommunityForm() {
         />
         <FormFeedback>{errors.entityVat?.message}</FormFeedback>
         <br />
-        <FormGroup className='form-label-group'>
+        <FormGroup className='form-label-group' style={{ marginTop: '1.3em' }}>
           <Input
             autoComplete='username'
-            defaultValue={user?.email || ''}
+            defaultValue={''}
             type='text'
             name='email'
             placeholder={t('email')}
@@ -134,7 +118,7 @@ export default function CommunityForm() {
         </FormGroup>
         <FormGroup
           className='form-label-group'
-          style={{ marginTop: '1.7em', color: '#A4A1B0 !important' }}
+          style={{ marginTop: '3em', color: '#A4A1B0 !important' }}
         >
           <Controller
             control={control}
@@ -179,7 +163,9 @@ export default function CommunityForm() {
           placeholder={t('community:city')}
           className='form-control'
         />
-        <FormFeedback>{errors.city?.message}</FormFeedback>
+        <FormFeedback>
+          {(errors.address as FieldErrors<EntityAddress>)?.city?.message}
+        </FormFeedback>
         <br />
         <Label htmlFor='zip'>{t('community:zip')}</Label> <br />
         <Input
@@ -227,7 +213,12 @@ export default function CommunityForm() {
             {t('community:logo')}
           </Label>
           <Col sm={12} md={12} lg={12}>
-            <Input type='file' name='file' id='logo' required={true} />
+            <Input
+              type='file'
+              id='logo'
+              placeholder={t('community:logo')}
+              {...register('logo', { required: true })}
+            />
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -235,7 +226,11 @@ export default function CommunityForm() {
             {t('community:cover')}
           </Label>
           <Col sm={12} md={12} lg={12}>
-            <Input type='file' name='file' id='cover' required={true} />
+            <Input
+              type='file'
+              id='cover'
+              {...register('cover', { required: true })}
+            />
           </Col>
         </FormGroup>
         <RippleButton>{t('community:submit')}</RippleButton>
