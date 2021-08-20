@@ -9,6 +9,7 @@ declare const translationNamespaces: string[]
 declare const pinValidationRegExp: RegExp
 declare const genders: Gender[]
 declare const fonts: { url: string }
+declare const communityTypes: string[]
 
 export {
   baseHost,
@@ -20,5 +21,5 @@ export {
   pinValidationRegExp,
   genders,
   fonts,
-  communityTypes
+  communityTypes,
 }
