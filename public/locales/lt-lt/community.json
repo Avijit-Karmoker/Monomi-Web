@@ -1,21 +1,42 @@
 {
   "about": "Apie",
   "addingPaymentMethodFailed": "Nepavyko pridėti mokėjimo priemonės",
+  "addressLine1": "Adreso Eilutė 1",
+  "addressLine2": "Adreso Eilutė 2",
   "alreadyMember": "Jau esate šios bendruomenės narys",
   "billing": "Atsiskaitymas",
+  "businessCategory": "Verslo kategorija",
   "checkDetailsAndRetry": "Patikrinkite duomenis ir pabandykite dar kartą.",
   "checkout": "Užsakymas",
+  "city": "Miestas",
+  "community": "Bendruomenės",
+  "communityTypes": {
+    "nonProfit": "Ne-pelno",
+    "profit": "Pelno"
+  },
   "confirmPurchase": "Patvirtinkite pirkimą",
   "contact": "Kontaktai",
+  "country": "Šalis",
+  "cover": "Viršelio Nuotrauka",
+  "create": "Sukurti",
   "creditCardDetails": "Mokėjimo kortelės duomenys",
+  "description": "Apibūdinimas",
   "enterSubscriptionAmount": "Prašome įvesti norimą narystės mokesčio sumą",
+  "entityCode": "Subjekto kodas",
+  "entityName": "Subjekto pavadinimas",
+  "entityVat": "Subjektas Vat",
   "feeAndTax": "Rinkliavos ir mokesčiai",
   "join": "Tapti nariu",
   "joined": "Nuo",
   "latestPhotos": "Naujausios nuotraukos",
   "location": "Vieta",
+  "logo": "Logotipas",
   "member": "Narys",
   "membership": "narystė",
+  "name": "Pavadinimas",
+  "nav": {
+    "communities": "Communities"
+  },
   "nowAMember": "Tapote bendruomenės nariu",
   "oncePerMonth": "Kartą per mėnesį",
   "pay": "Mokėti",
@@ -23,5 +44,9 @@
   "paymentMethodFailed": "Nepavyko nuskaityti mokėjimo priemonės",
   "paymentSuccessful": "Mokėjimas sėkmingas",
   "priceDetails": "Kainos",
-  "suggested": "Siūlomos bendruomenės"
+  "select": "Pasirinkite",
+  "selectProfit": "Pasirinkite Pelnas",
+  "submit": "Tapti Nariu",
+  "suggested": "Siūlomos bendruomenės",
+  "zip": "Pašto kodas"
 }

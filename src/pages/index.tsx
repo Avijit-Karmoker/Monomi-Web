@@ -10,8 +10,8 @@ import Footer from '@/components/Footer'
 export default function Landing() {
   return (
     <div>
-      <Nav />
       <main>
+        <Nav />
         <Hero></Hero>
         <Creators></Creators>
         <ForMembers></ForMembers>

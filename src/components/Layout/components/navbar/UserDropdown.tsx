@@ -22,9 +22,10 @@ const UserDropdown = () => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
-  const toggle = useCallback(() => setDropdownOpen((prevState) => !prevState), [
-    setDropdownOpen,
-  ])
+  const toggle = useCallback(
+    () => setDropdownOpen((prevState) => !prevState),
+    [setDropdownOpen],
+  )
 
   const { t } = useTranslation('common')
 
@@ -62,6 +63,12 @@ const UserDropdown = () => {
           <a className='dropdown-item' role='menuitem' onClick={toggle}>
             <Home size={14} className='mr-75' />
             <span className='align-middle'>{t('feed')}</span>
+          </a>
+        </DropdownItem>
+        <DropdownItem tag={Link} href='/communities/new'>
+          <a className='dropdown-item' role='menuitem' onClick={toggle}>
+            <Home size={14} className='mr-75' />
+            <span className='align-middle'>{t('createCommunity')}</span>
           </a>
         </DropdownItem>
         <DropdownItem divider />

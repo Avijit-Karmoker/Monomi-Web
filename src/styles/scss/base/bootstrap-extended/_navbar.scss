@@ -266,7 +266,7 @@
         &.dropdown-user {
           line-height: 1 !important; // Set due to custom 2 line component in navbar
           .dropdown-menu {
-            width: 12rem;
+            width: auto;
             margin-top: 10px;
             i,
             svg {

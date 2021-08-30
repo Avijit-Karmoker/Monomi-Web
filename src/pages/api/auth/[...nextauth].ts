@@ -13,7 +13,7 @@ const options: NextAuthOptions = {
       credentials: {
         accessToken: { type: 'text' },
       },
-      authorize: async ({ accessToken }) =>
+      authorize: async ({ accessToken }: { accessToken: string }) =>
         accessToken ? { accessToken } : null,
     }),
   ],

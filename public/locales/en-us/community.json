@@ -1,21 +1,42 @@
 {
   "about": "About",
   "addingPaymentMethodFailed": "Adding payment method failed",
+  "addressLine1": "Address Line 1",
+  "addressLine2": "Address Line 2",
   "alreadyMember": "You're already a member of this community",
   "billing": "Billing",
+  "businessCategory": "Business Category",
   "checkDetailsAndRetry": "Check details and retry.",
   "checkout": "Checkout",
+  "city": "City",
+  "community": "Community",
+  "communityTypes": {
+    "nonProfit": "Non-Profit",
+    "profit": "Profit"
+  },
   "confirmPurchase": "Confirm purchase",
   "contact": "Contact",
+  "country": "Country",
+  "cover": "Cover",
+  "create": "Create",
   "creditCardDetails": "Credit card details",
+  "description": "Description",
   "enterSubscriptionAmount": "Please input your membership fee amount",
+  "entityCode": "Entity Code",
+  "entityName": "Entity Name",
+  "entityVat": "Entity Vat",
   "feeAndTax": "Fee & Tax",
   "join": "Become member",
   "joined": "Joined",
   "latestPhotos": "Latest photos",
   "location": "Location",
+  "logo": "Logo",
   "member": "Member",
   "membership": "membership",
+  "name": "Name",
+  "nav": {
+    "communities": "Communities"
+  },
   "nowAMember": "You're now a member",
   "oncePerMonth": "Once per month",
   "pay": "Pay",
@@ -23,5 +44,9 @@
   "paymentMethodFailed": "Payment method failed",
   "paymentSuccessful": "Payment successful",
   "priceDetails": "Price details",
-  "suggested": "Suggested communities"
+  "select": "Select",
+  "selectProfit": "Select Profit",
+  "submit": "Become a member",
+  "suggested": "Suggested communities",
+  "zip": "Zip"
 }
