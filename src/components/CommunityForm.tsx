@@ -29,7 +29,7 @@ export default function CommunityForm() {
     defaultValues: {},
   })
 
-  const { t } = useTranslation('community')
+  const { t } = useTranslation()
 
   const onSubmit: SubmitHandler<CreateCommunityPayload> = (data) => {
     console.log(data)
@@ -100,22 +100,20 @@ export default function CommunityForm() {
         />
         <FormFeedback>{errors.entityVat?.message}</FormFeedback>
         <br />
-        <FormGroup className='form-label-group' style={{ marginTop: '1.3em' }}>
-          <Input
-            autoComplete='username'
-            defaultValue={''}
-            type='text'
-            name='email'
-            placeholder={t('email')}
-            invalid={!!errors.email}
-            innerRef={register({
-              required: true,
-              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            })}
-          />
-          <Label for='email'>{t('community:email')}</Label>
-          <FormFeedback>{errors.email?.message}</FormFeedback>
-        </FormGroup>
+        <Label htmlFor='email'>{t('email')}</Label>
+        <Input
+          autoComplete='username'
+          defaultValue={''}
+          type='text'
+          name='email'
+          placeholder={t('email')}
+          invalid={!!errors.email}
+          innerRef={register({
+            required: true,
+            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          })}
+        />
+        <FormFeedback>{errors.email?.message}</FormFeedback>
         <FormGroup
           className='form-label-group'
           style={{ marginTop: '3em', color: '#A4A1B0 !important' }}
@@ -174,23 +172,31 @@ export default function CommunityForm() {
           placeholder={t('community:zip')}
           className='form-control'
         />
-        <FormFeedback>{errors.zip?.message}</FormFeedback>
+        <FormFeedback>
+          {(errors.address as FieldErrors<EntityAddress>)?.zip?.message}
+        </FormFeedback>
         <br />
-        <Label htmlFor='addressLine1'>{t('community:addressLine1')}</Label>{' '}
+        <Label htmlFor='address.line1'>
+          {t('community:addressLine1')}
+        </Label>{' '}
         <br />
         <Input
-          {...register('addressLine1', { required: true })}
-          id='addressLine1'
+          {...register('address.line1', { required: true })}
+          id='address.line1'
           placeholder={t('community:addressLine1')}
           className='form-control'
         />
-        <FormFeedback>{errors.addressLine1?.message}</FormFeedback>
+        <FormFeedback>
+          {(errors.address as FieldErrors<EntityAddress>)?.line1?.message}
+        </FormFeedback>
         <br />
-        <Label htmlFor='addressLine2'>{t('community:addressLine2')}</Label>{' '}
+        <Label htmlFor='address.line2'>
+          {t('community:addressLine2')}
+        </Label>{' '}
         <br />
         <Input
-          {...register('addressLine2')}
-          id='addressLine2'
+          {...register('address.line2')}
+          id='address.line2'
           placeholder={t('community:addressLine2')}
           className='form-control'
         />
