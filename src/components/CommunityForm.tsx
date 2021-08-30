@@ -239,7 +239,7 @@ export default function CommunityForm() {
             />
           </Col>
         </FormGroup>
-        <RippleButton>{t('community:submit')}</RippleButton>
+        <RippleButton>{t('community:create')}</RippleButton>
       </FormGroup>
     </div>
   )
